@@ -40,6 +40,7 @@ const CONFIG = {
     </div>
     <span class="nav-wordmark">Attruvera</span>
   </a>
+
   <div class="nav-links">
     <a href="#products">Products</a>
     <a href="#vision">Vision</a>
@@ -47,61 +48,105 @@ const CONFIG = {
     <a href="#licensing">Licensing</a>
     <a href="#about">About</a>
   </div>
-  <a href="#contact" class="nav-contact">Contact</a>
 
-  <!-- ACCESSIBILITY DROPDOWN -->
-  <div class="a11y-menu" role="region" aria-label="Accessibility options">
-    <button class="a11y-trigger" id="a11y-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-dropdown">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="5" r="2"/>
-        <path d="M8 9h8M12 9v10M9 19l3-4 3 4"/>
-      </svg>
-      <span>Accessibility</span>
-      <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M6 9l6 6 6-6"/>
-      </svg>
-    </button>
+  <div class="nav-right">
+    <a href="#contact" class="nav-contact">Contact</a>
 
-    <div class="a11y-dropdown" id="a11y-dropdown" role="menu" aria-label="Accessibility controls">
-      <div class="a11y-dropdown-label">Accessibility</div>
+    <!-- ACCESSIBILITY DROPDOWN -->
+    <div class="a11y-menu" role="region" aria-label="Accessibility options">
+      <button class="a11y-trigger" id="a11y-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-dropdown">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="5" r="2"/>
+          <path d="M8 9h8M12 9v10M9 19l3-4 3 4"/>
+        </svg>
+        <span>Accessibility</span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
 
-      <!-- Font size -->
-      <div class="a11y-btn-group" role="group" aria-label="Text size">
-        <button class="a11y-btn" id="btn-font-dec" role="menuitem" aria-label="Decrease text size" title="Smaller text">
-          A−
+      <div class="a11y-dropdown" id="a11y-dropdown" role="menu" aria-label="Accessibility controls">
+        <div class="a11y-dropdown-label">Text Size <span id="a11y-fontsize-label" style="float:right;color:var(--moss)">16px</span></div>
+        <div class="a11y-btn-group" role="group" aria-label="Text size">
+          <button class="a11y-btn" id="btn-font-dec" role="menuitem" aria-label="Decrease text size">A−</button>
+          <button class="a11y-btn" id="btn-font-inc" role="menuitem" aria-label="Increase text size">A+</button>
+        </div>
+
+        <div class="a11y-divider" aria-hidden="true"></div>
+        <div class="a11y-dropdown-label">Display</div>
+
+        <button class="a11y-btn" id="btn-contrast" role="menuitemcheckbox" aria-checked="false" aria-label="Toggle high contrast">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="currentColor" stroke="none"/>
+          </svg>
+          High contrast
         </button>
-        <button class="a11y-btn" id="btn-font-inc" role="menuitem" aria-label="Increase text size" title="Larger text">
-          A+
+
+        <button class="a11y-btn" id="btn-motion" role="menuitemcheckbox" aria-checked="false" aria-label="Reduce animations">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M18.364 5.636a9 9 0 0 1 0 12.728M5.636 5.636a9 9 0 0 0 0 12.728M12 8v4l3 3"/>
+          </svg>
+          Reduce motion
+        </button>
+
+        <div class="a11y-divider" aria-hidden="true"></div>
+        <div class="a11y-dropdown-label">Color Vision</div>
+
+        <button class="a11y-btn" id="btn-cb-none" role="menuitemradio" aria-checked="true" aria-label="Default color scheme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          Default
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-deut" role="menuitemradio" aria-checked="false" aria-label="Deuteranopia / Protanopia (red-green)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="8" cy="12" r="5" fill="#f97316" opacity="0.8"/>
+            <circle cx="16" cy="12" r="5" fill="#3b82f6" opacity="0.8"/>
+          </svg>
+          Deuteranopia
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-trit" role="menuitemradio" aria-checked="false" aria-label="Tritanopia (blue-yellow)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="8" cy="12" r="5" fill="#ef4444" opacity="0.8"/>
+            <circle cx="16" cy="12" r="5" fill="#22c55e" opacity="0.8"/>
+          </svg>
+          Tritanopia
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-mono" role="menuitemradio" aria-checked="false" aria-label="Monochromacy / grayscale">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#333"/><stop offset="1" stop-color="#ccc"/></linearGradient></defs>
+            <circle cx="12" cy="12" r="9" fill="url(#gr)"/>
+          </svg>
+          Monochromacy
+        </button>
+
+        <div class="a11y-divider" aria-hidden="true"></div>
+        <button class="a11y-reset" id="btn-reset" role="menuitem" aria-label="Reset all accessibility settings">
+          Reset to defaults
         </button>
       </div>
-
-      <div class="a11y-divider" aria-hidden="true"></div>
-
-      <!-- High contrast -->
-      <button class="a11y-btn" id="btn-contrast" role="menuitemcheckbox" aria-checked="false" aria-label="Toggle high contrast">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="currentColor" stroke="none"/>
-        </svg>
-        High contrast
-      </button>
-
-      <!-- Reduce motion -->
-      <button class="a11y-btn" id="btn-motion" role="menuitemcheckbox" aria-checked="false" aria-label="Reduce animations">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M18.364 5.636a9 9 0 0 1 0 12.728M5.636 5.636a9 9 0 0 0 0 12.728M12 8v4l3 3"/>
-        </svg>
-        Reduce motion
-      </button>
-
-      <div class="a11y-divider" aria-hidden="true"></div>
-
-      <button class="a11y-reset" id="btn-reset" role="menuitem" aria-label="Reset all accessibility settings">
-        Reset to defaults
-      </button>
     </div>
+
+    <!-- BURGER -->
+    <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE NAV PANEL -->
+<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Mobile navigation">
+  <a href="#products" class="nav-mobile-link">Products</a>
+  <a href="#vision" class="nav-mobile-link">Vision</a>
+  <a href="#cases" class="nav-mobile-link">Case Studies</a>
+  <a href="#licensing" class="nav-mobile-link">Licensing</a>
+  <a href="#about" class="nav-mobile-link">About</a>
+  <a href="#contact" class="nav-mobile-link">Contact</a>
+</div>
 
 <!-- ══════════════════════════════════════════════
      HERO
@@ -568,6 +613,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // ACCESSIBILITY DROPDOWN
   // ══════════════════════════════════════════════
 
+  // Font size: range -2 to +2, each step = 2px. Default = 16px.
+  // -2=12px, -1=14px, 0=16px, +1=18px, +2=20px
+  var FONT_BASE = 16;
+  var FONT_STEP = 2;
+  var FONT_MIN = -2;
+  var FONT_MAX = 2;
+
   var a11y = JSON.parse(localStorage.getItem('a11y') || '{}');
   var trigger = document.getElementById('a11y-trigger');
   var dropdown = document.getElementById('a11y-dropdown');
@@ -576,10 +628,8 @@ document.addEventListener('DOMContentLoaded', function() {
   trigger.addEventListener('click', function(e) {
     e.stopPropagation();
     var open = dropdown.classList.toggle('open');
-    trigger.setAttribute('aria-expanded', open);
+    trigger.setAttribute('aria-expanded', String(open));
   });
-
-  // Close on outside click or Escape
   document.addEventListener('click', function() {
     dropdown.classList.remove('open');
     trigger.setAttribute('aria-expanded', 'false');
@@ -593,40 +643,91 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   dropdown.addEventListener('click', function(e) { e.stopPropagation(); });
 
-  function applyA11y() {
-    // Font size
-    document.body.classList.remove('large-text', 'xlarge-text');
-    if (a11y.fontSize === 1) document.body.classList.add('large-text');
-    if (a11y.fontSize === 2) document.body.classList.add('xlarge-text');
+  // ── Burger menu ──
+  var burger = document.getElementById('nav-burger');
+  var mobilePanel = document.getElementById('nav-mobile-panel');
+  var mainNav = document.getElementById('main-nav');
 
-    // High contrast
+  burger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var open = mobilePanel.classList.toggle('open');
+    mainNav.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    // Close a11y dropdown if open
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Close mobile menu on link click or outside click
+  mobilePanel.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobilePanel.classList.remove('open');
+      mainNav.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function() {
+    mobilePanel.classList.remove('open');
+    mainNav.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+  mobilePanel.addEventListener('click', function(e) { e.stopPropagation(); });
+  mainNav.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  function applyA11y() {
+    // ── Font size ──
+    var step = a11y.fontSize || 0;
+    var px = FONT_BASE + (step * FONT_STEP);
+    var fsStyle = document.getElementById('fs-style');
+    if (!fsStyle) { fsStyle = document.createElement('style'); fsStyle.id = 'fs-style'; document.head.appendChild(fsStyle); }
+    fsStyle.textContent = 'html { font-size: ' + px + 'px !important; }';
+    var lbl = document.getElementById('a11y-fontsize-label');
+    if (lbl) lbl.textContent = px + 'px';
+    // Disable buttons at limits
+    document.getElementById('btn-font-dec').disabled = (step <= FONT_MIN);
+    document.getElementById('btn-font-inc').disabled = (step >= FONT_MAX);
+
+    // ── High contrast ──
     document.body.classList.toggle('high-contrast', !!a11y.contrast);
     var btnC = document.getElementById('btn-contrast');
     btnC.classList.toggle('active', !!a11y.contrast);
-    btnC.setAttribute('aria-checked', !!a11y.contrast);
+    btnC.setAttribute('aria-checked', String(!!a11y.contrast));
 
-    // Reduce motion
-    document.body.classList.toggle('reduce-motion', !!a11y.motion);
+    // ── Reduce motion ──
     var btnM = document.getElementById('btn-motion');
     btnM.classList.toggle('active', !!a11y.motion);
-    btnM.setAttribute('aria-checked', !!a11y.motion);
+    btnM.setAttribute('aria-checked', String(!!a11y.motion));
     var ms = document.getElementById('motion-style');
     if (a11y.motion) {
       if (!ms) { ms = document.createElement('style'); ms.id = 'motion-style'; document.head.appendChild(ms); }
-      ms.textContent = '*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } .fade-up { opacity: 1 !important; transform: none !important; } html { scroll-behavior: auto !important; }';
-    } else {
-      if (ms) ms.remove();
-    }
+      ms.textContent = '*, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; } .fade-up{opacity:1!important;transform:none!important;} html{scroll-behavior:auto!important;}';
+    } else { if (ms) ms.remove(); }
+
+    // ── Color blindness ──
+    document.body.classList.remove('cb-deuteranopia', 'cb-tritanopia', 'cb-mono');
+    var cbMode = a11y.colorBlind || 'none';
+    if (cbMode === 'deuteranopia') document.body.classList.add('cb-deuteranopia');
+    if (cbMode === 'tritanopia')   document.body.classList.add('cb-tritanopia');
+    if (cbMode === 'mono')         document.body.classList.add('cb-mono');
+    ['btn-cb-none','btn-cb-deut','btn-cb-trit','btn-cb-mono'].forEach(function(id, i) {
+      var modes = ['none','deuteranopia','tritanopia','mono'];
+      var btn = document.getElementById(id);
+      if (btn) {
+        var active = cbMode === modes[i];
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-checked', String(active));
+      }
+    });
   }
 
   applyA11y();
 
   document.getElementById('btn-font-inc').addEventListener('click', function() {
-    a11y.fontSize = Math.min((a11y.fontSize || 0) + 1, 2);
+    a11y.fontSize = Math.min((a11y.fontSize || 0) + 1, FONT_MAX);
     localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
   });
   document.getElementById('btn-font-dec').addEventListener('click', function() {
-    a11y.fontSize = Math.max((a11y.fontSize || 0) - 1, 0);
+    a11y.fontSize = Math.max((a11y.fontSize || 0) - 1, FONT_MIN);
     localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
   });
   document.getElementById('btn-contrast').addEventListener('click', function() {
@@ -636,6 +737,14 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('btn-motion').addEventListener('click', function() {
     a11y.motion = !a11y.motion;
     localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
+  });
+  // Color blindness radio buttons
+  [['btn-cb-none','none'],['btn-cb-deut','deuteranopia'],['btn-cb-trit','tritanopia'],['btn-cb-mono','mono']].forEach(function(pair) {
+    var btn = document.getElementById(pair[0]);
+    if (btn) btn.addEventListener('click', function() {
+      a11y.colorBlind = pair[1];
+      localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
+    });
   });
   document.getElementById('btn-reset').addEventListener('click', function() {
     a11y = {};

@@ -71,10 +71,49 @@ body.high-contrast {
   --slate:      #94a3b8;
 }
 
-/* ── Large text mode ── */
-body.large-text { font-size: calc(16px * 1.2); }
+/* ── Large text mode — font size applied via JS to html element ── */
 body.large-text .hero h1 { font-size: clamp(58px, 6.5vw, 96px); }
 body.large-text .section-title { font-size: clamp(40px, 4.5vw, 60px); }
+
+/* ── Color blindness: Deuteranopia / Protanopia (red-green) ── */
+body.cb-deuteranopia {
+  --moss:       #f97316;   /* orange replaces cyan */
+  --leaf:       #fb923c;
+  --gold:       #3b82f6;   /* blue replaces amber */
+  --gold-light: #60a5fa;
+  --forest:     #1e1b4b;
+  --green:      #1e3a5f;
+  --border:     rgba(249,115,22,0.2);
+  --glow-cyan:  rgba(249,115,22,0.2);
+}
+
+/* ── Color blindness: Tritanopia (blue-yellow) ── */
+body.cb-tritanopia {
+  --moss:       #ef4444;   /* red replaces cyan */
+  --leaf:       #22c55e;   /* green replaces teal */
+  --gold:       #a21caf;   /* purple replaces amber */
+  --gold-light: #e879f9;
+  --forest:     #1a1a2e;
+  --green:      #16213e;
+  --border:     rgba(239,68,68,0.2);
+  --glow-cyan:  rgba(239,68,68,0.2);
+}
+
+/* ── Color blindness: Monochromacy / grayscale ── */
+body.cb-mono {
+  --black:      #111111;
+  --off-white:  #eeeeee;
+  --forest:     #222222;
+  --ink:        #1a1a1a;
+  --green:      #333333;
+  --leaf:       #888888;
+  --moss:       #bbbbbb;
+  --gold:       #999999;
+  --gold-light: #cccccc;
+  --slate:      #666666;
+  --border:     rgba(200,200,200,0.15);
+  --glow-cyan:  rgba(200,200,200,0.1);
+}
 
 /* ============================================================
    RESET & BASE
@@ -343,6 +382,73 @@ nav.scrolled { padding: 14px 60px; }
   border-color: var(--moss);
   box-shadow: 0 0 12px var(--glow-cyan);
 }
+
+/* ── Nav right group (Contact + A11y) ── */
+.nav-right {
+  display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Burger button (hidden on desktop) ── */
+.nav-burger {
+  display: none;
+  background: none;
+  border: 1px solid rgba(6,182,212,0.25);
+  border-radius: 4px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--off-white);
+  transition: all 0.2s;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-burger:hover { border-color: var(--moss); background: rgba(6,182,212,0.08); }
+.nav-burger span {
+  display: block;
+  width: 18px; height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+nav.menu-open .nav-burger span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+nav.menu-open .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+nav.menu-open .nav-burger span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+/* ── Mobile nav panel ── */
+.nav-mobile-panel {
+  display: none;
+  position: fixed;
+  top: 65px; left: 0; right: 0;
+  background: rgba(15,23,42,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px 28px;
+  z-index: 490;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(-8px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-mobile-panel.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.nav-mobile-panel a {
+  font-size: 14px; font-weight: 500;
+  color: rgba(241,245,249,0.55);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(6,182,212,0.06);
+  transition: color 0.2s;
+}
+.nav-mobile-panel a:hover { color: var(--moss); }
+.nav-mobile-panel a:last-child { border-bottom: none; }
 
 /* ============================================================
    HERO
@@ -1170,8 +1276,16 @@ footer {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+
+/* ── Burger appears before nav links overlap (~960px) ── */
+@media (max-width: 960px) {
+  nav .nav-links { display: none; }
+  .nav-burger { display: flex; }
+}
+
 @media (max-width: 1024px) {
-  nav { padding: 18px 30px; top: 36px; }
+  nav { padding: 18px 30px; top: 0; }
+  nav.scrolled { padding: 14px 30px; }
   .hero-inner, .about-inner, .vision-inner { grid-template-columns: 1fr; gap: 48px; }
   .hero-card { display: none; }
   .products-header { grid-template-columns: 1fr; }
@@ -1181,12 +1295,16 @@ footer {
   .problem-inner { grid-template-columns: 1fr; }
   .prob-item { border-right: none; border-bottom: 1px solid rgba(6,182,212,0.08); }
 }
+
 @media (max-width: 768px) {
   .section-inner, .cases-header, .cases-grid, .products-grid,
   .products-header, .pricing-table, .contact-inner { padding: 0 24px; }
-  nav { padding: 16px 24px; }
-  nav .nav-links { display: none; }
+  nav { padding: 16px 24px; top: 0; }
+  .nav-contact { display: none; } /* Contact lives in mobile panel */
   .a11y-menu { display: flex; }
+  .a11y-trigger span { display: none; }
+  .a11y-trigger { padding: 8px 10px; }
+  .a11y-dropdown { right: -10px; min-width: 210px; }
   #hero { padding: 130px 24px 80px; }
   .hero h1 { font-size: 42px; }
   .problem-inner { padding: 0 24px; }
