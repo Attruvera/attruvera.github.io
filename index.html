@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,925 +19,67 @@ const CONFIG = {
 };
 </script>
 
-<link href="css2.css" rel="stylesheet">
-
-<style>
-:root {
-  --black: #080A08;
-  --off-white: #F0EDE6;
-  --warm-white: #FAF8F4;
-  --ink: #111410;
-  --forest: #0F2318;
-  --green: #1C4A2E;
-  --leaf: #2D7A4A;
-  --moss: #3E9E62;
-  --gold: #C4922A;
-  --gold-light: #E8B84B;
-  --gold-pale: #F5DFA0;
-  --slate: #5A6B62;
-  --mist: #D8D4CB;
-  --card-bg: rgba(255,255,255,0.04);
-  --border: rgba(255,255,255,0.08);
-  --border-light: rgba(0,0,0,0.08);
-}
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; font-size: 16px; }
-
-body {
-  background: var(--black);
-  color: var(--off-white);
-  font-family: 'Syne', sans-serif;
-  overflow-x: hidden;
-  cursor: default;
-}
-
-/* ── NOISE OVERLAY ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.025;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-/* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--leaf); border-radius: 2px; }
-
-/* ══════════════════════════════════════════════
-   NAV
-══════════════════════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 60px;
-  background: rgba(8,10,8,0.85);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  transition: padding 0.3s;
-}
-nav.scrolled { padding: 14px 60px; }
-
-.nav-logo {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none;
-}
-.nav-mark {
-  width: 36px; height: 36px;
-  background: var(--green);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.nav-mark svg { width: 20px; height: 20px; }
-.nav-wordmark {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 600;
-  color: var(--off-white);
-  letter-spacing: 0.02em;
-}
-.nav-links {
-  display: flex; gap: 36px; align-items: center;
-}
-.nav-links a {
-  font-size: 12px; font-weight: 500;
-  color: rgba(240,237,230,0.45);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold-light); }
-.nav-contact {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  background: none;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--off-white);
-  border-radius: 4px;
-  padding: 8px 18px;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-decoration: none;
-  display: inline-block;
-}
-.nav-contact:hover {
-  background: var(--green);
-  border-color: var(--leaf);
-}
-
-/* ══════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding: 140px 60px 100px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(28,74,46,0.18) 0%, transparent 70%),
-              radial-gradient(ellipse 40% 40% at 85% 70%, rgba(196,146,42,0.06) 0%, transparent 60%);
-}
-
-.hero-grid {
-  position: absolute; inset: 0; opacity: 0.04;
-  background-image: linear-gradient(rgba(240,237,230,1) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(240,237,230,1) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: 1200px; margin: 0 auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
-}
-
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-bottom: 28px;
-}
-.hero-eyebrow-dot {
-  width: 6px; height: 6px;
-  background: var(--moss);
-  border-radius: 50%;
-  animation: pulse 2.5s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.8); }
-}
-.hero-eyebrow span {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.15em;
-  color: var(--moss); text-transform: uppercase;
-}
-
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(54px, 6vw, 88px);
-  font-weight: 300;
-  line-height: 1.0;
-  color: var(--off-white);
-  margin-bottom: 28px;
-}
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.hero-tagline {
-  font-size: 15px; font-weight: 400;
-  color: rgba(240,237,230,0.5);
-  line-height: 1.8;
-  max-width: 480px;
-  margin-bottom: 48px;
-}
-
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-
-.btn-primary {
-  background: var(--gold);
-  color: var(--black);
-  border: none; border-radius: 4px;
-  padding: 14px 30px;
-  font-family: 'Syne', sans-serif;
-  font-size: 13px; font-weight: 600;
-  letter-spacing: 0.05em;
-  cursor: pointer; transition: all 0.2s;
-  text-decoration: none; display: inline-block;
-}
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-.btn-ghost {
-  background: none;
-  color: rgba(240,237,230,0.6);
-  border: 1px solid rgba(240,237,230,0.18);
-  border-radius: 4px;
-  padding: 14px 26px;
-  font-family: 'Syne', sans-serif;
-  font-size: 13px; font-weight: 500;
-  cursor: pointer; transition: all 0.2s;
-  text-decoration: none; display: inline-block;
-}
-.btn-ghost:hover { border-color: rgba(240,237,230,0.45); color: var(--off-white); }
-
-/* Hero right — VISA analogy card */
-.hero-card {
-  background: rgba(15,35,24,0.6);
-  border: 1px solid rgba(45,122,74,0.25);
-  border-radius: 16px;
-  padding: 36px;
-  position: relative;
-  overflow: hidden;
-}
-.hero-card::before {
-  content: '';
-  position: absolute; top: -60px; right: -60px;
-  width: 200px; height: 200px;
-  background: radial-gradient(ellipse, rgba(196,146,42,0.12) 0%, transparent 70%);
-}
-.hero-card-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.15em;
-  color: var(--gold); text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.hero-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px; font-weight: 600;
-  color: var(--off-white);
-  line-height: 1.3;
-  margin-bottom: 14px;
-}
-.hero-card p {
-  font-size: 13px; line-height: 1.8;
-  color: rgba(240,237,230,0.45);
-  font-weight: 400;
-  margin-bottom: 24px;
-}
-.hero-card-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.hcs {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px;
-  padding: 14px;
-}
-.hcs-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 600;
-  color: var(--gold-light);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.hcs-lbl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: rgba(240,237,230,0.3);
-  letter-spacing: 0.08em; line-height: 1.4;
-}
-
-/* ══════════════════════════════════════════════
-   SECTION SHARED
-══════════════════════════════════════════════ */
-section { position: relative; }
-
-.section-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
-}
-
-.section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--moss);
-  margin-bottom: 12px;
-  display: block;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 300; line-height: 1.1;
-  color: var(--off-white);
-  margin-bottom: 20px;
-}
-.section-title em { font-style: italic; color: var(--gold-light); }
-
-.section-body {
-  font-size: 15px; line-height: 1.85;
-  color: rgba(240,237,230,0.45);
-  font-weight: 400;
-}
-
-/* ══════════════════════════════════════════════
-   PROBLEM BAND
-══════════════════════════════════════════════ */
-#problem {
-  padding: 80px 0;
-  background: var(--forest);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.problem-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-}
-
-.prob-item {
-  padding: 32px 40px;
-  border-right: 1px solid rgba(255,255,255,0.06);
-}
-.prob-item:last-child { border-right: none; }
-.prob-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.12em;
-  color: var(--gold); margin-bottom: 12px;
-  display: block;
-}
-.prob-item h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px; font-weight: 600;
-  color: var(--off-white); margin-bottom: 8px;
-  line-height: 1.2;
-}
-.prob-item p {
-  font-size: 12px; line-height: 1.75;
-  color: rgba(240,237,230,0.4);
-}
-
-/* ══════════════════════════════════════════════
-   PRODUCTS
-══════════════════════════════════════════════ */
-#products {
-  padding: 120px 0;
-  background: var(--black);
-}
-
-.products-header {
-  max-width: 1200px; margin: 0 auto 72px;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end;
-}
-
-.products-grid {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3px;
-}
-
-.prod-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 48px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.3s, background 0.3s;
-}
-.prod-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(45,122,74,0.35);
-}
-.prod-card.featured {
-  background: rgba(15,35,24,0.5);
-  border-color: rgba(45,122,74,0.2);
-}
-
-.prod-card-glow {
-  position: absolute; top: -80px; right: -80px;
-  width: 250px; height: 250px;
-  background: radial-gradient(ellipse, rgba(45,122,74,0.1) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.prod-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-bottom: 20px;
-}
-.prod-tag-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.prod-tag-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px;
-  background: rgba(196,146,42,0.12);
-  border: 1px solid rgba(196,146,42,0.25);
-  border-radius: 99px;
-  padding: 2px 8px;
-  color: var(--gold);
-  letter-spacing: 0.06em;
-}
-.prod-tag-free {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px;
-  background: rgba(45,122,74,0.15);
-  border: 1px solid rgba(45,122,74,0.3);
-  border-radius: 99px;
-  padding: 2px 8px;
-  color: var(--moss);
-  letter-spacing: 0.06em;
-}
-
-.prod-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px; font-weight: 600;
-  color: var(--off-white);
-  margin-bottom: 6px; line-height: 1.1;
-}
-.prod-card .prod-subtitle {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: var(--slate);
-  letter-spacing: 0.08em; margin-bottom: 18px;
-}
-.prod-card p {
-  font-size: 13px; line-height: 1.8;
-  color: rgba(240,237,230,0.45);
-  margin-bottom: 24px;
-}
-.prod-features {
-  display: flex; flex-direction: column; gap: 8px;
-}
-.pf {
-  display: flex; gap: 10px; align-items: flex-start;
-}
-.pf-dot {
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--moss);
-  flex-shrink: 0; margin-top: 6px;
-}
-.pf span {
-  font-size: 12px; line-height: 1.5;
-  color: rgba(240,237,230,0.35);
-}
-
-/* TVA card spans full width */
-.prod-card.tva-card {
-  grid-column: 1 / -1;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-  background: rgba(8,10,8,0.8);
-  border-color: rgba(196,146,42,0.2);
-}
-.prod-card.tva-card:hover { border-color: rgba(196,146,42,0.4); }
-.tva-visual {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 20px 0;
-}
-.tva-chain {
-  display: flex; flex-direction: column; gap: 3px;
-}
-.tva-block {
-  display: flex; align-items: center; gap: 12px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 6px;
-  padding: 10px 14px;
-  transition: all 0.2s;
-}
-.tva-block:hover { background: rgba(196,146,42,0.05); border-color: rgba(196,146,42,0.2); }
-.tva-block-icon {
-  width: 28px; height: 28px;
-  background: rgba(196,146,42,0.1);
-  border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px; flex-shrink: 0;
-}
-.tva-block-text { flex: 1; }
-.tva-block-title {
-  font-size: 11px; font-weight: 600;
-  color: var(--off-white); margin-bottom: 1px;
-}
-.tva-block-sub {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: rgba(240,237,230,0.25);
-  letter-spacing: 0.05em;
-}
-.tva-block-hash {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8px; color: var(--gold);
-  letter-spacing: 0.05em;
-}
-.tva-connector {
-  width: 1px; height: 8px;
-  background: rgba(196,146,42,0.2);
-  margin-left: 27px;
-}
-
-/* ══════════════════════════════════════════════
-   VISA ANALOGY
-══════════════════════════════════════════════ */
-#vision {
-  padding: 120px 0;
-  background: var(--forest);
-  overflow: hidden;
-}
-
-.vision-inner {
-  max-width: 1200px; margin: 0 auto; padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
-}
-
-.visa-diagram {
-  position: relative;
-}
-.visa-center {
-  background: var(--green);
-  border: 2px solid rgba(45,122,74,0.5);
-  border-radius: 12px;
-  padding: 28px 32px;
-  text-align: center;
-  position: relative; z-index: 2;
-}
-.visa-center-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.15em;
-  color: var(--gold); margin-bottom: 8px;
-  text-transform: uppercase;
-}
-.visa-center h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 600;
-  color: var(--off-white); line-height: 1.1;
-}
-.visa-center p {
-  font-size: 11px; color: rgba(240,237,230,0.4);
-  margin-top: 6px; font-style: italic;
-}
-
-.visa-nodes {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 10px; margin-top: 12px;
-}
-.visa-node {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 8px; padding: 12px 14px;
-}
-.visa-node-title {
-  font-size: 11px; font-weight: 600;
-  color: var(--off-white); margin-bottom: 2px;
-}
-.visa-node-sub {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: rgba(240,237,230,0.25);
-}
-
-/* ══════════════════════════════════════════════
-   CASE STUDIES
-══════════════════════════════════════════════ */
-#cases {
-  padding: 120px 0;
-  background: var(--black);
-}
-
-.cases-header {
-  max-width: 1200px; margin: 0 auto 64px;
-  padding: 0 60px;
-}
-
-.cases-grid {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
-}
-
-.case-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  overflow: hidden;
-  transition: all 0.3s;
-  position: relative;
-}
-.case-card:hover { border-color: rgba(45,122,74,0.3); }
-
-.case-header {
-  padding: 32px 36px 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.case-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.12em;
-  color: var(--moss); margin-bottom: 10px; display: block;
-}
-.case-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px; font-weight: 600;
-  color: var(--off-white); line-height: 1.2;
-}
-.case-body { padding: 24px 36px 32px; }
-.case-stat {
-  display: flex; align-items: baseline; gap: 8px;
-  margin-bottom: 14px;
-}
-.case-stat-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 42px; font-weight: 600;
-  color: var(--gold-light); line-height: 1;
-}
-.case-stat-unit {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; color: rgba(240,237,230,0.3);
-}
-.case-desc {
-  font-size: 13px; line-height: 1.75;
-  color: rgba(240,237,230,0.4);
-}
-
-/* ══════════════════════════════════════════════
-   LICENSING
-══════════════════════════════════════════════ */
-#licensing {
-  padding: 120px 0;
-  background: var(--forest);
-}
-
-.pricing-table {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px;
-  margin-top: 64px;
-}
-
-.price-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 40px 36px;
-  position: relative;
-  transition: all 0.3s;
-}
-.price-card:hover { border-color: rgba(45,122,74,0.3); }
-.price-card.featured-price {
-  background: rgba(15,35,24,0.6);
-  border-color: rgba(196,146,42,0.25);
-}
-
-.price-tier {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--moss); margin-bottom: 14px;
-}
-.price-product {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 600;
-  color: var(--off-white); margin-bottom: 6px;
-}
-.price-tagline {
-  font-size: 12px; color: rgba(240,237,230,0.35);
-  margin-bottom: 28px; line-height: 1.5;
-}
-.price-amount {
-  display: flex; align-items: baseline; gap: 4px;
-  margin-bottom: 28px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.price-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px; font-weight: 600;
-  color: var(--gold-light); line-height: 1;
-}
-.price-period {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: rgba(240,237,230,0.25);
-}
-.price-free {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px; font-weight: 300;
-  color: var(--moss); line-height: 1;
-}
-
-.price-features { display: flex; flex-direction: column; gap: 10px; }
-.pricef {
-  display: flex; gap: 10px; align-items: flex-start;
-}
-.pricef-check {
-  width: 14px; height: 14px; flex-shrink: 0;
-  margin-top: 1px;
-  color: var(--moss); font-size: 10px;
-}
-.pricef span {
-  font-size: 12px; line-height: 1.5;
-  color: rgba(240,237,230,0.4);
-}
-
-.price-cta {
-  margin-top: 32px;
-  display: block; text-align: center;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 4px;
-  color: rgba(240,237,230,0.5);
-  font-size: 12px; font-weight: 500;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.price-cta:hover { border-color: var(--moss); color: var(--off-white); }
-.price-cta.cta-gold {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--black);
-  font-weight: 600;
-}
-.price-cta.cta-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
-
-/* ══════════════════════════════════════════════
-   ABOUT / FOUNDER
-══════════════════════════════════════════════ */
-#about {
-  padding: 120px 0;
-  background: var(--black);
-}
-
-.about-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
-}
-
-.founder-card {
-  background: rgba(15,35,24,0.4);
-  border: 1px solid rgba(45,122,74,0.2);
-  border-radius: 12px;
-  padding: 40px;
-}
-.founder-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.14em;
-  color: var(--moss); text-transform: uppercase;
-  margin-bottom: 16px; display: block;
-}
-.founder-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px; font-weight: 600;
-  color: var(--off-white);
-  margin-bottom: 4px;
-}
-.founder-title {
-  font-size: 12px; color: var(--slate);
-  margin-bottom: 20px; line-height: 1.5;
-}
-.founder-bio {
-  font-size: 13px; line-height: 1.8;
-  color: rgba(240,237,230,0.4);
-  margin-bottom: 24px;
-}
-.founder-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.ftag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.07em;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 99px;
-  padding: 4px 12px;
-  color: rgba(240,237,230,0.3);
-}
-
-/* ══════════════════════════════════════════════
-   CONTACT
-══════════════════════════════════════════════ */
-#contact {
-  padding: 120px 0;
-  background: var(--forest);
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.contact-inner {
-  max-width: 1200px; margin: 0 auto;
-  padding: 0 60px;
-  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px;
-  margin-top: 64px;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 36px 32px;
-  transition: all 0.3s;
-}
-.contact-card:hover { border-color: rgba(196,146,42,0.3); background: rgba(255,255,255,0.04); }
-.contact-card-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; letter-spacing: 0.14em;
-  color: var(--moss); margin-bottom: 12px;
-  text-transform: uppercase;
-}
-.contact-card h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px; font-weight: 600;
-  color: var(--off-white); margin-bottom: 10px;
-}
-.contact-card p {
-  font-size: 12px; line-height: 1.7;
-  color: rgba(240,237,230,0.35);
-  margin-bottom: 20px;
-}
-.contact-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--gold-light);
-  text-decoration: none;
-  display: flex; align-items: center; gap: 6px;
-}
-.contact-link:hover { color: var(--off-white); }
-.contact-link::after { content: '→'; transition: transform 0.2s; }
-.contact-link:hover::after { transform: translateX(3px); }
-
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
-footer {
-  background: var(--black);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 36px 60px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.footer-left {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.08em;
-  color: rgba(240,237,230,0.2);
-}
-.footer-right {
-  display: flex; gap: 28px;
-}
-.footer-right a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: rgba(240,237,230,0.2);
-  text-decoration: none; transition: color 0.2s;
-}
-.footer-right a:hover { color: var(--gold-light); }
-
-/* ══════════════════════════════════════════════
-   BACK TO TOP
-══════════════════════════════════════════════ */
-.back-top {
-  position: fixed; bottom: 32px; right: 32px;
-  width: 40px; height: 40px;
-  background: var(--green);
-  border: 1px solid rgba(45,122,74,0.4);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  opacity: 0; pointer-events: none;
-  transition: all 0.3s;
-  z-index: 300;
-  text-decoration: none;
-}
-.back-top.visible { opacity: 1; pointer-events: all; }
-.back-top:hover { background: var(--leaf); transform: translateY(-2px); }
-.back-top svg { width: 14px; height: 14px; fill: var(--off-white); }
-
-/* ══════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  nav { padding: 18px 30px; }
-  .hero-inner, .about-inner, .vision-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero-card { display: none; }
-  .products-header { grid-template-columns: 1fr; }
-  .prod-card.tva-card { grid-template-columns: 1fr; gap: 32px; }
-  .pricing-table, .contact-inner { grid-template-columns: 1fr; }
-  .cases-grid, .products-grid { grid-template-columns: 1fr; }
-  .problem-inner { grid-template-columns: 1fr; }
-  .prob-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-}
-@media (max-width: 768px) {
-  .section-inner, .cases-header, .cases-grid, .products-grid,
-  .products-header, .pricing-table, .contact-inner { padding: 0 24px; }
-  nav { padding: 16px 24px; }
-  nav .nav-links { display: none; }
-  #hero { padding: 120px 24px 80px; }
-  .hero h1 { font-size: 42px; }
-  .problem-inner { padding: 0 24px; }
-  .vision-inner, .about-inner { padding: 0 24px; }
-  footer { flex-direction: column; gap: 16px; padding: 28px 24px; text-align: center; }
-}
-
-/* ══════════════════════════════════════════════
-   ENTRANCE ANIMATIONS
-══════════════════════════════════════════════ */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>
+<link href="css1.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="main-nav" class="">
-  <a href="#hero" class="nav-logo">
-    <div class="nav-mark">
+<!-- ── SKIP TO CONTENT (keyboard / screen reader) ── -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ══════════════════════════════════════════════
+     ACCESSIBILITY BAR
+══════════════════════════════════════════════ -->
+<div id="a11y-bar" role="toolbar" aria-label="Accessibility options">
+  <span class="a11y-label">Accessibility</span>
+  <div class="a11y-controls">
+
+    <button class="a11y-btn" id="btn-font-dec" aria-label="Decrease text size" title="Decrease text size">
+      <svg viewBox="0 0 16 16"><text x="1" y="13" font-size="11" font-family="sans-serif" fill="currentColor">A</text><text x="8" y="13" font-size="7" font-family="sans-serif" fill="currentColor">A</text></svg>
+      A−
+    </button>
+
+    <button class="a11y-btn" id="btn-font-inc" aria-label="Increase text size" title="Increase text size">
+      <svg viewBox="0 0 16 16"><text x="0" y="13" font-size="8" font-family="sans-serif" fill="currentColor">A</text><text x="7" y="13" font-size="12" font-family="sans-serif" fill="currentColor">A</text></svg>
+      A+
+    </button>
+
+    <div class="a11y-divider" aria-hidden="true"></div>
+
+    <button class="a11y-btn" id="btn-contrast" aria-label="Toggle high contrast" aria-pressed="false" title="High contrast mode">
+      <svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 1 A7 7 0 0 1 8 15 Z" fill="currentColor"/></svg>
+      Contrast
+    </button>
+
+    <div class="a11y-divider" aria-hidden="true"></div>
+
+    <button class="a11y-btn" id="btn-motion" aria-label="Reduce motion" aria-pressed="false" title="Reduce animations">
+      <svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Reduce motion
+    </button>
+
+    <div class="a11y-divider" aria-hidden="true"></div>
+
+    <button class="a11y-btn" id="btn-reset" aria-label="Reset accessibility settings" title="Reset all">
+      <svg viewBox="0 0 16 16"><path d="M13 8A5 5 0 1 1 8 3h3M11 1v4h-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Reset
+    </button>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="Attruvera Technologies — home">
+    <div class="nav-mark" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3L4 7V17L12 21L20 17V7L12 3Z" stroke="#E8B84B" stroke-width="1.5" fill="none"></path>
-        <circle cx="12" cy="12" r="2.5" fill="#E8B84B"></circle>
-        <path d="M12 9.5V7M12 17V14.5M9.5 12H7M17 12H14.5" stroke="#E8B84B" stroke-width="1" stroke-linecap="round"></path>
+        <path d="M12 3L4 7V17L12 21L20 17V7L12 3Z" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+        <circle cx="12" cy="12" r="2.5" fill="#06b6d4"/>
+        <path d="M12 9.5V7M12 17V14.5M9.5 12H7M17 12H14.5" stroke="#06b6d4" stroke-width="1" stroke-linecap="round"/>
       </svg>
     </div>
-    <span class="nav-wordmark" id="nav-wordmark">Attruvera</span>
+    <span class="nav-wordmark">Attruvera</span>
   </a>
   <div class="nav-links">
     <a href="#products">Products</a>
@@ -948,24 +91,27 @@ footer {
   <a href="#contact" class="nav-contact">Contact</a>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<main id="main-content">
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-eyebrow">
+      <div class="hero-eyebrow" aria-hidden="true">
         <div class="hero-eyebrow-dot"></div>
         <span>Trust Infrastructure for AI</span>
       </div>
       <h1>The <em>verification layer</em><br>every AI transaction<br>deserves.</h1>
-      <p class="hero-tagline" id="hero-tagline">AI with humans first. Canopy, Hudo, and Max make it possible. TVA makes it provable.</p>
+      <p class="hero-tagline" id="hero-tagline"></p>
       <div class="hero-btns">
         <a href="#products" class="btn-primary">Explore the stack</a>
         <a href="#contact" class="btn-ghost">Talk to us</a>
       </div>
     </div>
-    <div class="hero-right">
+    <div class="hero-right" aria-hidden="true">
       <div class="hero-card">
         <div class="hero-card-label">The Attruvera Thesis</div>
         <h3>What Visa did for financial transactions, Attruvera does for AI.</h3>
@@ -994,63 +140,50 @@ footer {
 </section>
 
 <!-- PROBLEM BAND -->
-<section id="problem">
+<section id="problem" aria-label="The problem">
   <div class="problem-inner">
-    <div class="prob-item fade-up visible">
+    <div class="prob-item fade-up">
       <span class="prob-num">01 — THE PROBLEM</span>
       <h4>No verification standard</h4>
-      <p>LLM outputs are consumed daily in high-stakes contexts — 
-medicine, law, government — with no standardized mechanism to prove what
- was asked, what was answered, or whether it was validated.</p>
+      <p>LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.</p>
     </div>
-    <div class="prob-item fade-up visible">
+    <div class="prob-item fade-up">
       <span class="prob-num">02 — THE PROBLEM</span>
       <h4>Attribution is invisible</h4>
-      <p>When multi-agent AI systems produce a result, no layer 
-currently tracks which agent contributed what. Responsibility is 
-diffuse. Liability is undefined. Regulators have no handle on the 
-process.</p>
+      <p>When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.</p>
     </div>
-    <div class="prob-item fade-up visible">
+    <div class="prob-item fade-up">
       <span class="prob-num">03 — THE PROBLEM</span>
       <h4>Learning without memory</h4>
-      <p>AI systems optimize for individual sessions. Knowledge built 
-through interaction is lost. Organizations re-teach systems constantly —
- without infrastructure for cumulative, attributed learning.</p>
+      <p>AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.</p>
     </div>
   </div>
 </section>
 
 <!-- PRODUCTS -->
-<section id="products">
+<section id="products" aria-labelledby="products-heading">
   <div class="products-header">
     <div>
       <span class="section-label">The Technology Stack</span>
-      <h2 class="section-title">Four layers.<br><em>One integrated platform.</em></h2>
+      <h2 class="section-title" id="products-heading">Four layers.<br><em>One integrated platform.</em></h2>
     </div>
     <div>
-      <p class="section-body">Attruvera is not a single tool — it is a 
-vertically integrated trust infrastructure. Each layer is independently 
-valuable; together they form the only complete solution for accountable 
-AI deployment.</p>
+      <p class="section-body">Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.</p>
     </div>
   </div>
 
   <div class="products-grid">
 
     <!-- CANOPY / ALICE -->
-    <div class="prod-card featured fade-up visible">
-      <div class="prod-card-glow"></div>
+    <div class="prod-card featured fade-up">
+      <div class="prod-card-glow" aria-hidden="true"></div>
       <div class="prod-tag">
-        <span class="prod-tag-label" id="prod-platform-name" style="color:var(--moss);">Canopy</span>
+        <span class="prod-tag-label" id="prod-platform-name" style="color:var(--moss);"></span>
         <span class="prod-tag-free">OPEN SOURCE (CORE)</span>
       </div>
-      <h3 id="prod-platform-h3">Canopy</h3>
+      <h3 id="prod-platform-h3"></h3>
       <div class="prod-subtitle">KNOWLEDGE REPRESENTATION PLATFORM</div>
-      <p>A rhizomatic knowledge architecture that maps information as 
-terrain rather than hierarchy. The foundation of the stack — free and 
-open in its core form, enabling any organization to represent, navigate,
- and deliver structured knowledge through multi-agent orchestration.</p>
+      <p>A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.</p>
       <div class="prod-features">
         <div class="pf"><div class="pf-dot"></div><span>Rhizomatic, non-hierarchical knowledge representation</span></div>
         <div class="pf"><div class="pf-dot"></div><span>Adaptive delivery: content surfaces at the moment of need</span></div>
@@ -1060,17 +193,14 @@ open in its core form, enabling any organization to represent, navigate,
     </div>
 
     <!-- MAX -->
-    <div class="prod-card fade-up visible">
+    <div class="prod-card fade-up">
       <div class="prod-tag">
         <span class="prod-tag-label" style="color:var(--gold);">Max</span>
         <span class="prod-tag-badge">PATENT PENDING</span>
       </div>
       <h3>Max</h3>
       <div class="prod-subtitle">MULTI-AGENT HARMONIZATION</div>
-      <p>When multiple AI agents collaborate on a task, Max coordinates 
-their outputs — resolving conflicts, enforcing consistency, and 
-producing a single harmonized result with a traceable decision record. 
-No more contradiction between agents; no more opaque consensus.</p>
+      <p>When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.</p>
       <div class="prod-features">
         <div class="pf"><div class="pf-dot"></div><span>Cross-agent output harmonization and conflict resolution</span></div>
         <div class="pf"><div class="pf-dot"></div><span>Configurable adjudication logic with audit trail</span></div>
@@ -1080,17 +210,14 @@ No more contradiction between agents; no more opaque consensus.</p>
     </div>
 
     <!-- HUDO -->
-    <div class="prod-card fade-up visible">
+    <div class="prod-card fade-up">
       <div class="prod-tag">
         <span class="prod-tag-label" style="color:var(--gold);">Hudo</span>
         <span class="prod-tag-badge">PATENT PENDING</span>
       </div>
       <h3>Hudo</h3>
       <div class="prod-subtitle">WHO DOES — ATTRIBUTION LAYER</div>
-      <p>Hudo answers the question every regulated industry must be able
- to answer: who — or what — produced this output, and on what basis? A 
-patent-pending attribution engine that binds AI outputs to their 
-contributing agents, sources, and reasoning chains.</p>
+      <p>Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.</p>
       <div class="prod-features">
         <div class="pf"><div class="pf-dot"></div><span>Granular attribution: output ↔ agent ↔ source ↔ reasoning</span></div>
         <div class="pf"><div class="pf-dot"></div><span>Defensible documentation for compliance and litigation</span></div>
@@ -1100,8 +227,8 @@ contributing agents, sources, and reasoning chains.</p>
     </div>
 
     <!-- TVA — full width -->
-    <div class="prod-card tva-card fade-up visible">
-      <div class="prod-card-glow" style="background:radial-gradient(ellipse,rgba(196,146,42,0.12) 0%,transparent 65%)"></div>
+    <div class="prod-card tva-card fade-up">
+      <div class="prod-card-glow" aria-hidden="true" style="background:radial-gradient(ellipse,rgba(245,158,11,0.1) 0%,transparent 65%)"></div>
       <div>
         <div class="prod-tag">
           <span class="prod-tag-label" style="color:var(--gold);">TVA</span>
@@ -1109,11 +236,7 @@ contributing agents, sources, and reasoning chains.</p>
         </div>
         <h3>TVA</h3>
         <div class="prod-subtitle">TRUSTED VERIFICATION AUTHORITY</div>
-        <p>The cryptographic foundation of the entire stack. TVA creates
- an immutable, tamper-evident audit record of every AI interaction — 
-what was asked, what was produced, what was verified — using a 
-patent-pending hash-chain architecture. Think of it as the clearing and 
-settlement layer for LLM transactions.</p>
+        <p>The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.</p>
         <div class="prod-features">
           <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Cryptographic hash-chain over every AI interaction</span></div>
           <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready</span></div>
@@ -1122,8 +245,8 @@ settlement layer for LLM transactions.</p>
           <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>PCT international patent filing in progress</span></div>
         </div>
       </div>
-      <div class="tva-visual">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(196,146,42,0.5);letter-spacing:0.12em;margin-bottom:14px;">VERIFICATION CHAIN — LIVE ILLUSTRATION</div>
+      <div class="tva-visual" aria-hidden="true">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(245,158,11,0.5);letter-spacing:0.12em;margin-bottom:14px;">VERIFICATION CHAIN — LIVE ILLUSTRATION</div>
         <div class="tva-chain">
           <div class="tva-block">
             <div class="tva-block-icon">🧠</div>
@@ -1152,13 +275,13 @@ settlement layer for LLM transactions.</p>
             <div class="tva-block-hash" id="hash3">a3f9c2...</div>
           </div>
           <div class="tva-connector"></div>
-          <div class="tva-block" style="border-color:rgba(196,146,42,0.35);background:rgba(196,146,42,0.06)">
+          <div class="tva-block" style="border-color:rgba(245,158,11,0.35);background:rgba(245,158,11,0.05)">
             <div class="tva-block-icon">🔐</div>
             <div class="tva-block-text">
               <div class="tva-block-title">TVA Seal</div>
               <div class="tva-block-sub">Cryptographic record finalized</div>
             </div>
-            <div class="tva-block-hash" id="hash4" style="color:var(--gold-light)">VERIFIED ✓</div>
+            <div class="tva-block-hash" id="hash4" style="color:var(--moss)">VERIFIED ✓</div>
           </div>
         </div>
       </div>
@@ -1168,22 +291,15 @@ settlement layer for LLM transactions.</p>
 </section>
 
 <!-- VISA VISION -->
-<section id="vision">
+<section id="vision" aria-labelledby="vision-heading">
   <div class="vision-inner">
     <div>
       <span class="section-label">The Market Position</span>
-      <h2 class="section-title">The <em>Visa</em><br>of LLM<br>transactions.</h2>
-      <p class="section-body" style="margin-bottom:24px;">Visa did not 
-replace banks or payment networks. It became the trusted clearing layer 
-between them — the standard that made transactions verifiable, 
-accountable, and insurable at global scale.</p>
-      <p class="section-body">Attruvera occupies the same position in 
-the AI economy. We do not replace your LLM, your agents, or your 
-applications. We become the layer that makes every interaction provable —
- and therefore deployable in regulated, high-stakes environments where 
-trust is non-negotiable.</p>
+      <h2 class="section-title" id="vision-heading">The <em>Visa</em><br>of LLM<br>transactions.</h2>
+      <p class="section-body" style="margin-bottom:24px;">Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.</p>
+      <p class="section-body">Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.</p>
     </div>
-    <div class="visa-diagram fade-up visible">
+    <div class="visa-diagram fade-up">
       <div class="visa-center">
         <div class="visa-center-label">The Clearing Layer</div>
         <h4>Attruvera<br>Trust Infrastructure</h4>
@@ -1212,14 +328,14 @@ trust is non-negotiable.</p>
 </section>
 
 <!-- CASE STUDIES -->
-<section id="cases">
+<section id="cases" aria-labelledby="cases-heading">
   <div class="cases-header">
     <span class="section-label">Proven at Scale</span>
-    <h2 class="section-title">Not a prototype.<br><em>A track record.</em></h2>
+    <h2 class="section-title" id="cases-heading">Not a prototype.<br><em>A track record.</em></h2>
   </div>
   <div class="cases-grid">
 
-    <div class="case-card fade-up visible">
+    <div class="case-card fade-up">
       <div class="case-header">
         <span class="case-tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
         <h3>Florida Agency for Persons with Disabilities</h3>
@@ -1229,15 +345,11 @@ trust is non-negotiable.</p>
           <span class="case-stat-val">$2B</span>
           <span class="case-stat-unit">annual spend optimized</span>
         </div>
-        <p class="case-desc">Attruvera technology was deployed through 
-ISF, Inc. to analyze and optimize resource allocation for Florida APD — 
-one of the largest algorithmic budget allocation exercises in state 
-government. The system produced auditable, defensible recommendations at
- a scale no manual process could achieve.</p>
+        <p class="case-desc">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
       </div>
     </div>
 
-    <div class="case-card fade-up visible">
+    <div class="case-card fade-up">
       <div class="case-header">
         <span class="case-tag">UNIVERSITY · RESEARCH COMMERCIALIZATION</span>
         <h3>University of Texas at San Antonio</h3>
@@ -1247,12 +359,7 @@ government. The system produced auditable, defensible recommendations at
           <span class="case-stat-val">R1</span>
           <span class="case-stat-unit">research university anchor</span>
         </div>
-        <p class="case-desc">Attruvera emerged from UTSA's research 
-enterprise in computational mathematics and AI governance. UTSA holds 
-equity in the company under a conflict-of-interest management plan — a 
-structure that reflects institutional confidence and ensures rigorous 
-oversight of commercialization. The university is an active pilot 
-environment for the full stack.</p>
+        <p class="case-desc">Attruvera emerged from UTSA's research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization. The university is an active pilot environment for the full stack.</p>
       </div>
     </div>
 
@@ -1260,22 +367,18 @@ environment for the full stack.</p>
 </section>
 
 <!-- LICENSING -->
-<section id="licensing">
+<section id="licensing" aria-labelledby="licensing-heading">
   <div class="section-inner">
     <span class="section-label">Licensing</span>
-    <h2 class="section-title">Open where it matters.<br><em>Protected where it counts.</em></h2>
-    <p class="section-body" style="max-width:560px;margin-top:12px;">The
- core knowledge representation layer is open source — we believe the 
-infrastructure of knowledge should be accessible. The attribution, 
-harmonization, and verification layers that make AI trustworthy in 
-regulated environments are licensed.</p>
+    <h2 class="section-title" id="licensing-heading">Open where it matters.<br><em>Protected where it counts.</em></h2>
+    <p class="section-body" style="max-width:560px;margin-top:12px;">The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.</p>
   </div>
 
   <div class="pricing-table">
 
-    <div class="price-card fade-up visible">
+    <div class="price-card fade-up">
       <div class="price-tier">Open Source</div>
-      <div class="price-product" id="price-platform-name">Canopy (open core)</div>
+      <div class="price-product" id="price-platform-name"></div>
       <div class="price-tagline">Core knowledge representation platform — free for any use.</div>
       <div class="price-amount">
         <span class="price-free">Free</span>
@@ -1286,10 +389,10 @@ regulated environments are licensed.</p>
         <div class="pricef"><div class="pricef-check">✓</div><span>Community support</span></div>
         <div class="pricef"><div class="pricef-check">✓</div><span>Open source license</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Open%20Source%20Inquiry" class="price-cta">Access repository</a>
+      <a href="mailto:contact@attruvera.com?subject=Open Source Inquiry" class="price-cta">Access repository</a>
     </div>
 
-    <div class="price-card fade-up visible">
+    <div class="price-card fade-up">
       <div class="price-tier">Licensed Add-on</div>
       <div class="price-product">Hudo + Max</div>
       <div class="price-tagline">Attribution and multi-agent harmonization. Per seat, per year.</div>
@@ -1303,10 +406,10 @@ regulated environments are licensed.</p>
         <div class="pricef"><div class="pricef-check">✓</div><span>Integration with open-source core</span></div>
         <div class="pricef"><div class="pricef-check">✓</div><span>Enterprise support SLA</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Licensing%20Inquiry%20-%20Hudo+Max" class="price-cta">Inquire about licensing</a>
+      <a href="mailto:contact@attruvera.com?subject=Licensing Inquiry - Hudo+Max" class="price-cta">Inquire about licensing</a>
     </div>
 
-    <div class="price-card featured-price fade-up visible">
+    <div class="price-card featured-price fade-up">
       <div class="price-tier">Full Stack</div>
       <div class="price-product">Complete Platform</div>
       <div class="price-tagline">The full Attruvera trust infrastructure — all four layers.</div>
@@ -1315,42 +418,32 @@ regulated environments are licensed.</p>
         <span class="price-period">/ seat / year</span>
       </div>
       <div class="price-features">
-        <div class="pricef"><div class="pricef-check" style="color:var(--gold-light)">✓</div><span id="price-full-platform">Canopy open core</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--gold-light)">✓</div><span>Hudo attribution (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--gold-light)">✓</div><span>Max harmonization (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--gold-light)">✓</div><span>TVA cryptographic audit (PCT pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--gold-light)">✓</div><span>Priority support + onboarding</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span id="price-full-platform"></span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Hudo attribution (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Max harmonization (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>TVA cryptographic audit (PCT pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Priority support + onboarding</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Full%20Stack%20Inquiry" class="price-cta cta-gold">Start the conversation</a>
+      <a href="mailto:contact@attruvera.com?subject=Full Stack Inquiry" class="price-cta cta-gold">Start the conversation</a>
     </div>
 
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" aria-labelledby="about-heading">
   <div class="about-inner">
     <div>
       <span class="section-label">About Attruvera</span>
-      <h2 class="section-title">Built on mathematics.<br><em>Grounded in accountability.</em></h2>
-      <p class="section-body" style="margin-bottom:20px;">Attruvera 
-Technologies is a deep-tech company incorporated in Delaware and 
-headquartered in San Antonio, Texas. It is a research spinout of The 
-University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the 
-Department of Mathematics. Dr. Gutiérrez has decades of experience in academia and industry .</p>
-      <p class="section-body">The company's foundational insight is 
-mathematical: zero-error AI is provably impossible, which means the 
-right question for any deployment is not "is this AI reliable?" but "is 
-this AI's failure mode acceptable and visible?" Attruvera builds the 
-infrastructure that makes failure modes visible — and therefore 
-manageable.</p>
+      <h2 class="section-title" id="about-heading">Built on mathematics.<br><em>Grounded in accountability.</em></h2>
+      <p class="section-body" style="margin-bottom:20px;">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics. Dr. Gutiérrez has decades of experience in academia and industry.</p>
+      <p class="section-body">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
     </div>
-    <div class="founder-card fade-up visible">
+    <div class="founder-card fade-up">
       <span class="founder-label">Founder</span>
-      <div class="founder-name" id="founder-name-el">Juan B. Gutiérrez</div>
+      <div class="founder-name" id="founder-name-el"></div>
       <div class="founder-title">Professor, Department of Mathematics, UTSA<br>CEO, Attruvera Technologies, Inc.</div>
-      <p class="founder-bio">Dr. Gutiérrez's research spans 
-AI, data science, and multi-scale mdoeling. Dr. Gutiérrez's research has been funded by DARPA, NIH and NSF. See bio and record at <a href="https://biomathematicus.me">biomathematicus.me</a> </p>
+      <p class="founder-bio">Dr. Gutiérrez's research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at <a href="https://biomathematicus.me" target="_blank" rel="noopener">biomathematicus.me</a></p>
       <div class="founder-tags">
         <span class="ftag">AI</span>
         <span class="ftag">Multi-scale modeling</span>
@@ -1362,43 +455,38 @@ AI, data science, and multi-scale mdoeling. Dr. Gutiérrez's research has been f
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" aria-labelledby="contact-heading">
   <div class="section-inner">
     <span class="section-label">Get in Touch</span>
-    <h2 class="section-title">Three conversations<br><em>we want to have.</em></h2>
+    <h2 class="section-title" id="contact-heading">Three conversations<br><em>we want to have.</em></h2>
   </div>
   <div class="contact-inner">
-    <div class="contact-card fade-up visible">
+    <div class="contact-card fade-up">
       <div class="contact-card-label">For Investors</div>
       <h4>Seed Round</h4>
-      <p>We are building the trust infrastructure layer for the AI 
-economy. If you are investing in the governance, compliance, or 
-accountability stack for enterprise AI, we should talk.</p>
-      <a href="mailto:contact@attruvera.com?subject=Investor%20Inquiry" class="contact-link">contact@attruvera.com</a>
+      <p>We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
+      <a href="mailto:contact@attruvera.com?subject=Investor Inquiry" class="contact-link">contact@attruvera.com</a>
     </div>
-    <div class="contact-card fade-up visible">
+    <div class="contact-card fade-up">
       <div class="contact-card-label">For Partners</div>
       <h4>Strategic Partnerships</h4>
-      <p>We work with system integrators, government contractors, and 
-enterprise software vendors who need a credible, auditable AI 
-accountability layer for their clients and deployments.</p>
-      <a href="mailto:contact@attruvera.com?subject=Partnership%20Inquiry" class="contact-link">contact@attruvera.com</a>
+      <p>We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
+      <a href="mailto:contact@attruvera.com?subject=Partnership Inquiry" class="contact-link">contact@attruvera.com</a>
     </div>
-    <div class="contact-card fade-up visible">
+    <div class="contact-card fade-up">
       <div class="contact-card-label">For Licensees</div>
       <h4>Technology Licensing</h4>
-      <p>Whether you need Hudo, Max, TVA, or the full stack, our 
-licensing team can scope a deployment that fits your regulatory 
-environment, risk profile, and budget.</p>
-      <a href="mailto:contact@attruvera.com?subject=Licensing%20Inquiry" class="contact-link">contact@attruvera.com</a>
+      <p>Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
+      <a href="mailto:contact@attruvera.com?subject=Licensing Inquiry" class="contact-link">contact@attruvera.com</a>
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
-<footer>
+<footer role="contentinfo">
   <div class="footer-left">
-    © <span id="footer-year">2026</span> Attruvera Technologies, Inc. · 4040 Broadway Suite 525, San Antonio, TX 78209 US · Delaware C-Corp · All rights reserved.
+    © <span id="footer-year"></span> Attruvera Technologies, Inc. · 4040 Broadway Suite 525, San Antonio, TX 78209 · Delaware C-Corp · All rights reserved.
   </div>
   <div class="footer-right">
     <a href="#products">Products</a>
@@ -1409,30 +497,25 @@ environment, risk profile, and budget.</p>
 </footer>
 
 <!-- BACK TO TOP -->
-<a href="#hero" class="back-top" id="back-top">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 19V5M5 12l7-7 7 7"></path>
+<a href="#hero" class="back-top" id="back-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
   </svg>
 </a>
 
 <script>
-// ── Apply CONFIG values to DOM ──
 document.addEventListener('DOMContentLoaded', function() {
-  const pn = CONFIG.DELIVERY_PLATFORM_NAME;
 
-  document.getElementById('hero-tagline').textContent = CONFIG.TAGLINE + ' ' +
-    pn + ', Hudo, and Max make it possible. TVA makes it provable.';
+  // ── Apply CONFIG ──
+  const pn = CONFIG.DELIVERY_PLATFORM_NAME;
+  document.getElementById('hero-tagline').textContent =
+    CONFIG.TAGLINE + ' ' + pn + ', Hudo, and Max make it possible. TVA makes it provable.';
   document.getElementById('prod-platform-name').textContent = pn;
   document.getElementById('prod-platform-h3').textContent = pn;
   document.getElementById('price-platform-name').textContent = pn + ' (open core)';
   document.getElementById('price-full-platform').textContent = pn + ' open core';
   document.getElementById('founder-name-el').textContent = CONFIG.FOUNDER_NAME;
   document.getElementById('footer-year').textContent = new Date().getFullYear();
-
-  // Update all contact links
-  document.querySelectorAll('[href^="mailto:contact@attruvera.com"]').forEach(function(el) {
-    // already correct
-  });
 
   // ── Nav scroll effect ──
   var nav = document.getElementById('main-nav');
@@ -1456,24 +539,89 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.fade-up').forEach(function(el) {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
 
   // ── TVA hash animation ──
   var hashes = ['a3f9c2', 'b7e1d4', 'c2a8f0', 'd6b3e9', 'e1f4a7', 'f0c5b2'];
   var hi = 0;
   setInterval(function() {
     hi = (hi + 1) % hashes.length;
-    var h = hashes[hi];
     ['hash1','hash2','hash3'].forEach(function(id, i) {
       var el = document.getElementById(id);
       if (el) el.textContent = hashes[(hi + i) % hashes.length] + '...';
     });
   }, 2800);
+
+  // ══════════════════════════════════════════════
+  // ACCESSIBILITY BAR
+  // ══════════════════════════════════════════════
+
+  // Persist settings
+  var a11y = JSON.parse(localStorage.getItem('a11y') || '{}');
+
+  function applyA11y() {
+    // Font size
+    var fs = a11y.fontSize || 0;
+    var sizes = ['', 'large-text', 'xlarge-text'];
+    document.body.classList.remove('large-text', 'xlarge-text');
+    if (fs > 0) document.body.classList.add(sizes[fs]);
+
+    // High contrast
+    document.body.classList.toggle('high-contrast', !!a11y.contrast);
+    document.getElementById('btn-contrast').classList.toggle('active', !!a11y.contrast);
+    document.getElementById('btn-contrast').setAttribute('aria-pressed', !!a11y.contrast);
+
+    // Reduce motion
+    document.body.classList.toggle('reduce-motion', !!a11y.motion);
+    document.getElementById('btn-motion').classList.toggle('active', !!a11y.motion);
+    document.getElementById('btn-motion').setAttribute('aria-pressed', !!a11y.motion);
+    if (a11y.motion) {
+      var style = document.getElementById('motion-style') || document.createElement('style');
+      style.id = 'motion-style';
+      style.textContent = '*, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } .fade-up { opacity: 1 !important; transform: none !important; }';
+      document.head.appendChild(style);
+    } else {
+      var ms = document.getElementById('motion-style');
+      if (ms) ms.remove();
+    }
+  }
+
+  applyA11y();
+
+  // Font size buttons
+  document.getElementById('btn-font-inc').addEventListener('click', function() {
+    a11y.fontSize = Math.min((a11y.fontSize || 0) + 1, 2);
+    localStorage.setItem('a11y', JSON.stringify(a11y));
+    applyA11y();
+  });
+  document.getElementById('btn-font-dec').addEventListener('click', function() {
+    a11y.fontSize = Math.max((a11y.fontSize || 0) - 1, 0);
+    localStorage.setItem('a11y', JSON.stringify(a11y));
+    applyA11y();
+  });
+
+  // Contrast toggle
+  document.getElementById('btn-contrast').addEventListener('click', function() {
+    a11y.contrast = !a11y.contrast;
+    localStorage.setItem('a11y', JSON.stringify(a11y));
+    applyA11y();
+  });
+
+  // Motion toggle
+  document.getElementById('btn-motion').addEventListener('click', function() {
+    a11y.motion = !a11y.motion;
+    localStorage.setItem('a11y', JSON.stringify(a11y));
+    applyA11y();
+  });
+
+  // Reset
+  document.getElementById('btn-reset').addEventListener('click', function() {
+    a11y = {};
+    localStorage.removeItem('a11y');
+    applyA11y();
+  });
+
 });
 </script>
-
-
-</body></html>
+</body>
+</html>
