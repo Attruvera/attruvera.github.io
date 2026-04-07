@@ -127,6 +127,7 @@ body {
   font-family: 'Syne', sans-serif;
   overflow-x: hidden;
   cursor: default;
+  padding-bottom: 80px;
 }
 
 /* Skip to content link for keyboard users */
@@ -1217,20 +1218,22 @@ section { position: relative; }
 footer {
   background: var(--black);
   border-top: 1px solid rgba(6,182,212,0.08);
-  padding: 36px 60px;
+  padding: 27px 60px;
   display: flex; align-items: center; justify-content: space-between;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 400;
 }
 .footer-left {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px; letter-spacing: 0.08em;
-  color: rgba(241,245,249,0.2);
+  color: #dddddd;
 }
 .footer-right {
   display: flex; gap: 28px;
 }
 .footer-right a {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: rgba(241,245,249,0.2);
+  font-size: 10px; color: #dddddd;
   text-decoration: none; transition: color 0.2s;
 }
 .footer-right a:hover { color: var(--moss); }
@@ -1239,7 +1242,7 @@ footer {
    BACK TO TOP
    ============================================================ */
 .back-top {
-  position: fixed; bottom: 32px; right: 32px;
+  position: fixed; bottom: 90px; right: 32px;
   width: 40px; height: 40px;
   background: rgba(6,182,212,0.1);
   border: 1px solid rgba(6,182,212,0.3);
@@ -1309,7 +1312,7 @@ footer {
   .hero h1 { font-size: 42px; }
   .problem-inner { padding: 0 24px; }
   .vision-inner, .about-inner { padding: 0 24px; }
-  footer { flex-direction: column; gap: 16px; padding: 28px 24px; text-align: center; }
+  footer { flex-direction: column; gap: 8px; padding: 16px 24px; text-align: center; }
 }
 
 /* ============================================================
