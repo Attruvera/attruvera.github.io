@@ -130,79 +130,160 @@ body::before {
 }
 
 /* ============================================================
-   ACCESSIBILITY BAR
+   ACCESSIBILITY DROPDOWN
    ============================================================ */
-#a11y-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 600;
-  background: var(--forest);
-  border-bottom: 1px solid var(--border);
-  padding: 6px 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+.a11y-menu {
+  position: relative;
 }
 
-.a11y-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.14em;
-  color: rgba(241,245,249,0.3);
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.a11y-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.a11y-btn {
-  background: rgba(6,182,212,0.08);
-  border: 1px solid rgba(6,182,212,0.2);
+.a11y-trigger {
+  background: none;
+  border: 1px solid rgba(6,182,212,0.25);
   border-radius: 4px;
   color: rgba(241,245,249,0.6);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.06em;
-  padding: 4px 10px;
+  padding: 8px 14px;
   cursor: pointer;
   transition: all 0.2s;
-  white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
+  white-space: nowrap;
 }
-.a11y-btn:hover,
-.a11y-btn.active {
-  background: rgba(6,182,212,0.18);
+.a11y-trigger:hover,
+.a11y-trigger[aria-expanded="true"] {
+  background: rgba(6,182,212,0.1);
   border-color: var(--moss);
   color: var(--off-white);
 }
-.a11y-btn svg {
-  width: 11px; height: 11px;
-  fill: currentColor;
+.a11y-trigger svg {
+  width: 13px; height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   flex-shrink: 0;
+  transition: transform 0.2s;
 }
+.a11y-trigger[aria-expanded="true"] svg.chevron {
+  transform: rotate(180deg);
+}
+
+.a11y-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+  z-index: 700;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+.a11y-dropdown.open { display: flex; }
+
+.a11y-dropdown-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: rgba(241,245,249,0.25);
+  text-transform: uppercase;
+  padding: 4px 8px 8px;
+  border-bottom: 1px solid rgba(6,182,212,0.08);
+  margin-bottom: 4px;
+}
+
+.a11y-btn {
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: rgba(241,245,249,0.55);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 9px 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+}
+.a11y-btn:hover {
+  background: rgba(6,182,212,0.08);
+  color: var(--off-white);
+}
+.a11y-btn.active {
+  background: rgba(6,182,212,0.1);
+  color: var(--moss);
+}
+.a11y-btn svg {
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.a11y-btn.active svg { opacity: 1; }
+
+.a11y-btn-group {
+  display: flex;
+  gap: 4px;
+  padding: 2px 0;
+}
+.a11y-btn-group .a11y-btn {
+  flex: 1;
+  justify-content: center;
+  border: 1px solid rgba(6,182,212,0.1);
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 7px 4px;
+}
+.a11y-btn-group .a11y-btn:hover { border-color: var(--moss); }
 
 .a11y-divider {
-  width: 1px; height: 16px;
-  background: rgba(6,182,212,0.15);
-  flex-shrink: 0;
+  height: 1px;
+  background: rgba(6,182,212,0.08);
+  margin: 4px 0;
 }
 
-/* ── Nudge everything down when a11y bar is visible ── */
-body { padding-top: 36px; }
+.a11y-reset {
+  font-size: 10px;
+  color: rgba(241,245,249,0.3);
+  text-align: center;
+  padding: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.06em;
+  transition: color 0.2s;
+}
+.a11y-reset:hover { color: rgba(241,245,249,0.7); }
+
+/* Mobile: dropdown opens upward if near bottom */
+@media (max-width: 768px) {
+  .a11y-dropdown {
+    right: -10px;
+    min-width: 200px;
+  }
+  .a11y-trigger span { display: none; }
+  .a11y-trigger { padding: 8px 10px; }
+}
 
 /* ============================================================
    NAV
    ============================================================ */
 nav {
   position: fixed;
-  top: 36px; left: 0; right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 500;
   display: flex; align-items: center; justify-content: space-between;
   padding: 20px 60px;
@@ -1101,12 +1182,11 @@ footer {
   .prob-item { border-right: none; border-bottom: 1px solid rgba(6,182,212,0.08); }
 }
 @media (max-width: 768px) {
-  #a11y-bar { padding: 6px 16px; }
-  .a11y-label { display: none; }
   .section-inner, .cases-header, .cases-grid, .products-grid,
   .products-header, .pricing-table, .contact-inner { padding: 0 24px; }
   nav { padding: 16px 24px; }
   nav .nav-links { display: none; }
+  .a11y-menu { display: flex; }
   #hero { padding: 130px 24px 80px; }
   .hero h1 { font-size: 42px; }
   .problem-inner { padding: 0 24px; }
