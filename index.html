@@ -50,7 +50,7 @@ const CONFIG = {
 </head>
 <body>
 <!-- ── SKIP TO CONTENT (keyboard / screen reader) ── -->
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link" href="#main-content" data-i18n="skip">Skip to main content</a>
 
 <!-- ══════════════════════════════════════════════
      NAV
@@ -68,23 +68,31 @@ const CONFIG = {
   </a>
 
   <div class="nav-links">
-    <a href="#products">Products</a>
-    <a href="#vision">Vision</a>
-    <a href="#cases">Case Studies</a>
-    <a href="#licensing">Licensing</a>
-    <a href="#about">About</a>
+    <a href="#products" data-i18n="nav.products">Products</a>
+    <a href="#vision" data-i18n="nav.vision">Vision</a>
+    <a href="#cases" data-i18n="nav.cases">Case Studies</a>
+    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
+    <a href="#about" data-i18n="nav.about">About</a>
   </div>
 
   <div class="nav-right">
-    <a href="#contact" class="nav-contact">Contact</a>
+    <a href="#contact" class="nav-contact" data-i18n="nav.contact">Contact</a>
+
+    <!-- LANGUAGE SWITCHER -->
+    <button class="lang-btn" id="lang-btn" aria-label="Switch to Spanish">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex-shrink:0;">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9"/>
+        <path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
+        <path d="M3 12h18"/>
+      </svg>
+      <span id="lang-label">ES</span>
+    </button>
 
     <!-- ACCESSIBILITY DROPDOWN -->
     <div class="a11y-menu" role="region" aria-label="Accessibility options">
       <button class="a11y-trigger" id="a11y-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-dropdown">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="5" r="2"/>
-          <path d="M8 9h8M12 9v10M9 19l3-4 3 4"/>
-        </svg>
+        <span class="a11y-icon" style="font-size:1.2em;line-height:1;" aria-hidden="true">♿</span>
         <span>Accessibility</span>
         <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M6 9l6 6 6-6"/>
@@ -159,12 +167,12 @@ const CONFIG = {
 
 <!-- MOBILE NAV PANEL -->
 <div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Mobile navigation">
-  <a href="#products" class="nav-mobile-link">Products</a>
-  <a href="#vision" class="nav-mobile-link">Vision</a>
-  <a href="#cases" class="nav-mobile-link">Case Studies</a>
-  <a href="#licensing" class="nav-mobile-link">Licensing</a>
-  <a href="#about" class="nav-mobile-link">About</a>
-  <a href="#contact" class="nav-mobile-link">Contact</a>
+  <a href="#products" class="nav-mobile-link" data-i18n="nav.products">Products</a>
+  <a href="#vision" class="nav-mobile-link" data-i18n="nav.vision">Vision</a>
+  <a href="#cases" class="nav-mobile-link" data-i18n="nav.cases">Case Studies</a>
+  <a href="#licensing" class="nav-mobile-link" data-i18n="nav.licensing">Licensing</a>
+  <a href="#about" class="nav-mobile-link" data-i18n="nav.about">About</a>
+  <a href="#contact" class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -178,36 +186,36 @@ const CONFIG = {
     <div class="hero-left">
       <div class="hero-eyebrow" aria-hidden="true">
         <div class="hero-eyebrow-dot"></div>
-        <span>Trust Infrastructure for AI</span>
+        <span data-i18n="hero.eyebrow">Trust Infrastructure for AI</span>
       </div>
-      <h1>The <em>verification layer</em> every AI transaction deserves.</h1>
+      <h1>The <em data-i18n="hero.h1em">verification layer</em> <span data-i18n="hero.h1rest">every AI transaction deserves.</span></h1>
       <p class="hero-tagline" id="hero-tagline"></p>
       <div class="hero-btns">
-        <a href="#products" class="btn-primary">Explore the stack</a>
-        <a href="#contact" class="btn-ghost">Talk to us</a>
+        <a href="#products" class="btn-primary" data-i18n="hero.btn1">Explore the stack</a>
+        <a href="#contact" class="btn-ghost" data-i18n="hero.btn2">Talk to us</a>
       </div>
     </div>
     <div class="hero-right" aria-hidden="true">
       <div class="hero-card">
-        <div class="hero-card-label">The Attruvera Thesis</div>
-        <h3>Provable AI, at scale.</h3>
-        <p>Provenance, attribution, accountability, and audit.</p>
+        <div class="hero-card-label" data-i18n="hero.card.label">The Attruvera Thesis</div>
+        <h3 data-i18n="hero.card.h3">Provable AI, at scale.</h3>
+        <p data-i18n="hero.card.p">Provenance, attribution, accountability, and audit.</p>
         <div class="hero-card-stats">
           <div class="hcs">
             <div class="hcs-val">$2B</div>
-            <div class="hcs-lbl">Healthcare spend optimized</div>
+            <div class="hcs-lbl" data-i18n="hero.stat1">Healthcare spend optimized</div>
           </div>
           <div class="hcs">
             <div class="hcs-val">PCT</div>
-            <div class="hcs-lbl">International patent filing in progress</div>
+            <div class="hcs-lbl" data-i18n="hero.stat2">International patent filing in progress</div>
           </div>
           <div class="hcs">
             <div class="hcs-val">3</div>
-            <div class="hcs-lbl">Core patent-pending<br>technologies</div>
+            <div class="hcs-lbl" data-i18n="hero.stat3">Core patent-pending<br>technologies</div>
           </div>
           <div class="hcs">
             <div class="hcs-val">UTSA</div>
-            <div class="hcs-lbl">Research spinout<br>San Antonio, TX</div>
+            <div class="hcs-lbl" data-i18n="hero.stat4">Research spinout<br>San Antonio, TX</div>
           </div>
         </div>
       </div>
@@ -219,19 +227,19 @@ const CONFIG = {
 <section id="problem" aria-label="The problem">
   <div class="problem-inner">
     <div class="prob-item fade-up">
-      <span class="prob-num">01 — THE PROBLEM</span>
-      <h4>No verification standard</h4>
-      <p>LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.</p>
+      <span class="prob-num" data-i18n="prob.num1">01 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h1">No verification standard</h4>
+      <p data-i18n="prob.p1">LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.</p>
     </div>
     <div class="prob-item fade-up">
-      <span class="prob-num">02 — THE PROBLEM</span>
-      <h4>Attribution is invisible</h4>
-      <p>When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.</p>
+      <span class="prob-num" data-i18n="prob.num2">02 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h2">Attribution is invisible</h4>
+      <p data-i18n="prob.p2">When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.</p>
     </div>
     <div class="prob-item fade-up">
-      <span class="prob-num">03 — THE PROBLEM</span>
-      <h4>Learning without memory</h4>
-      <p>AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.</p>
+      <span class="prob-num" data-i18n="prob.num3">03 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h3">Learning without memory</h4>
+      <p data-i18n="prob.p3">AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.</p>
     </div>
   </div>
 </section>
@@ -240,11 +248,11 @@ const CONFIG = {
 <section id="products" aria-labelledby="products-heading">
   <div class="products-header">
     <div>
-      <span class="section-label">The Technology Stack</span>
-      <h2 class="section-title" id="products-heading">Four layers.<br><em>One integrated platform.</em></h2>
+      <span class="section-label" data-i18n="prod.label">The Technology Stack</span>
+      <h2 class="section-title" id="products-heading" data-i18n="prod.heading">Four layers.<br><em>One integrated platform.</em></h2>
     </div>
     <div>
-      <p class="section-body">Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.</p>
+      <p class="section-body" data-i18n="prod.intro">Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.</p>
     </div>
   </div>
 
@@ -258,13 +266,13 @@ const CONFIG = {
         <span class="prod-tag-free">OPEN SOURCE (CORE)</span>
       </div>
       <h3 id="prod-platform-h3"></h3>
-      <div class="prod-subtitle">KNOWLEDGE REPRESENTATION PLATFORM</div>
-      <p>A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.</p>
+      <div class="prod-subtitle" data-i18n="prod.canopy.sub">KNOWLEDGE REPRESENTATION PLATFORM</div>
+      <p data-i18n="prod.canopy.p">A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.</p>
       <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span>Rhizomatic, non-hierarchical knowledge representation</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Adaptive delivery: content surfaces at the moment of need</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Multi-agent orchestration backbone</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Open core; licensed extensions for attribution and harmonization</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f1">Rhizomatic, non-hierarchical knowledge representation</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f2">Adaptive delivery: content surfaces at the moment of need</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f3">Multi-agent orchestration backbone</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f4">Open core; licensed extensions for attribution and harmonization</span></div>
       </div>
     </div>
 
@@ -275,13 +283,13 @@ const CONFIG = {
         <span class="prod-tag-badge">PATENT PENDING</span>
       </div>
       <h3>Max</h3>
-      <div class="prod-subtitle">MULTI-AGENT HARMONIZATION</div>
-      <p>When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.</p>
+      <div class="prod-subtitle" data-i18n="prod.max.sub">MULTI-AGENT HARMONIZATION</div>
+      <p data-i18n="prod.max.p">When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.</p>
       <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span>Cross-agent output harmonization and conflict resolution</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Configurable adjudication logic with audit trail</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Scales from two-agent tasks to enterprise orchestration</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Patent-pending multi-agent coordination protocol</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f1">Cross-agent output harmonization and conflict resolution</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f2">Configurable adjudication logic with audit trail</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f3">Scales from two-agent tasks to enterprise orchestration</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f4">Patent-pending multi-agent coordination protocol</span></div>
       </div>
     </div>
 
@@ -292,13 +300,13 @@ const CONFIG = {
         <span class="prod-tag-badge">PATENT PENDING</span>
       </div>
       <h3>Hudo</h3>
-      <div class="prod-subtitle">WHO DOES — ATTRIBUTION LAYER</div>
-      <p>Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.</p>
+      <div class="prod-subtitle" data-i18n="prod.hudo.sub">WHO DOES — ATTRIBUTION LAYER</div>
+      <p data-i18n="prod.hudo.p">Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.</p>
       <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span>Granular attribution: output ↔ agent ↔ source ↔ reasoning</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Defensible documentation for compliance and litigation</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Designed for healthcare, government, and financial services</span></div>
-        <div class="pf"><div class="pf-dot"></div><span>Patent-pending attribution protocol</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f1">Granular attribution: output ↔ agent ↔ source ↔ reasoning</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f2">Defensible documentation for compliance and litigation</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f3">Designed for healthcare, government, and financial services</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f4">Patent-pending attribution protocol</span></div>
       </div>
     </div>
 
@@ -311,14 +319,14 @@ const CONFIG = {
           <span class="prod-tag-badge">PCT FILING IN PROGRESS</span>
         </div>
         <h3>TVA</h3>
-        <div class="prod-subtitle">TRUSTED VERIFICATION AUTHORITY</div>
-        <p>The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.</p>
+        <div class="prod-subtitle" data-i18n="prod.tva.sub">TRUSTED VERIFICATION AUTHORITY</div>
+        <p data-i18n="prod.tva.p">The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.</p>
         <div class="prod-features">
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Cryptographic hash-chain over every AI interaction</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Proves what happened without exposing sensitive content</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>Enables AI liability insurance underwriting</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span>PCT international patent filing in progress</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f1">Cryptographic hash-chain over every AI interaction</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f2">Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f3">Proves what happened without exposing sensitive content</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f4">Enables AI liability insurance underwriting</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f5">PCT international patent filing in progress</span></div>
         </div>
       </div>
       <div class="tva-visual" aria-hidden="true">
@@ -370,33 +378,33 @@ const CONFIG = {
 <section id="vision" aria-labelledby="vision-heading">
   <div class="vision-inner">
     <div>
-      <span class="section-label">The Market Position</span>
-      <h2 class="section-title" id="vision-heading">The <em>Visa</em><br>of LLM<br>transactions.</h2>
-      <p class="section-body" style="margin-bottom:24px;">Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.</p>
-      <p class="section-body">Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.</p>
+      <span class="section-label" data-i18n="vision.label">The Market Position</span>
+      <h2 class="section-title" id="vision-heading" data-i18n="vision.heading">The clearing standard for AI.</h2>
+      <p class="section-body" style="margin-bottom:24px;" data-i18n="vision.p1">Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.</p>
+      <p class="section-body" data-i18n="vision.p2">Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.</p>
     </div>
     <div class="visa-diagram fade-up">
       <div class="visa-center">
-        <div class="visa-center-label">The Clearing Layer</div>
-        <h4>Attruvera<br>Trust Infrastructure</h4>
-        <p>Every AI transaction, verified.</p>
+        <div class="visa-center-label" data-i18n="vision.center.label">The Clearing Layer</div>
+        <h4 data-i18n="vision.center.h4">Attruvera Trust Infrastructure</h4>
+        <p data-i18n="vision.center.p">Every AI transaction, verified.</p>
       </div>
       <div class="visa-nodes">
         <div class="visa-node">
-          <div class="visa-node-title">Healthcare</div>
-          <div class="visa-node-sub">HIPAA · clinical AI · audit</div>
+          <div class="visa-node-title" data-i18n="vision.n1.title">Healthcare</div>
+          <div class="visa-node-sub" data-i18n="vision.n1.sub">HIPAA · clinical AI · audit</div>
         </div>
         <div class="visa-node">
-          <div class="visa-node-title">Government</div>
-          <div class="visa-node-sub">FedRAMP · procurement · accountability</div>
+          <div class="visa-node-title" data-i18n="vision.n2.title">Government</div>
+          <div class="visa-node-sub" data-i18n="vision.n2.sub">FedRAMP · procurement · accountability</div>
         </div>
         <div class="visa-node">
-          <div class="visa-node-title">Finance</div>
-          <div class="visa-node-sub">Compliance · liability · underwriting</div>
+          <div class="visa-node-title" data-i18n="vision.n3.title">Finance</div>
+          <div class="visa-node-sub" data-i18n="vision.n3.sub">Compliance · liability · underwriting</div>
         </div>
         <div class="visa-node">
-          <div class="visa-node-title">Education</div>
-          <div class="visa-node-sub">FERPA · academic integrity · attribution</div>
+          <div class="visa-node-title" data-i18n="vision.n4.title">Education</div>
+          <div class="visa-node-sub" data-i18n="vision.n4.sub">FERPA · academic integrity · attribution</div>
         </div>
       </div>
     </div>
@@ -406,36 +414,36 @@ const CONFIG = {
 <!-- CASE STUDIES -->
 <section id="cases" aria-labelledby="cases-heading">
   <div class="cases-header">
-    <span class="section-label">Proven at Scale</span>
-    <h2 class="section-title" id="cases-heading">Not a prototype.<br><em>A track record.</em></h2>
+    <span class="section-label" data-i18n="cases.label">Proven at Scale</span>
+    <h2 class="section-title" id="cases-heading" data-i18n="cases.heading">Not a prototype. A track record.</h2>
   </div>
   <div class="cases-grid">
 
     <div class="case-card fade-up">
       <div class="case-header">
-        <span class="case-tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
-        <h3>Florida Agency for Persons with Disabilities</h3>
+        <span class="case-tag" data-i18n="cases.apd.tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
+        <h3 data-i18n="cases.apd.h3">Florida Agency for Persons with Disabilities</h3>
       </div>
       <div class="case-body">
         <div class="case-stat">
           <span class="case-stat-val">$2B</span>
-          <span class="case-stat-unit">annual spend optimized</span>
+          <span class="case-stat-unit" data-i18n="cases.apd.unit">annual spend optimized</span>
         </div>
-        <p class="case-desc">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
+        <p class="case-desc" data-i18n="cases.apd.p">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
       </div>
     </div>
 
     <div class="case-card fade-up">
       <div class="case-header">
-        <span class="case-tag">UNIVERSITY · RESEARCH COMMERCIALIZATION</span>
-        <h3>University of Texas at San Antonio</h3>
+        <span class="case-tag" data-i18n="cases.utsa.tag">UNIVERSITY · RESEARCH COMMERCIALIZATION</span>
+        <h3 data-i18n="cases.utsa.h3">University of Texas at San Antonio</h3>
       </div>
       <div class="case-body">
         <div class="case-stat">
           <span class="case-stat-val">R1</span>
-          <span class="case-stat-unit">research university anchor</span>
+          <span class="case-stat-unit" data-i18n="cases.utsa.unit">research university anchor</span>
         </div>
-        <p class="case-desc">Attruvera emerged from UTSA's research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization. The university is an active pilot environment for the full stack.</p>
+        <p class="case-desc" data-i18n="cases.utsa.p">Attruvera emerged from UTSA's research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization. The university is an active pilot environment for the full stack.</p>
       </div>
     </div>
 
@@ -445,62 +453,62 @@ const CONFIG = {
 <!-- LICENSING -->
 <section id="licensing" aria-labelledby="licensing-heading">
   <div class="section-inner">
-    <span class="section-label">Licensing</span>
-    <h2 class="section-title" id="licensing-heading">Open where it matters.<br><em>Protected where it counts.</em></h2>
-    <p class="section-body" style="max-width:560px;margin-top:12px;">The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.</p>
+    <span class="section-label" data-i18n="lic.label">Licensing</span>
+    <h2 class="section-title" id="licensing-heading" data-i18n="lic.heading">Open where it matters. Protected where it counts.</h2>
+    <p class="section-body" style="max-width:560px;margin-top:12px;" data-i18n="lic.intro">The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.</p>
   </div>
 
   <div class="pricing-table">
 
     <div class="price-card fade-up">
-      <div class="price-tier">Open Source</div>
+      <div class="price-tier" data-i18n="lic.t1.tier">Open Source</div>
       <div class="price-product" id="price-platform-name"></div>
-      <div class="price-tagline">Core knowledge representation platform — free for any use.</div>
+      <div class="price-tagline" data-i18n="lic.t1.tagline">Core knowledge representation platform — free for any use.</div>
       <div class="price-amount">
         <span class="price-free">Free</span>
       </div>
       <div class="price-features">
-        <div class="pricef"><div class="pricef-check">✓</div><span>Rhizomatic knowledge architecture</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Multi-agent delivery backbone</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Community support</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Open source license</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f1">Rhizomatic knowledge architecture</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f2">Multi-agent delivery backbone</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f3">Community support</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f4">Open source license</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Open Source Inquiry" class="price-cta">Access repository</a>
+      <a href="/cdn-cgi/l/email-protection#b9dad6d7cdd8dacdf9d8cdcdcbcccfdccbd897dad6d486caccdbd3dcdacd84f6c9dcd799ead6cccbdadc99f0d7c8ccd0cbc0" class="price-cta" data-i18n="lic.t1.cta">Access repository</a>
     </div>
 
     <div class="price-card fade-up">
-      <div class="price-tier">Licensed Add-on</div>
+      <div class="price-tier" data-i18n="lic.t2.tier">Licensed Add-on</div>
       <div class="price-product">Hudo + Max</div>
-      <div class="price-tagline">Attribution and multi-agent harmonization. Per seat, per year.</div>
+      <div class="price-tagline" data-i18n="lic.t2.tagline">Attribution and multi-agent harmonization. Per seat, per year.</div>
       <div class="price-amount">
         <span class="price-num">$25K</span>
         <span class="price-period">/ seat / year</span>
       </div>
       <div class="price-features">
-        <div class="pricef"><div class="pricef-check">✓</div><span>Hudo attribution engine (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Max multi-agent harmonization (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Integration with open-source core</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span>Enterprise support SLA</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f1">Hudo attribution engine (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f2">Max multi-agent harmonization (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f3">Integration with open-source core</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f4">Enterprise support SLA</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Licensing Inquiry - Hudo+Max" class="price-cta">Inquire about licensing</a>
+      <a href="/cdn-cgi/l/email-protection#95f6fafbe1f4f6e1d5f4e1e1e7e0e3f0e7f4bbf6faf8aae6e0f7fff0f6e1a8d9fcf6f0fbe6fcfbf2b5dcfbe4e0fce7ecb5b8b5dde0f1fabed8f4ed" class="price-cta" data-i18n="lic.t2.cta">Inquire about licensing</a>
     </div>
 
     <div class="price-card featured-price fade-up">
-      <div class="price-tier">Full Stack</div>
-      <div class="price-product">Complete Platform</div>
-      <div class="price-tagline">The full Attruvera trust infrastructure — all four layers.</div>
+      <div class="price-tier" data-i18n="lic.t3.tier">Full Stack</div>
+      <div class="price-product" data-i18n="lic.t3.product">Complete Platform</div>
+      <div class="price-tagline" data-i18n="lic.t3.tagline">The full Attruvera trust infrastructure — all four layers.</div>
       <div class="price-amount">
         <span class="price-num">$25K</span>
         <span class="price-period">/ seat / year</span>
       </div>
       <div class="price-features">
         <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span id="price-full-platform"></span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Hudo attribution (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Max harmonization (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>TVA cryptographic audit (PCT pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span>Priority support + onboarding</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f2">Hudo attribution (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f3">Max harmonization (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f4">TVA cryptographic audit (PCT pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f5">Priority support + onboarding</span></div>
       </div>
-      <a href="mailto:contact@attruvera.com?subject=Full Stack Inquiry" class="price-cta cta-gold">Start the conversation</a>
+      <a href="/cdn-cgi/l/email-protection#6605090812070512260712121413100314074805090b591513040c0305125b20130a0a46351207050d462f0817130f141f" class="price-cta cta-gold" data-i18n="lic.t3.cta">Start the conversation</a>
     </div>
 
   </div>
@@ -510,17 +518,17 @@ const CONFIG = {
 <section id="about" aria-labelledby="about-heading">
   <div class="about-inner">
     <div>
-      <span class="section-label">About Attruvera</span>
-      <h2 class="section-title" id="about-heading">Built on mathematics.<br><em>Grounded in accountability.</em></h2>
+      <span class="section-label" data-i18n="about.label">About Attruvera</span>
+      <h2 class="section-title" id="about-heading" data-i18n="about.heading">Built on mathematics. Grounded in accountability.</h2>
       <p class="section-body" style="margin-bottom:20px;">© <span id="footer-year"></span> · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.</p>
-      <p class="section-body" style="margin-bottom:20px;">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics. </p>
-      <p class="section-body">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
+      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.p1">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics.</p>
+      <p class="section-body" data-i18n="about.p2">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
     </div>
     <div class="founder-card fade-up">
-      <span class="founder-label">Founder</span>
+      <span class="founder-label" data-i18n="about.founder.label">Founder</span>
       <div class="founder-name" id="founder-name-el"></div>
-      <div class="founder-title">Professor, Department of Mathematics, UTSA<br>CEO, Attruvera Technologies, Inc.</div>
-      <p class="founder-bio">Dr. Gutiérrez's research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at <a href="https://biomathematicus.me" target="_blank" rel="noopener">biomathematicus.me</a>  Dr. Gutiérrez has decades of experience in academia and industry.</p>
+      <div class="founder-title" data-i18n="about.founder.title">Professor, Department of Mathematics, UTSA · CEO, Attruvera Technologies, Inc.</div>
+      <p class="founder-bio"><span data-i18n="about.founder.bio">Dr. Gutiérrez's research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at</span> <a href="https://biomathematicus.me" target="_blank" rel="noopener">biomathematicus.me</a></p>
       <div class="founder-tags">
         <span class="ftag">AI</span>
         <span class="ftag">Multi-scale modeling</span>
@@ -534,27 +542,27 @@ const CONFIG = {
 <!-- CONTACT -->
 <section id="contact" aria-labelledby="contact-heading">
   <div class="section-inner">
-    <span class="section-label">Get in Touch</span>
-    <h2 class="section-title" id="contact-heading">Three conversations<br><em>we want to have.</em></h2>
+    <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+    <h2 class="section-title" id="contact-heading" data-i18n="contact.heading">Three conversations we want to have.</h2>
   </div>
   <div class="contact-inner">
     <div class="contact-card fade-up">
-      <div class="contact-card-label">For Investors</div>
-      <h4>Seed Round</h4>
-      <p>We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
-      <a href="mailto:contact@attruvera.com?subject=Investor Inquiry" class="contact-link">contact@attruvera.com</a>
+      <div class="contact-card-label" data-i18n="contact.c1.label">For Investors</div>
+      <h4 data-i18n="contact.c1.h4">Seed Round</h4>
+      <p data-i18n="contact.c1.p">We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
+      <a href="/cdn-cgi/l/email-protection#3b5854554f5a584f7b5a4f4f494e4d5e495a1558545604484e59515e584f0672554d5e484f54491b72554a4e524942" class="contact-link"><span class="__cf_email__" data-cfemail="61020e0f15000215210015151314170413004f020e0c">[email&#160;protected]</span></a>
     </div>
     <div class="contact-card fade-up">
-      <div class="contact-card-label">For Partners</div>
-      <h4>Strategic Partnerships</h4>
-      <p>We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
-      <a href="mailto:contact@attruvera.com?subject=Partnership Inquiry" class="contact-link">contact@attruvera.com</a>
+      <div class="contact-card-label" data-i18n="contact.c2.label">For Partners</div>
+      <h4 data-i18n="contact.c2.h4">Strategic Partnerships</h4>
+      <p data-i18n="contact.c2.p">We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
+      <a href="/cdn-cgi/l/email-protection#04676b6a70656770446570707671726176652a676b693b7771666e61677039546576706a6176776c6d74244d6a75716d767d" class="contact-link"><span class="__cf_email__" data-cfemail="accfc3c2d8cdcfd8eccdd8d8ded9dac9decd82cfc3c1">[email&#160;protected]</span></a>
     </div>
     <div class="contact-card fade-up">
-      <div class="contact-card-label">For Licensees</div>
-      <h4>Technology Licensing</h4>
-      <p>Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
-      <a href="mailto:contact@attruvera.com?subject=Licensing Inquiry" class="contact-link">contact@attruvera.com</a>
+      <div class="contact-card-label" data-i18n="contact.c3.label">For Licensees</div>
+      <h4 data-i18n="contact.c3.h4">Technology Licensing</h4>
+      <p data-i18n="contact.c3.p">Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
+      <a href="/cdn-cgi/l/email-protection#14777b7a60757760547560606661627166753a777b792b6761767e71776029587d77717a677d7a73345d7a65617d666d" class="contact-link"><span class="__cf_email__" data-cfemail="c5a6aaabb1a4a6b185a4b1b1b7b0b3a0b7a4eba6aaa8">[email&#160;protected]</span></a>
     </div>
   </div>
 </section>
@@ -566,10 +574,10 @@ const CONFIG = {
     © <span id="footer-year"></span> Attruvera Technologies, Inc. · <a href="https://maps.app.goo.gl/FFQriLtd9mNRDZLp7" style="color: #CCCCCC;" target="_blank">4040 Broadway Suite 525, San Antonio, TX 78209</a>
   </div>
   <div class="footer-right">
-    <a href="#products">Products</a>
-    <a href="#licensing">Licensing</a>
-    <a href="#about">About</a>
-    <a href="mailto:contact@attruvera.com">Contact</a>
+    <a href="#products" data-i18n="nav.products">Products</a>
+    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="/cdn-cgi/l/email-protection#e0838f8e94818394a0819494929596859281ce838f8d" data-i18n="nav.contact">Contact</a>
   </div>
 </footer>
 
@@ -580,7 +588,7 @@ const CONFIG = {
   </svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 document.addEventListener('DOMContentLoaded', function() {
 
   // ── Apply CONFIG ──
@@ -747,21 +755,306 @@ document.addEventListener('DOMContentLoaded', function() {
     trigger.setAttribute('aria-expanded', 'false');
   });
 
+  // ══════════════════════════════════════════════
+  // INTERNATIONALISATION (EN / ES)
+  // ══════════════════════════════════════════════
+
+  var TRANSLATIONS = {
+    en: {
+      skip: 'Skip to main content',
+      'nav.products': 'Products',
+      'nav.vision': 'Vision',
+      'nav.cases': 'Case Studies',
+      'nav.licensing': 'Licensing',
+      'nav.about': 'About',
+      'nav.contact': 'Contact',
+      'hero.eyebrow': 'Trust Infrastructure for AI',
+      'hero.h1em': 'verification layer',
+      'hero.h1rest': 'every AI transaction deserves.',
+      'hero.tagline': CONFIG.TAGLINE + ' ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo, and Max make it possible. TVA makes it provable.',
+      'hero.btn1': 'Explore the stack',
+      'hero.btn2': 'Talk to us',
+      'hero.card.label': 'The Attruvera Thesis',
+      'hero.card.h3': 'Provable AI, at scale.',
+      'hero.card.p': 'Provenance, attribution, accountability, and audit.',
+      'hero.stat1': 'Healthcare spend optimized',
+      'hero.stat2': 'International patent filing in progress',
+      'hero.stat3': 'Core patent-pending technologies',
+      'hero.stat4': 'Research spinout · San Antonio, TX',
+      'prob.num1': '01 — THE PROBLEM',
+      'prob.num2': '02 — THE PROBLEM',
+      'prob.num3': '03 — THE PROBLEM',
+      'prob.h1': 'No verification standard',
+      'prob.h2': 'Attribution is invisible',
+      'prob.h3': 'Learning without memory',
+      'prob.p1': 'LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.',
+      'prob.p2': 'When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.',
+      'prob.p3': 'AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.',
+      'prod.label': 'The Technology Stack',
+      'prod.heading': 'Four layers. One integrated platform.',
+      'prod.intro': 'Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.',
+      'prod.canopy.sub': 'KNOWLEDGE REPRESENTATION PLATFORM',
+      'prod.canopy.p': 'A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.',
+      'prod.canopy.f1': 'Rhizomatic, non-hierarchical knowledge representation',
+      'prod.canopy.f2': 'Adaptive delivery: content surfaces at the moment of need',
+      'prod.canopy.f3': 'Multi-agent orchestration backbone',
+      'prod.canopy.f4': 'Open core; licensed extensions for attribution and harmonization',
+      'prod.max.sub': 'MULTI-AGENT HARMONIZATION',
+      'prod.max.p': 'When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.',
+      'prod.max.f1': 'Cross-agent output harmonization and conflict resolution',
+      'prod.max.f2': 'Configurable adjudication logic with audit trail',
+      'prod.max.f3': 'Scales from two-agent tasks to enterprise orchestration',
+      'prod.max.f4': 'Patent-pending multi-agent coordination protocol',
+      'prod.hudo.sub': 'WHO DOES — ATTRIBUTION LAYER',
+      'prod.hudo.p': 'Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.',
+      'prod.hudo.f1': 'Granular attribution: output ↔ agent ↔ source ↔ reasoning',
+      'prod.hudo.f2': 'Defensible documentation for compliance and litigation',
+      'prod.hudo.f3': 'Designed for healthcare, government, and financial services',
+      'prod.hudo.f4': 'Patent-pending attribution protocol',
+      'prod.tva.sub': 'TRUSTED VERIFICATION AUTHORITY',
+      'prod.tva.p': 'The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.',
+      'prod.tva.f1': 'Cryptographic hash-chain over every AI interaction',
+      'prod.tva.f2': 'Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready',
+      'prod.tva.f3': 'Proves what happened without exposing sensitive content',
+      'prod.tva.f4': 'Enables AI liability insurance underwriting',
+      'prod.tva.f5': 'PCT international patent filing in progress',
+      'vision.label': 'The Market Position',
+      'vision.heading': 'The clearing standard for AI.',
+      'vision.p1': 'Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.',
+      'vision.p2': 'Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.',
+      'vision.center.label': 'The Clearing Layer',
+      'vision.center.h4': 'Attruvera Trust Infrastructure',
+      'vision.center.p': 'Every AI transaction, verified.',
+      'vision.n1.title': 'Healthcare',
+      'vision.n1.sub': 'HIPAA · clinical AI · audit',
+      'vision.n2.title': 'Government',
+      'vision.n2.sub': 'FedRAMP · procurement · accountability',
+      'vision.n3.title': 'Finance',
+      'vision.n3.sub': 'Compliance · liability · underwriting',
+      'vision.n4.title': 'Education',
+      'vision.n4.sub': 'FERPA · academic integrity · attribution',
+      'cases.label': 'Proven at Scale',
+      'cases.heading': 'Not a prototype. A track record.',
+      'cases.apd.tag': 'GOVERNMENT · HEALTHCARE ALLOCATION',
+      'cases.apd.h3': 'Florida Agency for Persons with Disabilities',
+      'cases.apd.unit': 'annual spend optimized',
+      'cases.apd.p': 'Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.',
+      'cases.utsa.tag': 'UNIVERSITY · RESEARCH COMMERCIALIZATION',
+      'cases.utsa.h3': 'University of Texas at San Antonio',
+      'cases.utsa.unit': 'research university anchor',
+      'cases.utsa.p': 'Attruvera emerged from UTSA\'s research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization.',
+      'lic.label': 'Licensing',
+      'lic.heading': 'Open where it matters. Protected where it counts.',
+      'lic.intro': 'The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.',
+      'lic.t1.tier': 'Open Source',
+      'lic.t1.tagline': 'Core knowledge representation platform — free for any use.',
+      'lic.t1.f1': 'Rhizomatic knowledge architecture',
+      'lic.t1.f2': 'Multi-agent delivery backbone',
+      'lic.t1.f3': 'Community support',
+      'lic.t1.f4': 'Open source license',
+      'lic.t1.cta': 'Access repository',
+      'lic.t2.tier': 'Licensed Add-on',
+      'lic.t2.tagline': 'Attribution and multi-agent harmonization. Per seat, per year.',
+      'lic.t2.f1': 'Hudo attribution engine (patent pending)',
+      'lic.t2.f2': 'Max multi-agent harmonization (patent pending)',
+      'lic.t2.f3': 'Integration with open-source core',
+      'lic.t2.f4': 'Enterprise support SLA',
+      'lic.t2.cta': 'Inquire about licensing',
+      'lic.t3.tier': 'Full Stack',
+      'lic.t3.product': 'Complete Platform',
+      'lic.t3.tagline': 'The full Attruvera trust infrastructure — all four layers.',
+      'lic.t3.f2': 'Hudo attribution (patent pending)',
+      'lic.t3.f3': 'Max harmonization (patent pending)',
+      'lic.t3.f4': 'TVA cryptographic audit (PCT pending)',
+      'lic.t3.f5': 'Priority support + onboarding',
+      'lic.t3.cta': 'Start the conversation',
+      'about.label': 'About Attruvera',
+      'about.heading': 'Built on mathematics. Grounded in accountability.',
+      'about.p1': 'Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics.',
+      'about.p2': 'The company\'s foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI\'s failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.',
+      'about.founder.label': 'Founder',
+      'about.founder.title': 'Professor, Department of Mathematics, UTSA · CEO, Attruvera Technologies, Inc.',
+      'about.founder.bio': 'Dr. Gutiérrez\'s research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at',
+      'contact.label': 'Get in Touch',
+      'contact.heading': 'Three conversations we want to have.',
+      'contact.c1.label': 'For Investors',
+      'contact.c1.h4': 'Seed Round',
+      'contact.c1.p': 'We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.',
+      'contact.c2.label': 'For Partners',
+      'contact.c2.h4': 'Strategic Partnerships',
+      'contact.c2.p': 'We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.',
+      'contact.c3.label': 'For Licensees',
+      'contact.c3.h4': 'Technology Licensing',
+      'contact.c3.p': 'Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.',
+    },
+    es: {
+      skip: 'Saltar al contenido principal',
+      'nav.products': 'Productos',
+      'nav.vision': 'Visión',
+      'nav.cases': 'Casos de Uso',
+      'nav.licensing': 'Licencias',
+      'nav.about': 'Nosotros',
+      'nav.contact': 'Contacto',
+      'hero.eyebrow': 'Infraestructura de Confianza para IA',
+      'hero.h1em': 'capa de verificación',
+      'hero.h1rest': 'que toda transacción de IA merece.',
+      'hero.tagline': 'IA con los humanos primero. ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo y Max lo hacen posible. TVA lo hace demostrable.',
+      'hero.btn1': 'Explorar la plataforma',
+      'hero.btn2': 'Contáctenos',
+      'hero.card.label': 'La Tesis de Attruvera',
+      'hero.card.h3': 'IA demostrable, a escala.',
+      'hero.card.p': 'Procedencia, atribución, responsabilidad y auditoría.',
+      'hero.stat1': 'Gasto de salud pública optimizado',
+      'hero.stat2': 'Solicitud internacional de patente en curso',
+      'hero.stat3': 'Tecnologías con patente pendiente',
+      'hero.stat4': 'Empresa derivada de UTSA · San Antonio, TX',
+      'prob.num1': '01 — EL PROBLEMA',
+      'prob.num2': '02 — EL PROBLEMA',
+      'prob.num3': '03 — EL PROBLEMA',
+      'prob.h1': 'Sin estándar de verificación',
+      'prob.h2': 'La atribución es invisible',
+      'prob.h3': 'Aprendizaje sin memoria',
+      'prob.p1': 'Las salidas de los LLM se consumen diariamente en contextos de alto riesgo — medicina, derecho, gobierno — sin ningún mecanismo estandarizado para demostrar qué se preguntó, qué se respondió, o si fue validado.',
+      'prob.p2': 'Cuando los sistemas multiagente de IA producen un resultado, ninguna capa rastrea qué agente contribuyó con qué. La responsabilidad es difusa. La responsabilidad legal está indefinida. Los reguladores no tienen control del proceso.',
+      'prob.p3': 'Los sistemas de IA optimizan para sesiones individuales. El conocimiento construido mediante la interacción se pierde. Las organizaciones re-entrenan los sistemas constantemente — sin infraestructura para un aprendizaje acumulativo y atribuido.',
+      'prod.label': 'La Plataforma Tecnológica',
+      'prod.heading': 'Cuatro capas. Una plataforma integrada.',
+      'prod.intro': 'Attruvera no es una herramienta única — es una infraestructura de confianza verticalmente integrada. Cada capa tiene valor independiente; juntas forman la única solución completa para el despliegue responsable de IA.',
+      'prod.canopy.sub': 'PLATAFORMA DE REPRESENTACIÓN DEL CONOCIMIENTO',
+      'prod.canopy.p': 'Una arquitectura de conocimiento rizomática que mapea la información como terreno en lugar de jerarquía. La base de la plataforma — libre y abierta en su forma central, permitiendo a cualquier organización representar, navegar y entregar conocimiento estructurado mediante orquestación multiagente.',
+      'prod.canopy.f1': 'Representación del conocimiento rizomática y no jerárquica',
+      'prod.canopy.f2': 'Entrega adaptativa: el contenido aparece cuando se necesita',
+      'prod.canopy.f3': 'Columna vertebral de orquestación multiagente',
+      'prod.canopy.f4': 'Núcleo abierto; extensiones licenciadas para atribución y armonización',
+      'prod.max.sub': 'ARMONIZACIÓN MULTIAGENTE',
+      'prod.max.p': 'Cuando múltiples agentes de IA colaboran en una tarea, Max coordina sus resultados — resolviendo conflictos, aplicando consistencia y produciendo un único resultado armonizado con un registro de decisiones rastreable. Sin más contradicciones entre agentes; sin más consenso opaco.',
+      'prod.max.f1': 'Armonización de salidas entre agentes y resolución de conflictos',
+      'prod.max.f2': 'Lógica de adjudicación configurable con pista de auditoría',
+      'prod.max.f3': 'Escala desde tareas de dos agentes hasta orquestación empresarial',
+      'prod.max.f4': 'Protocolo de coordinación multiagente con patente pendiente',
+      'prod.hudo.sub': 'QUIÉN LO HACE — CAPA DE ATRIBUCIÓN',
+      'prod.hudo.p': 'Hudo responde la pregunta que toda industria regulada debe poder contestar: ¿quién — o qué — produjo este resultado, y con qué base? Un motor de atribución con patente pendiente que vincula las salidas de IA con sus agentes contribuyentes, fuentes y cadenas de razonamiento.',
+      'prod.hudo.f1': 'Atribución granular: salida ↔ agente ↔ fuente ↔ razonamiento',
+      'prod.hudo.f2': 'Documentación defendible para cumplimiento normativo y litigios',
+      'prod.hudo.f3': 'Diseñado para salud, gobierno y servicios financieros',
+      'prod.hudo.f4': 'Protocolo de atribución con patente pendiente',
+      'prod.tva.sub': 'AUTORIDAD DE VERIFICACIÓN CONFIABLE',
+      'prod.tva.p': 'La base criptográfica de toda la plataforma. TVA crea un registro de auditoría inmutable y resistente a manipulaciones de cada interacción de IA — qué se preguntó, qué se produjo, qué se verificó — usando una arquitectura de cadena de hash con patente pendiente.',
+      'prod.tva.f1': 'Cadena de hash criptográfica sobre cada interacción de IA',
+      'prod.tva.f2': 'Pista de auditoría resistente a manipulaciones: HIPAA, FERPA, FedRAMP',
+      'prod.tva.f3': 'Demuestra lo ocurrido sin exponer contenido sensible',
+      'prod.tva.f4': 'Permite la suscripción de seguros de responsabilidad para IA',
+      'prod.tva.f5': 'Solicitud internacional de patente PCT en curso',
+      'vision.label': 'Posicionamiento en el Mercado',
+      'vision.heading': 'El estándar de compensación para la IA.',
+      'vision.p1': 'Visa no reemplazó a los bancos ni a las redes de pago. Se convirtió en la capa de compensación confiable entre ellos — el estándar que hizo las transacciones verificables, responsables y asegurables a escala global.',
+      'vision.p2': 'Attruvera ocupa la misma posición en la economía de la IA. No reemplazamos su LLM, sus agentes ni sus aplicaciones. Nos convertimos en la capa que hace cada interacción demostrable — y por tanto desplegable en entornos regulados y de alto riesgo donde la confianza no es negociable.',
+      'vision.center.label': 'La Capa de Compensación',
+      'vision.center.h4': 'Infraestructura de Confianza Attruvera',
+      'vision.center.p': 'Cada transacción de IA, verificada.',
+      'vision.n1.title': 'Salud',
+      'vision.n1.sub': 'HIPAA · IA clínica · auditoría',
+      'vision.n2.title': 'Gobierno',
+      'vision.n2.sub': 'FedRAMP · contratación · responsabilidad',
+      'vision.n3.title': 'Finanzas',
+      'vision.n3.sub': 'Cumplimiento · responsabilidad · suscripción',
+      'vision.n4.title': 'Educación',
+      'vision.n4.sub': 'FERPA · integridad académica · atribución',
+      'cases.label': 'Probado a Escala',
+      'cases.heading': 'No es un prototipo. Es un historial.',
+      'cases.apd.tag': 'GOBIERNO · ASIGNACIÓN DE RECURSOS EN SALUD',
+      'cases.apd.h3': 'Agencia de Florida para Personas con Discapacidades',
+      'cases.apd.unit': 'gasto anual optimizado',
+      'cases.apd.p': 'La tecnología de Attruvera fue desplegada a través de ISF, Inc. para analizar y optimizar la asignación de recursos para Florida APD — uno de los ejercicios de asignación presupuestaria algorítmica más grandes del gobierno estatal. El sistema produjo recomendaciones auditables y defendibles a una escala que ningún proceso manual podría lograr.',
+      'cases.utsa.tag': 'UNIVERSIDAD · COMERCIALIZACIÓN DE INVESTIGACIÓN',
+      'cases.utsa.h3': 'Universidad de Texas en San Antonio',
+      'cases.utsa.unit': 'universidad de investigación ancla',
+      'cases.utsa.p': 'Attruvera surgió de la empresa de investigación de UTSA en matemáticas computacionales y gobernanza de IA. UTSA posee participación en la empresa bajo un plan de gestión de conflictos de interés — una estructura que refleja la confianza institucional y garantiza una supervisión rigurosa de la comercialización.',
+      'lic.label': 'Licencias',
+      'lic.heading': 'Abierto donde importa. Protegido donde cuenta.',
+      'lic.intro': 'La capa central de representación del conocimiento es de código abierto — creemos que la infraestructura del conocimiento debe ser accesible. Las capas de atribución, armonización y verificación que hacen que la IA sea confiable en entornos regulados están licenciadas.',
+      'lic.t1.tier': 'Código Abierto',
+      'lic.t1.tagline': 'Plataforma central de representación del conocimiento — gratuita para cualquier uso.',
+      'lic.t1.f1': 'Arquitectura de conocimiento rizomática',
+      'lic.t1.f2': 'Columna vertebral de entrega multiagente',
+      'lic.t1.f3': 'Soporte comunitario',
+      'lic.t1.f4': 'Licencia de código abierto',
+      'lic.t1.cta': 'Acceder al repositorio',
+      'lic.t2.tier': 'Complemento Licenciado',
+      'lic.t2.tagline': 'Atribución y armonización multiagente. Por asiento, por año.',
+      'lic.t2.f1': 'Motor de atribución Hudo (patente pendiente)',
+      'lic.t2.f2': 'Armonización multiagente Max (patente pendiente)',
+      'lic.t2.f3': 'Integración con el núcleo de código abierto',
+      'lic.t2.f4': 'SLA de soporte empresarial',
+      'lic.t2.cta': 'Consultar sobre licencias',
+      'lic.t3.tier': 'Plataforma Completa',
+      'lic.t3.product': 'Plataforma Completa',
+      'lic.t3.tagline': 'La infraestructura de confianza completa de Attruvera — las cuatro capas.',
+      'lic.t3.f2': 'Atribución Hudo (patente pendiente)',
+      'lic.t3.f3': 'Armonización Max (patente pendiente)',
+      'lic.t3.f4': 'Auditoría criptográfica TVA (PCT pendiente)',
+      'lic.t3.f5': 'Soporte prioritario + incorporación',
+      'lic.t3.cta': 'Iniciar la conversación',
+      'about.label': 'Sobre Attruvera',
+      'about.heading': 'Construido sobre matemáticas. Fundamentado en responsabilidad.',
+      'about.p1': 'Attruvera Technologies es una empresa de tecnología avanzada constituida en Delaware y con sede en San Antonio, Texas. Es una empresa derivada de investigación de la Universidad de Texas en San Antonio, donde su fundador, el Dr. Juan B. Gutiérrez, es profesor del Departamento de Matemáticas.',
+      'about.p2': 'La perspectiva fundamental de la empresa es matemática: el error cero en la IA es demostrablemente imposible, lo que significa que la pregunta correcta para cualquier despliegue no es "¿es confiable esta IA?" sino "¿es el modo de fallo de esta IA aceptable y visible?" Attruvera construye la infraestructura que hace visibles los modos de fallo — y por tanto manejables.',
+      'about.founder.label': 'Fundador',
+      'about.founder.title': 'Profesor, Departamento de Matemáticas, UTSA · CEO, Attruvera Technologies, Inc.',
+      'about.founder.bio': 'La investigación del Dr. Gutiérrez abarca IA, ciencia de datos y modelado multiescala. Su investigación ha sido financiada por DARPA, NIH y NSF. Vea la biografía completa en',
+      'contact.label': 'Contáctenos',
+      'contact.heading': 'Tres conversaciones que queremos tener.',
+      'contact.c1.label': 'Para Inversores',
+      'contact.c1.h4': 'Ronda Semilla',
+      'contact.c1.p': 'Estamos construyendo la capa de infraestructura de confianza para la economía de la IA. Si está invirtiendo en la pila de gobernanza, cumplimiento o responsabilidad para la IA empresarial, deberíamos hablar.',
+      'contact.c2.label': 'Para Socios',
+      'contact.c2.h4': 'Alianzas Estratégicas',
+      'contact.c2.p': 'Trabajamos con integradores de sistemas, contratistas gubernamentales y proveedores de software empresarial que necesitan una capa de responsabilidad de IA creíble y auditable para sus clientes y despliegues.',
+      'contact.c3.label': 'Para Licenciatarios',
+      'contact.c3.h4': 'Licencias Tecnológicas',
+      'contact.c3.p': 'Ya sea que necesite Hudo, Max, TVA o la plataforma completa, nuestro equipo de licencias puede definir un despliegue que se adapte a su entorno regulatorio, perfil de riesgo y presupuesto.',
+    }
+  };
+
+  var currentLang = localStorage.getItem('lang') || 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    var t = TRANSLATIONS[lang];
+    document.documentElement.lang = lang;
+
+    // Update lang button label
+    document.getElementById('lang-label').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.getElementById('lang-btn').setAttribute('aria-label',
+      lang === 'en' ? 'Switch to Spanish' : 'Switch to English');
+
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // Update hero tagline (set by CONFIG JS)
+    var tl = document.getElementById('hero-tagline');
+    if (tl) tl.textContent = t['hero.tagline'] || '';
+
+    // Update page title
+    document.title = lang === 'es'
+      ? 'Attruvera Technologies — La Capa de Confianza para la IA'
+      : 'Attruvera Technologies — The Trust Layer for AI';
+  }
+
+  // Apply on load
+  applyLang(currentLang);
+
+  // Lang button toggle
+  document.getElementById('lang-btn').addEventListener('click', function(e) {
+    e.stopPropagation();
+    applyLang(currentLang === 'en' ? 'es' : 'en');
+  });
+
 });
 </script>
 </body>
 </html>
-
-<!--   
-     ___         _____         ____    
-    /\__\       /::\  \       /:/ _/_   
-   /:/__/      /:/\:\  \     /:/ /\  \  
-  /::\  \     /:/ /::\__\   /:/ /::\  \ 
-  \/\:\  \   /:/_/:/\:|__| /:/__\/\:\__\
-     /\  ┬  ┬  ┌   \_/   \/  ☰  ┌    /\
-     \:\  \  \:\/:/ /:/  / \:\  \ /:/  /
-      \:\__\  \::/_/:/  /   \:\  /:/  / 
-      /:/  /   \:\/:/  /     \:\/:/  /  
-     /:/  /     \::/  /       \::/  /   
-     \/__/       \/__/         \/__/   
--->
