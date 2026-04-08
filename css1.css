@@ -75,17 +75,17 @@
      fs-menu     : nav, buttons, labels, badges
      fs-content  : all body / paragraph text
      fs-footer   : footer + tiny mono labels
-  --fs-title:    52px;
-  --fs-subtitle: 24px;
-  --fs-menu:     14px;
-  --fs-content:  16px;
-  --fs-footer:   11px;
-  ══════════════════════════════════════════════ */
   --fs-title:    64px;
   --fs-subtitle: 56px;
   --fs-menu:     24px;
   --fs-content:  24px;
   --fs-footer:   18px;
+  ══════════════════════════════════════════════ */
+  --fs-title:    52px;
+  --fs-subtitle: 30px;
+  --fs-menu:     20px;
+  --fs-content:  20px;
+  --fs-footer:   16px;
 }
 
 /* ── High contrast ── */
