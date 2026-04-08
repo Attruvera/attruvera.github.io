@@ -75,12 +75,17 @@
      fs-menu     : nav, buttons, labels, badges
      fs-content  : all body / paragraph text
      fs-footer   : footer + tiny mono labels
-  ══════════════════════════════════════════════ */
   --fs-title:    52px;
-  --fs-subtitle: 36px;
+  --fs-subtitle: 24px;
   --fs-menu:     14px;
-  --fs-content:  18px;
-  --fs-footer:   14px;
+  --fs-content:  16px;
+  --fs-footer:   11px;
+  ══════════════════════════════════════════════ */
+  --fs-title:    72px;
+  --fs-subtitle: 56px;
+  --fs-menu:     24px;
+  --fs-content:  24px;
+  --fs-footer:   18px;
 }
 
 /* ── High contrast ── */
@@ -366,7 +371,7 @@ nav.menu-open .nav-burger span:nth-child(3) { transform: translateY(-5.5px) rota
 .hero-inner {
   position: relative; z-index: 2;
   max-width: 1200px; margin: 0 auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
+  display: grid; grid-template-columns: 1fr 630px; gap: 80px; align-items: center;
 }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 28px; }
 .hero-eyebrow-dot {
@@ -382,12 +387,12 @@ nav.menu-open .nav-burger span:nth-child(3) { transform: translateY(-5.5px) rota
   font-size: var(--fs-footer); letter-spacing: 0.15em;
   color: var(--moss); text-transform: uppercase;
 }
-.hero h1 {
+#hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(calc(var(--fs-title) * 0.7), 6vw, calc(var(--fs-title) * 1.65));
+  font-size: var(--fs-title);
   font-weight: 300; line-height: 1.0; color: var(--off-white); margin-bottom: 28px;
 }
-.hero h1 em { font-style: italic; color: var(--moss); }
+#hero h1 em { font-style: italic; color: var(--moss); }
 .hero-tagline {
   font-size: var(--fs-content); font-weight: 400;
   color: rgba(241,245,249,0.5); line-height: 1.8;
@@ -453,7 +458,7 @@ section { position: relative; }
 }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(calc(var(--fs-subtitle) * 1.4), 4vw, var(--fs-title));
+  font-size: var(--fs-title);
   font-weight: 300; line-height: 1.1; color: var(--off-white); margin-bottom: 20px;
 }
 .section-title em { font-style: italic; color: var(--moss); }
@@ -694,3 +699,17 @@ footer {
   .fade-up { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/*
+     ___         _____         ____    
+    /\__\       /::\  \       /:/ _/_   
+   /:/__/      /:/\:\  \     /:/ /\  \  
+  /::\  \     /:/ /::\__\   /:/ /::\  \ 
+  \/\:\  \   /:/_/:/\:|__| /:/__\/\:\__\
+     /\  ┬  ┬  ┌   \_/   \/  ☰  ┌    /\
+     \:\  \  \:\/:/ /:/  / \:\  \ /:/  /
+      \:\__\  \::/_/:/  /   \:\  /:/  / 
+      /:/  /   \:\/:/  /     \:\/:/  /  
+     /:/  /     \::/  /       \::/  /   
+     \/__/       \/__/         \/__/ 
+*/
