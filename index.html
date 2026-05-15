@@ -38,7 +38,6 @@ const CONFIG = {
   DELIVERY_PLATFORM_NAME: "Canopy",   // Change to "ALICE" to swap globally
   COMPANY_NAME: "Attruvera Technologies",
   CONTACT_EMAIL: "contact@attruvera.com",
-  FOUNDER_NAME: "Juan B. Gutiérrez",
   TAGLINE: "AI with humans first.",
 };
 </script>
@@ -422,14 +421,14 @@ const CONFIG = {
     <div class="case-card fade-up">
       <div class="case-header">
         <span class="case-tag" data-i18n="cases.apd.tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
-        <h3 data-i18n="cases.apd.h3">Florida Agency for Persons with Disabilities</h3>
+        <h3 data-i18n="cases.apd.h3">U.S. State Health Agency</h3>
       </div>
       <div class="case-body">
         <div class="case-stat">
           <span class="case-stat-val">$2B</span>
           <span class="case-stat-unit" data-i18n="cases.apd.unit">annual spend optimized</span>
         </div>
-        <p class="case-desc" data-i18n="cases.apd.p">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
+        <p class="case-desc" data-i18n="cases.apd.p">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
       </div>
     </div>
 
@@ -513,25 +512,13 @@ const CONFIG = {
 
 <!-- ABOUT -->
 <section id="about" aria-labelledby="about-heading">
-  <div class="about-inner">
+  <div class="about-inner" style="grid-template-columns: 1fr; max-width: 880px;">
     <div>
       <span class="section-label" data-i18n="about.label">About Attruvera</span>
       <h2 class="section-title" id="about-heading" data-i18n="about.heading">Built on mathematics. Grounded in accountability.</h2>
       <p class="section-body" style="margin-bottom:20px;">© <span id="footer-year"></span> · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.</p>
-      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.p1">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics.</p>
+      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.p1">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio.</p>
       <p class="section-body" data-i18n="about.p2">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
-    </div>
-    <div class="founder-card fade-up">
-      <span class="founder-label" data-i18n="about.founder.label">Founder</span>
-      <div class="founder-name" id="founder-name-el"></div>
-      <div class="founder-title" data-i18n="about.founder.title">Professor, Department of Mathematics, UTSA · CEO, Attruvera Technologies, Inc.</div>
-      <p class="founder-bio"><span data-i18n="about.founder.bio">Dr. Gutiérrez's research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at</span> <a href="https://biomathematicus.me" target="_blank" rel="noopener">biomathematicus.me</a></p>
-      <div class="founder-tags">
-        <span class="ftag">AI</span>
-        <span class="ftag">Multi-scale modeling</span>
-        <span class="ftag">Data Science</span>
-        <span class="ftag">UTSA</span>
-      </div>
     </div>
   </div>
 </section>
@@ -547,19 +534,16 @@ const CONFIG = {
       <div class="contact-card-label" data-i18n="contact.c1.label">For Investors</div>
       <h4 data-i18n="contact.c1.h4">Seed Round</h4>
       <p data-i18n="contact.c1.p">We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
-      <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
     </div>
     <div class="contact-card fade-up">
       <div class="contact-card-label" data-i18n="contact.c2.label">For Partners</div>
       <h4 data-i18n="contact.c2.h4">Strategic Partnerships</h4>
       <p data-i18n="contact.c2.p">We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
-      <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
     </div>
     <div class="contact-card fade-up">
       <div class="contact-card-label" data-i18n="contact.c3.label">For Licensees</div>
       <h4 data-i18n="contact.c3.h4">Technology Licensing</h4>
       <p data-i18n="contact.c3.p">Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
-      <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
     </div>
   </div>
 </section>
@@ -596,7 +580,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('prod-platform-h3').textContent = pn;
   document.getElementById('price-platform-name').textContent = pn + ' (open core)';
   document.getElementById('price-full-platform').textContent = pn + ' open core';
-  document.getElementById('founder-name-el').textContent = CONFIG.FOUNDER_NAME;
   document.getElementById('footer-year').textContent = new Date().getFullYear();
 
   // ── Nav scroll effect ──
@@ -833,9 +816,9 @@ document.addEventListener('DOMContentLoaded', function() {
       'cases.label': 'Proven at Scale',
       'cases.heading': 'Not a prototype. A track record.',
       'cases.apd.tag': 'GOVERNMENT · HEALTHCARE ALLOCATION',
-      'cases.apd.h3': 'Florida Agency for Persons with Disabilities',
+      'cases.apd.h3': 'U.S. State Health Agency',
       'cases.apd.unit': 'annual spend optimized',
-      'cases.apd.p': 'Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for Florida APD — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.',
+      'cases.apd.p': 'Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.',
       'cases.utsa.tag': 'UNIVERSITY · RESEARCH COMMERCIALIZATION',
       'cases.utsa.h3': 'University of Texas at San Antonio',
       'cases.utsa.unit': 'research university anchor',
@@ -867,11 +850,8 @@ document.addEventListener('DOMContentLoaded', function() {
       'lic.t3.cta': 'Start the conversation',
       'about.label': 'About Attruvera',
       'about.heading': 'Built on mathematics. Grounded in accountability.',
-      'about.p1': 'Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, where its founder, Dr. Juan B. Gutiérrez, is a professor at the Department of Mathematics.',
+      'about.p1': 'Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio.',
       'about.p2': 'The company\'s foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI\'s failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.',
-      'about.founder.label': 'Founder',
-      'about.founder.title': 'Professor, Department of Mathematics, UTSA · CEO, Attruvera Technologies, Inc.',
-      'about.founder.bio': 'Dr. Gutiérrez\'s research spans AI, data science, and multi-scale modeling. His research has been funded by DARPA, NIH, and NSF. See full bio and record at',
       'contact.label': 'Get in Touch',
       'contact.heading': 'Three conversations we want to have.',
       'contact.c1.label': 'For Investors',
@@ -960,9 +940,9 @@ document.addEventListener('DOMContentLoaded', function() {
       'cases.label': 'Probado a Escala',
       'cases.heading': 'No es un prototipo. Es un historial.',
       'cases.apd.tag': 'GOBIERNO · ASIGNACIÓN DE RECURSOS EN SALUD',
-      'cases.apd.h3': 'Agencia de Florida para Personas con Discapacidades',
+      'cases.apd.h3': 'Agencia Estatal de Salud de EE. UU.',
       'cases.apd.unit': 'gasto anual optimizado',
-      'cases.apd.p': 'La tecnología de Attruvera fue desplegada a través de ISF, Inc. para analizar y optimizar la asignación de recursos para Florida APD — uno de los ejercicios de asignación presupuestaria algorítmica más grandes del gobierno estatal. El sistema produjo recomendaciones auditables y defendibles a una escala que ningún proceso manual podría lograr.',
+      'cases.apd.p': 'La tecnología de Attruvera fue desplegada a través de ISF, Inc. para analizar y optimizar la asignación de recursos para una agencia estatal de salud de EE. UU. — uno de los ejercicios de asignación presupuestaria algorítmica más grandes del gobierno estatal. El sistema produjo recomendaciones auditables y defendibles a una escala que ningún proceso manual podría lograr.',
       'cases.utsa.tag': 'UNIVERSIDAD · COMERCIALIZACIÓN DE INVESTIGACIÓN',
       'cases.utsa.h3': 'Universidad de Texas en San Antonio',
       'cases.utsa.unit': 'universidad de investigación ancla',
@@ -994,11 +974,8 @@ document.addEventListener('DOMContentLoaded', function() {
       'lic.t3.cta': 'Iniciar la conversación',
       'about.label': 'Sobre Attruvera',
       'about.heading': 'Construido sobre matemáticas. Fundamentado en responsabilidad.',
-      'about.p1': 'Attruvera Technologies es una empresa de tecnología avanzada constituida en Delaware y con sede en San Antonio, Texas. Es una empresa derivada de investigación de la Universidad de Texas en San Antonio, donde su fundador, el Dr. Juan B. Gutiérrez, es profesor del Departamento de Matemáticas.',
+      'about.p1': 'Attruvera Technologies es una empresa de tecnología avanzada constituida en Delaware y con sede en San Antonio, Texas. Es una empresa derivada de investigación de la Universidad de Texas en San Antonio.',
       'about.p2': 'La perspectiva fundamental de la empresa es matemática: el error cero en la IA es demostrablemente imposible, lo que significa que la pregunta correcta para cualquier despliegue no es "¿es confiable esta IA?" sino "¿es el modo de fallo de esta IA aceptable y visible?" Attruvera construye la infraestructura que hace visibles los modos de fallo — y por tanto manejables.',
-      'about.founder.label': 'Fundador',
-      'about.founder.title': 'Profesor, Departamento de Matemáticas, UTSA · CEO, Attruvera Technologies, Inc.',
-      'about.founder.bio': 'La investigación del Dr. Gutiérrez abarca IA, ciencia de datos y modelado multiescala. Su investigación ha sido financiada por DARPA, NIH y NSF. Vea la biografía completa en',
       'contact.label': 'Contáctenos',
       'contact.heading': 'Tres conversaciones que queremos tener.',
       'contact.c1.label': 'Para Inversores',
