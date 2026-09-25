@@ -34,7 +34,7 @@
      ============================================================ -->
 <script>
 const CONFIG = {
-  DELIVERY_PLATFORM_NAME: "ALICE",    // The platform itself; Vela and the education configuration are its content profiles
+  DELIVERY_PLATFORM_NAME: "Canopy",   // Open-core platform; ALICE is an installation built on it
   COMPANY_NAME: "Attruvera Technologies",
   CONTACT_EMAIL: "contact@attruvera.com",
   TAGLINE: "Attribution · Trust · Veracity. AI with humans first.",
@@ -263,15 +263,15 @@ const CONFIG = {
         <span class="prod-tag-free">OPEN SOURCE (CORE)</span>
       </div>
       <h3 id="prod-platform-h3"></h3>
-      <div class="prod-subtitle" data-i18n="prod.alice.sub">KNOWLEDGE PLATFORM</div>
-      <p data-i18n="prod.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.</p>
+      <div class="prod-subtitle" data-i18n="prod.canopy.sub">KNOWLEDGE REPRESENTATION PLATFORM</div>
+      <p data-i18n="prod.canopy.p">A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.</p>
       <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f1">Rhizomatic, non-hierarchical knowledge representation</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f2">Adaptive delivery: content surfaces at the moment of need</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f3">Multi-agent orchestration backbone</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f4">Open core; licensed extensions for attribution and harmonization</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f1">Rhizomatic, non-hierarchical knowledge representation</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f2">Adaptive delivery: content surfaces at the moment of need</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f3">Multi-agent orchestration backbone</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.canopy.f4">Open core; licensed extensions for attribution and harmonization</span></div>
       </div>
-      <a href="#alice" class="contact-link prod-live" data-i18n="prod.alice.live">In production: ALICE at UTSA</a>
+      <a href="#alice" class="contact-link prod-live" data-i18n="prod.canopy.live">In production: ALICE at UTSA</a>
     </div>
 
     <!-- MAX -->
@@ -306,24 +306,6 @@ const CONFIG = {
         <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f3">Designed for healthcare, government, and financial services</span></div>
         <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f4">Patent-pending attribution protocol</span></div>
       </div>
-    </div>
-
-    <!-- VELA -->
-    <div class="prod-card fade-up">
-      <div class="prod-tag">
-        <span class="prod-tag-label" style="color:var(--gold);">Vela</span>
-        <span class="prod-tag-badge" data-i18n="prod.vela.badge">ON THE ALICE PLATFORM</span>
-      </div>
-      <h3>Vela</h3>
-      <div class="prod-subtitle" data-i18n="prod.vela.sub">INVENTION DISCLOSURE &amp; PORTFOLIO MANAGEMENT</div>
-      <p data-i18n="prod.vela.p">Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.</p>
-      <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f1">Guided disclosure intake for inventors</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f2">Review, tracking and portfolio management for the office</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f3">One tenant per institution: its own database, storage and signing keys</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f4">A configuration of the ALICE platform: same software, different content profile</span></div>
-      </div>
-      <a href="https://vela.attruvera.ai" class="contact-link prod-live" target="_blank" rel="noopener" data-i18n="prod.vela.live">In production: vela.attruvera.ai</a>
     </div>
 
     <!-- TVA — full width -->
@@ -459,9 +441,9 @@ const CONFIG = {
           <span class="case-stat-val" data-i18n="cases.alice.val">Live</span>
           <span class="case-stat-unit" data-i18n="cases.alice.unit">in UTSA courses</span>
         </div>
-        <p class="case-desc" data-i18n="cases.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.</p>
+        <p class="case-desc" data-i18n="cases.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is an AI-assisted adaptive learning platform built on Canopy. Attruvera Technologies develops and operates ALICE for The University of Texas at San Antonio, where students and instructors use it in courses offered under university research pilots. UTSA is an active pilot environment for the full stack.</p>
         <div class="case-links">
-          <a href="https://utsa-alice.org/nuntius/ALICE_ABOUT" class="contact-link" target="_blank" rel="noopener">utsa-alice.org</a>
+          <a href="https://utsa-alice.org/" class="contact-link" target="_blank" rel="noopener">utsa-alice.org</a>
           <a href="https://utsa-alice.org/nuntius/SYS_PRIVACY" class="contact-link" target="_blank" rel="noopener" data-i18n="cases.alice.privacy">ALICE privacy policy</a>
         </div>
       </div>
@@ -579,7 +561,7 @@ const CONFIG = {
     <a href="#products" data-i18n="nav.products">Products</a>
     <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
     <a href="#about" data-i18n="nav.about">About</a>
-    <a href="https://utsa-alice.org/nuntius/ALICE_ABOUT" target="_blank" rel="noopener">ALICE</a>
+    <a href="https://utsa-alice.org/" target="_blank" rel="noopener">ALICE</a>
     <a href="https://utsa-alice.org/nuntius/SYS_PRIVACY" target="_blank" rel="noopener" data-i18n="footer.alicePrivacy">ALICE Privacy</a>
     <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
   </div>
@@ -796,13 +778,13 @@ document.addEventListener('DOMContentLoaded', function() {
       'prod.label': 'The Technology Stack',
       'prod.heading': 'Four layers.<br><em>One integrated platform.</em>',
       'prod.intro': 'Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.',
-      'prod.alice.sub': 'KNOWLEDGE PLATFORM',
-      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.',
-      'prod.alice.f1': 'Rhizomatic, non-hierarchical knowledge representation',
-      'prod.alice.f2': 'Adaptive delivery: content surfaces at the moment of need',
-      'prod.alice.f3': 'Multi-agent orchestration backbone',
-      'prod.alice.f4': 'Open core; licensed extensions for attribution and harmonization',
-      'prod.alice.live': 'In production: ALICE at UTSA',
+      'prod.canopy.sub': 'KNOWLEDGE REPRESENTATION PLATFORM',
+      'prod.canopy.p': 'A rhizomatic knowledge architecture that maps information as terrain rather than hierarchy. The foundation of the stack — free and open in its core form, enabling any organization to represent, navigate, and deliver structured knowledge through multi-agent orchestration.',
+      'prod.canopy.f1': 'Rhizomatic, non-hierarchical knowledge representation',
+      'prod.canopy.f2': 'Adaptive delivery: content surfaces at the moment of need',
+      'prod.canopy.f3': 'Multi-agent orchestration backbone',
+      'prod.canopy.f4': 'Open core; licensed extensions for attribution and harmonization',
+      'prod.canopy.live': 'In production: ALICE at UTSA',
       'prod.max.sub': 'MULTI-AGENT HARMONIZATION',
       'prod.max.p': 'When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.',
       'prod.max.f1': 'Cross-agent output harmonization and conflict resolution',
@@ -815,14 +797,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'prod.hudo.f2': 'Defensible documentation for compliance and litigation',
       'prod.hudo.f3': 'Designed for healthcare, government, and financial services',
       'prod.hudo.f4': 'Patent-pending attribution protocol',
-      'prod.vela.badge': 'ON THE ALICE PLATFORM',
-      'prod.vela.sub': 'INVENTION DISCLOSURE & PORTFOLIO MANAGEMENT',
-      'prod.vela.p': 'Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.',
-      'prod.vela.f1': 'Guided disclosure intake for inventors',
-      'prod.vela.f2': 'Review, tracking and portfolio management for the office',
-      'prod.vela.f3': 'One tenant per institution: its own database, storage and signing keys',
-      'prod.vela.f4': 'A configuration of the ALICE platform: same software, different content profile',
-      'prod.vela.live': 'In production: vela.attruvera.ai',
       'prod.tva.sub': 'TRUSTED VERIFICATION AUTHORITY',
       'prod.tva.p': 'The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.',
       'prod.tva.f1': 'Cryptographic hash-chain over every AI interaction',
@@ -855,7 +829,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'cases.alice.h3': 'ALICE at UTSA',
       'cases.alice.val': 'Live',
       'cases.alice.unit': 'in UTSA courses',
-      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.',
+      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is an AI-assisted adaptive learning platform built on ' + CONFIG.DELIVERY_PLATFORM_NAME + '. Attruvera Technologies develops and operates ALICE for The University of Texas at San Antonio, where students and instructors use it in courses offered under university research pilots. UTSA is an active pilot environment for the full stack.',
       'cases.alice.privacy': 'ALICE privacy policy',
       'lic.label': 'Licensing',
       'lic.heading': 'Open where it matters. Protected where it counts.',
@@ -934,13 +908,13 @@ document.addEventListener('DOMContentLoaded', function() {
       'prod.label': 'La Plataforma Tecnológica',
       'prod.heading': 'Cuatro capas.<br><em>Una plataforma integrada.</em>',
       'prod.intro': 'Attruvera no es una herramienta única — es una infraestructura de confianza verticalmente integrada. Cada capa tiene valor independiente; juntas forman la única solución completa para el despliegue responsable de IA.',
-      'prod.alice.sub': 'PLATAFORMA DE CONOCIMIENTO',
-      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es una plataforma de conocimiento basada en web que aloja cuerpos estructurados de trabajo como grafos de unidades enlazadas y asocia agentes de IA configurables a cada unidad. La base de toda la plataforma: libre y abierta en su núcleo. Vela y la configuración educativa son el mismo software con distintos perfiles de contenido.',
-      'prod.alice.f1': 'Representación del conocimiento rizomática y no jerárquica',
-      'prod.alice.f2': 'Entrega adaptativa: el contenido aparece cuando se necesita',
-      'prod.alice.f3': 'Columna vertebral de orquestación multiagente',
-      'prod.alice.f4': 'Núcleo abierto; extensiones licenciadas para atribución y armonización',
-      'prod.alice.live': 'En producción: ALICE en UTSA',
+      'prod.canopy.sub': 'PLATAFORMA DE REPRESENTACIÓN DEL CONOCIMIENTO',
+      'prod.canopy.p': 'Una arquitectura de conocimiento rizomática que mapea la información como terreno en lugar de jerarquía. La base de la plataforma — libre y abierta en su forma central, permitiendo a cualquier organización representar, navegar y entregar conocimiento estructurado mediante orquestación multiagente.',
+      'prod.canopy.f1': 'Representación del conocimiento rizomática y no jerárquica',
+      'prod.canopy.f2': 'Entrega adaptativa: el contenido aparece cuando se necesita',
+      'prod.canopy.f3': 'Columna vertebral de orquestación multiagente',
+      'prod.canopy.f4': 'Núcleo abierto; extensiones licenciadas para atribución y armonización',
+      'prod.canopy.live': 'En producción: ALICE en UTSA',
       'prod.max.sub': 'ARMONIZACIÓN MULTIAGENTE',
       'prod.max.p': 'Cuando múltiples agentes de IA colaboran en una tarea, Max coordina sus resultados — resolviendo conflictos, aplicando consistencia y produciendo un único resultado armonizado con un registro de decisiones rastreable. Sin más contradicciones entre agentes; sin más consenso opaco.',
       'prod.max.f1': 'Armonización de salidas entre agentes y resolución de conflictos',
@@ -953,14 +927,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'prod.hudo.f2': 'Documentación defendible para cumplimiento normativo y litigios',
       'prod.hudo.f3': 'Diseñado para salud, gobierno y servicios financieros',
       'prod.hudo.f4': 'Protocolo de atribución con patente pendiente',
-      'prod.vela.badge': 'SOBRE LA PLATAFORMA ALICE',
-      'prod.vela.sub': 'DIVULGACIÓN DE INVENCIONES Y GESTIÓN DE CARTERA',
-      'prod.vela.p': 'Vela es un servicio de divulgación de invenciones y gestión de cartera para oficinas de transferencia de tecnología, ofrecido como software como servicio. Los inventores presentan sus divulgaciones mediante un formulario guiado; la oficina las revisa, les da seguimiento y gestiona la cartera resultante. Vela es una configuración de la plataforma ALICE: el mismo software con un perfil de contenido distinto.',
-      'prod.vela.f1': 'Recepción guiada de divulgaciones para inventores',
-      'prod.vela.f2': 'Revisión, seguimiento y gestión de cartera para la oficina',
-      'prod.vela.f3': 'Un inquilino por institución: base de datos, almacenamiento y claves de firma propias',
-      'prod.vela.f4': 'Una configuración de la plataforma ALICE: el mismo software, distinto perfil de contenido',
-      'prod.vela.live': 'En producción: vela.attruvera.ai',
       'prod.tva.sub': 'AUTORIDAD DE VERIFICACIÓN CONFIABLE',
       'prod.tva.p': 'La base criptográfica de toda la plataforma. TVA crea un registro de auditoría inmutable y resistente a manipulaciones de cada interacción de IA — qué se preguntó, qué se produjo, qué se verificó — usando una arquitectura de cadena de hash con patente pendiente. Piense en ella como la capa de compensación y liquidación de las transacciones con LLM.',
       'prod.tva.f1': 'Cadena de hash criptográfica sobre cada interacción de IA',
@@ -993,7 +959,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'cases.alice.h3': 'ALICE en UTSA',
       'cases.alice.val': 'Activo',
       'cases.alice.unit': 'en cursos de UTSA',
-      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es la plataforma de conocimiento de Attruvera. En su configuración educativa, los instructores crean cursos como lecciones enlazadas con objetivos de aprendizaje y rúbricas, los estudiantes entregan trabajos y conversan con un tutor acotado al curso, y los instructores revisan la retroalimentación asistida por IA antes de publicarla. Attruvera Technologies desarrolla y opera ALICE; la Universidad de Texas en San Antonio la utiliza en cursos ofrecidos dentro de programas piloto de investigación.',
+      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es una plataforma de aprendizaje adaptativo asistida por IA, construida sobre ' + CONFIG.DELIVERY_PLATFORM_NAME + '. Attruvera Technologies desarrolla y opera ALICE para la Universidad de Texas en San Antonio, donde estudiantes e instructores la utilizan en cursos ofrecidos dentro de programas piloto de investigación de la universidad. UTSA es un entorno piloto activo para la plataforma completa.',
       'cases.alice.privacy': 'Política de privacidad de ALICE',
       'lic.label': 'Licencias',
       'lic.heading': 'Abierto donde importa. Protegido donde cuenta.',
@@ -1065,8 +1031,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update page title
     document.title = lang === 'es'
-      ? 'Attruvera Technologies — Atribución · Confianza · Veracidad'
-      : 'Attruvera Technologies — Attribution · Trust · Veracity';
+      ? 'Attruvera Technologies — La Capa de Confianza para la IA'
+      : 'Attruvera Technologies — The Trust Layer for AI';
   }
 
   // Apply on load

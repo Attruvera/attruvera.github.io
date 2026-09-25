@@ -529,6 +529,7 @@ section { position: relative; }
 .pf { display: flex; gap: 10px; align-items: flex-start; }
 .pf-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--moss); flex-shrink: 0; margin-top: 8px; }
 .pf span { font-size: var(--fs-content); line-height: 1.5; color: rgba(241,245,249,0.35); }
+.prod-live { margin-top: 28px; }
 
 /* TVA full-width */
 .prod-card.tva-card { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: rgba(15,23,42,0.9); border-color: rgba(245,158,11,0.2); }
@@ -584,6 +585,8 @@ section { position: relative; }
 .case-stat-val { font-family: 'Cormorant Garamond', serif; font-size: var(--fs-title); font-weight: 600; color: var(--moss); line-height: 1; }
 .case-stat-unit { font-family: 'JetBrains Mono', monospace; font-size: var(--fs-footer); color: rgba(241,245,249,0.3); }
 .case-desc { font-size: var(--fs-content); line-height: 1.75; color: rgba(241,245,249,0.4); }
+.case-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 20px; }
+#alice { scroll-margin-top: 110px; }
 
 /* ============================================================
    LICENSING
@@ -657,7 +660,7 @@ footer {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
 }
 .footer-left { font-family: 'JetBrains Mono', monospace; font-size: var(--fs-footer); letter-spacing: 0.08em; color: #dddddd; }
-.footer-right { display: flex; gap: 28px; }
+.footer-right { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 28px; }
 .footer-right a { font-family: 'JetBrains Mono', monospace; font-size: var(--fs-footer); color: #dddddd; text-decoration: none; transition: color 0.2s; }
 .footer-right a:hover { color: var(--moss); }
 
@@ -712,7 +715,9 @@ footer {
   #hero { padding: 130px 24px 80px; }
   .problem-inner { padding: 0 24px; }
   .vision-inner, .about-inner { padding: 0 24px; }
-  footer { flex-direction: column; gap: 8px; padding: 16px 24px; text-align: center; }
+  body { padding-bottom: 0; }
+  footer { position: static; flex-direction: column; gap: 8px; padding: 16px 24px; text-align: center; }
+  .footer-right { justify-content: center; gap: 6px 20px; }
 }
 
 /* ============================================================
