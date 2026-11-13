@@ -127,9 +127,12 @@ p { margin: 0 0 1em; }
 .stage-title .label { display: block; color: var(--ink-soft); }
 .stage-title strong { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.1; letter-spacing: -0.015em; }
 .stage-count { position: absolute; right: 16px; bottom: 12px; color: var(--ink-soft); pointer-events: none; }
-.switch { display: grid; grid-template-columns: repeat(7, 1fr); border: 1.5px solid var(--ink); background: var(--white); margin-top: 16px; }
+.switch { display: grid; grid-template-columns: repeat(6, 1fr); border: 1.5px solid var(--ink); background: var(--white); margin-top: 16px; }
 .switch button { border: 0; border-left: 1.5px solid var(--ink); background: none; color: var(--ink); cursor: pointer; padding: 11px 2px 10px; display: grid; gap: 5px; justify-items: center; min-width: 0; }
-.switch button:first-child { border-left: 0; }
+.switch button.k { grid-column: 1 / -1; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 8px 0 7px; border-left: 0; border-bottom: 1.5px solid var(--ink); }
+.switch button.k em { font-size: .7rem; }
+.switch button.k .nm { display: inline; font-size: 10.5px; font-weight: 600; letter-spacing: .22em; }
+.switch button:nth-child(2) { border-left: 0; }
 .switch button em { font-style: normal; font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1; }
 .switch button .nm { font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
 .switch button:hover { background: var(--paper); }
