@@ -1,17 +1,3 @@
-<!--   
-     ___         _____         ____    
-    /\__\       /::\  \       /:/ _/_   
-   /:/__/      /:/\:\  \     /:/ /\  \  
-  /::\  \     /:/ /::\__\   /:/ /::\  \ 
-  \/\:\  \   /:/_/:/\:|__| /:/__\/\:\__\
-     /\  ┬  ┬  ┌   \_/   \/  ☰  ┌    /\
-     \:\  \  \:\/:/ /:/  / \:\  \ /:/  /
-      \:\__\  \::/_/:/  /   \:\  /:/  / 
-      /:/  /   \:\/:/  /     \:\/:/  /  
-     /:/  /     \::/  /       \::/  /   
-     \/__/       \/__/         \/__/   
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,1063 +8,852 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-LRV1MPPFSJ');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Attruvera Technologies — Attribution · Trust · Veracity</title>
-
-<!-- ============================================================
-     CONFIGURABLE PARAMETERS — edit here only
-     ============================================================ -->
-<script>
-const CONFIG = {
-  DELIVERY_PLATFORM_NAME: "ALICE",    // The platform itself; Vela and the education configuration are its content profiles
-  COMPANY_NAME: "Attruvera Technologies",
-  CONTACT_EMAIL: "contact@attruvera.com",
-  TAGLINE: "Attribution · Trust · Veracity. AI with humans first.",
-};
-</script>
-<link href="css1.css" rel="stylesheet">
-
+<title>Attruvera Technologies — ALICE, a platform for producing knowledge</title>
+<meta name="description" content="Attruvera builds ALICE, one platform for producing knowledge that already works as a classroom, a workflow system, a secure federation and a research bench, with AI agents that stay inside the bounds people set.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Martian+Mono:wght@400..700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
+<style>
+:root {
+  --paper: #F6F5F0;
+  --white: #FFFFFF;
+  --ink: #08384A;
+  --ink-soft: #46626C;
+  --line: #D3D7D0;
+  --sky: #A5D3E6;
+  --peach: #FBC79F;
+  --sage: #9CC2B0;
+  --pink: #F4909F;
+  --amber: #FBB616;
+  --lilac: #C5BBEC;
+  --display: "Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Martian Mono", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --wrap: 1180px;
+  --gutter: 28px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.skip {
+  position: absolute; left: 12px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--paper); padding: 10px 16px;
+  font-family: var(--mono); font-size: 12px; text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+/* ── type ── */
+.label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; letter-spacing: -0.012em; }
+h1 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); line-height: 1.02; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.08; }
+h3 { font-size: 1.55rem; line-height: 1.15; }
+p { margin: 0 0 1em; }
+.hl { background: linear-gradient(transparent 58%, var(--amber) 58%, var(--amber) 92%, transparent 92%); padding: 0 .08em; }
+
+/* ── nav ── */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(246, 245, 240, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--ink);
+}
+.nav-in { display: flex; align-items: center; gap: 28px; height: 68px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-right: auto; }
+.brand svg { width: 30px; height: 30px; }
+.brand span { font-family: var(--display); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+.nav-links { display: flex; gap: 26px; }
+.nav-links a { text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover { border-bottom-color: var(--amber); }
+.lang, .menu-btn {
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em;
+  background: none; color: var(--ink); border: 1.5px solid var(--ink);
+  height: 36px; padding: 0 12px; cursor: pointer;
+}
+.lang:hover, .menu-btn:hover { background: var(--ink); color: var(--paper); }
+.menu-btn { display: none; }
+.btn {
+  display: inline-block; text-decoration: none; cursor: pointer;
+  font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  padding: 15px 22px; border: 1.5px solid var(--ink);
+  background: var(--ink); color: var(--paper);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translate(-3px, -3px); box-shadow: 3px 3px 0 var(--amber); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.ghost:hover { box-shadow: 3px 3px 0 var(--ink); }
+.nav .btn { padding: 11px 16px; }
+
+/* ── hero ── */
+.hero { padding: 64px 0 0; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero .label { display: inline-flex; gap: 14px; align-items: center; margin-bottom: 26px; }
+.hero .label i { width: 9px; height: 9px; display: inline-block; }
+.hero .label i:nth-of-type(1) { background: var(--sky); }
+.hero .label i:nth-of-type(2) { background: var(--pink); }
+.hero .label i:nth-of-type(3) { background: var(--amber); }
+.lede { font-size: 1.2rem; line-height: 1.55; color: var(--ink-soft); max-width: 34em; margin: 28px 0 34px; }
+.cta { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.stage { position: relative; }
+.stage-view { position: relative; aspect-ratio: 1 / 1; }
+.stage-view canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.stage-view::before, .stage-view::after { content: ""; position: absolute; width: 18px; height: 18px; pointer-events: none; }
+.stage-view::before { left: 0; top: 0; border-left: 1.5px solid var(--ink); border-top: 1.5px solid var(--ink); }
+.stage-view::after { right: 0; bottom: 0; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+.stage-title { position: absolute; left: 16px; top: 14px; pointer-events: none; }
+.stage-title .label { display: block; color: var(--ink-soft); }
+.stage-title strong { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.1; letter-spacing: -0.015em; }
+.stage-count { position: absolute; right: 16px; bottom: 12px; color: var(--ink-soft); pointer-events: none; }
+.switch { display: grid; grid-template-columns: repeat(7, 1fr); border: 1.5px solid var(--ink); background: var(--white); margin-top: 16px; }
+.switch button { border: 0; border-left: 1.5px solid var(--ink); background: none; color: var(--ink); cursor: pointer; padding: 11px 2px 10px; display: grid; gap: 5px; justify-items: center; min-width: 0; }
+.switch button:first-child { border-left: 0; }
+.switch button em { font-style: normal; font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1; }
+.switch button .nm { font-family: var(--mono); font-size: 8px; letter-spacing: .06em; text-transform: uppercase; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.switch button:hover { background: var(--paper); }
+.switch button[aria-pressed="true"] { background: var(--acc); }
+.switch button.k[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.tile { display: block; padding: 14%; transition: transform .18s ease; }
+.tile svg { display: block; width: 100%; height: auto; }
+.stage-desc { display: block; margin-top: 16px; min-height: 3.1em; font-size: 1.06rem; line-height: 1.5; text-decoration: underline; text-decoration-color: var(--amber); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.stage-desc::after { content: " ↓"; font-family: var(--mono); font-size: .8em; }
+.stage-desc:hover { text-decoration-color: var(--ink); }
+.figcap { margin-top: 10px; color: var(--ink-soft); }
+.c1 { background: var(--sky); } .c2 { background: var(--peach); } .c3 { background: var(--sage); }
+.c4 { background: var(--pink); } .c5 { background: var(--amber); } .c6 { background: var(--lilac); }
+
+.ledger { margin-top: 64px; border-top: 1.5px solid var(--ink); display: grid; grid-template-columns: repeat(4, 1fr); }
+.ledger div { padding: 20px 22px 24px; border-left: 1px solid var(--line); }
+.ledger div:first-child { border-left: 0; padding-left: 0; }
+.ledger .label { color: var(--ink-soft); display: block; margin-bottom: 6px; }
+.ledger strong { font-family: var(--display); font-weight: 600; font-size: 1.2rem; line-height: 1.2; display: block; }
+
+.ticker { margin-top: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); background: var(--white); overflow: hidden; }
+.ticker-track { display: flex; width: max-content; animation: tick 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-set { display: flex; align-items: center; flex: none; }
+.ticker-set span { font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.4rem); padding: 14px 0; white-space: nowrap; }
+.ticker-set i { width: 16px; height: 16px; margin: 0 30px; flex: none; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ── sections ── */
+section { padding: 104px 0; }
+.sec-head { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; margin-bottom: 56px; }
+.sec-head .label { padding-top: 14px; border-top: 1.5px solid var(--ink); align-self: start; }
+.sec-head h2 { max-width: 17em; }
+.sec-head p { color: var(--ink-soft); max-width: 40em; margin: 20px 0 0; font-size: 1.1rem; }
+
+.what { display: grid; grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr); gap: 40px; }
+.what .prose p { font-size: 1.1rem; }
+.defs { margin: 0; border-top: 1.5px solid var(--ink); }
+.defs div { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.defs dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; padding-top: 5px; }
+.defs dd { margin: 0; }
+
+/* forms */
+#forms { background: var(--white); border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+.form {
+  display: grid; grid-template-columns: 104px minmax(0, 300px) minmax(0, 1fr) 190px; gap: 32px; align-items: start;
+  padding: 30px 0; border-top: 1px solid var(--line); position: relative;
+}
+.form:first-of-type { border-top: 1.5px solid var(--ink); }
+.form:last-of-type { border-bottom: 1.5px solid var(--ink); }
+.form .tile { padding: 15px; }
+.form:hover .tile { transform: rotate(-4deg) scale(1.04); }
+.form .label { color: var(--ink-soft); display: block; margin-bottom: 8px; }
+.form h3 { margin-bottom: 6px; }
+.form .tag { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.12rem; color: var(--ink-soft); margin: 0; }
+.form p.d { margin: 0; }
+.status {
+  justify-self: end; text-align: left; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
+  border: 1.5px solid var(--ink); padding: 9px 11px; line-height: 1.5; display: grid; grid-template-columns: 9px 1fr; gap: 9px; align-items: start; width: 100%;
+}
+.status::before { content: ""; width: 9px; height: 9px; margin-top: 2px; background: var(--ink); }
+.status.open::before { background: transparent; border: 1.5px solid var(--ink); }
+.status.pat::before { background: var(--amber); }
+.status a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+/* bounded */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); border: 1.5px solid var(--ink); background: var(--white); }
+.step { padding: 26px 24px 28px; border-left: 1.5px solid var(--ink); position: relative; }
+.step:first-child { border-left: 0; }
+.step.key { background: var(--amber); }
+.step .label { display: block; margin-bottom: 34px; }
+.step h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.step p { margin: 0; font-size: .98rem; }
+.step:not(:last-child)::after {
+  content: "→"; position: absolute; right: -14px; top: 20px; z-index: 2;
+  width: 26px; height: 26px; display: grid; place-items: center;
+  background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 12px;
+}
+.contrast { display: grid; grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr); gap: 40px; margin-top: 48px; }
+.contrast div { border-top: 1.5px solid var(--ink); padding-top: 16px; }
+.contrast .label { display: block; color: var(--ink-soft); margin-bottom: 10px; }
+.contrast p { margin: 0; font-size: 1.08rem; }
+
+/* stewardship */
+#stewardship { background: var(--amber); padding: 0; }
+.hazard { height: 14px; background: repeating-linear-gradient(-45deg, var(--ink) 0 14px, var(--amber) 14px 28px); }
+#stewardship .inner { padding-top: 96px; padding-bottom: 100px; }
+#stewardship .sec-head p { color: var(--ink); }
+.pledges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1.5px solid var(--ink); }
+.pledge { padding: 26px 28px 0 0; border-left: 1.5px solid var(--ink); padding-left: 28px; }
+.pledge:first-child { border-left: 0; padding-left: 0; }
+.pledge .label { display: block; margin-bottom: 14px; }
+.pledge h3 { margin-bottom: 10px; }
+.pledge p { margin: 0; }
+
+/* name */
+.name { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); }
+.syll { padding: 34px 30px 36px; border-left: 1px solid var(--line); }
+.syll:first-child { border-left: 0; padding-left: 0; }
+.syll .big { font-family: var(--display); font-weight: 700; font-size: clamp(3.4rem, 8vw, 6.4rem); line-height: .9; letter-spacing: -0.03em; display: inline-block; padding: 0 .06em; margin-left: -.06em; }
+.syll:nth-child(1) .big { background: linear-gradient(transparent 62%, var(--sky) 62%); }
+.syll:nth-child(2) .big { background: linear-gradient(transparent 62%, var(--sage) 62%); }
+.syll:nth-child(3) .big { background: linear-gradient(transparent 62%, var(--pink) 62%); }
+.syll h3 { margin: 26px 0 8px; }
+.syll p { margin: 0; color: var(--ink-soft); }
+
+/* company */
+#company { background: var(--white); border-top: 1.5px solid var(--ink); }
+.facts { margin: 0; border-top: 1.5px solid var(--ink); }
+.facts div { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; padding-top: 6px; }
+.facts dd { margin: 0; max-width: 46em; }
+
+/* contact */
+#contact { border-top: 1.5px solid var(--ink); }
+.talks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.talk { padding: 26px 26px 28px; color: var(--ink); }
+.talk .label { display: block; margin-bottom: 26px; }
+.talk h3 { margin-bottom: 8px; }
+.talk p { margin: 0; font-size: .98rem; }
+.mail { display: inline-block; margin-top: 52px; font-family: var(--display); font-weight: 600; font-size: clamp(1.7rem, 4.6vw, 3.4rem); letter-spacing: -0.015em; text-decoration: none; border-bottom: 4px solid var(--amber); line-height: 1.15; overflow-wrap: anywhere; }
+.mail:hover { background: var(--amber); }
+
+footer { background: var(--white); color: var(--ink-soft); border-top: 1.5px solid var(--ink); padding: 26px 0 34px; font-size: .88rem; }
+.foot { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { text-underline-offset: 3px; }
+
+/* ── responsive ── */
+@media (max-width: 1020px) {
+  .nav-links { display: none; position: absolute; left: 0; right: 0; top: 68px; background: var(--paper); border-bottom: 1.5px solid var(--ink); flex-direction: column; gap: 0; padding: 8px var(--gutter) 16px; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .menu-btn { display: inline-block; }
+  .hero-grid { grid-template-columns: 1fr; gap: 56px; }
+  .stage { max-width: 560px; }
+  .sec-head, .what, .contrast { grid-template-columns: 1fr; gap: 22px; }
+  .sec-head .label { justify-self: start; padding-right: 40px; }
+  .spacer { display: none; }
+  .form { grid-template-columns: 84px minmax(0, 1fr); gap: 18px 24px; }
+  .form .d, .form .status { grid-column: 2; }
+  .status { justify-self: start; width: auto; min-width: 200px; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(3) { border-left: 0; }
+  .step:nth-child(n+3) { border-top: 1.5px solid var(--ink); }
+  .step:nth-child(2)::after { display: none; }
+  .facts div { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (max-width: 720px) {
+  :root { --gutter: 18px; }
+  body { font-size: 16px; }
+  section { padding: 72px 0; }
+  .hero { padding-top: 44px; }
+  .nav .btn { display: none; }
+  .ledger { grid-template-columns: 1fr 1fr; }
+  .ledger div { padding-left: 16px; }
+  .ledger div:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .ledger div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .switch button .nm { display: none; }
+  .steps, .pledges, .name, .talks { grid-template-columns: 1fr; }
+  .step { border-left: 0; border-top: 1.5px solid var(--ink); }
+  .step:first-child { border-top: 0; }
+  .step::after { display: none !important; }
+  .step .label { margin-bottom: 14px; }
+  .pledge { border-left: 0; padding: 24px 0; border-bottom: 1.5px solid var(--ink); }
+  .pledge:last-child { border-bottom: 0; padding-bottom: 0; }
+  .syll { border-left: 0; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .syll:last-child { border-bottom: 0; }
+  #stewardship .inner { padding-top: 64px; padding-bottom: 68px; }
+  .defs div { grid-template-columns: 1fr; gap: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .px { animation: pop .5s ease both; animation-delay: calc(var(--i) * 14ms); }
+  @keyframes pop { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
+  .px { transform-box: fill-box; transform-origin: center; }
+}
+</style>
 </head>
+
 <body>
-<!-- ── SKIP TO CONTENT (keyboard / screen reader) ── -->
-<a class="skip-link" href="#main-content" data-i18n="skip">Skip to main content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to main content</a>
 
-<!-- ══════════════════════════════════════════════
-     NAV
-══════════════════════════════════════════════ -->
-<nav id="main-nav" role="navigation" aria-label="Main navigation">
-  <a href="#hero" class="nav-logo" aria-label="Attruvera Technologies — home">
-    <div class="nav-mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3L4 7V17L12 21L20 17V7L12 3Z" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
-        <circle cx="12" cy="12" r="2.5" fill="#06b6d4"/>
-        <path d="M12 9.5V7M12 17V14.5M9.5 12H7M17 12H14.5" stroke="#06b6d4" stroke-width="1" stroke-linecap="round"/>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Attruvera Technologies, home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 3L4 7V17L12 21L20 17V7L12 3Z" stroke="#08384A" stroke-width="1.6"/>
+        <rect x="10" y="10" width="4" height="4" fill="#FBB616"/>
+        <path d="M12 9V7M12 17V15M9 12H7M17 12H15" stroke="#08384A" stroke-width="1.2" stroke-linecap="square"/>
       </svg>
-    </div>
-    <span class="nav-wordmark">Attruvera</span>
-  </a>
-
-  <div class="nav-links">
-    <a href="#products" data-i18n="nav.products">Products</a>
-    <a href="#vision" data-i18n="nav.vision">Vision</a>
-    <a href="#cases" data-i18n="nav.cases">Case Studies</a>
-    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
-    <a href="#about" data-i18n="nav.about">About</a>
+      <span>Attruvera</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="#alice">ALICE</a>
+      <a href="#forms" data-i18n="nav.forms">Six forms</a>
+      <a href="#bounded" data-i18n="nav.bounded">Bounded agents</a>
+      <a href="#stewardship" data-i18n="nav.stew">Stewardship</a>
+      <a href="#company" data-i18n="nav.company">Company</a>
+    </nav>
+    <button class="lang" id="lang" aria-label="Cambiar a español">ES</button>
+    <a class="btn" href="#contact" data-i18n="nav.cta">Request a briefing</a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
   </div>
+</header>
 
-  <div class="nav-right">
-    <a href="#contact" class="nav-contact" data-i18n="nav.contact">Contact</a>
+<main id="main">
 
-    <!-- LANGUAGE SWITCHER -->
-    <button class="lang-btn" id="lang-btn" aria-label="Switch to Spanish">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex-shrink:0;">
-        <circle cx="12" cy="12" r="9"/>
-        <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9"/>
-        <path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
-        <path d="M3 12h18"/>
-      </svg>
-      <span id="lang-label">ES</span>
-    </button>
+<!-- ═════════ HERO ═════════ -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="label"><i></i><span data-i18n="hero.a">Attribution</span><i></i><span data-i18n="hero.t">Trust</span><i></i><span data-i18n="hero.v">Veracity</span></div>
+        <h1 data-i18n="hero.h1">One platform for producing knowledge. <span class="hl">Six forms</span> already at work.</h1>
+        <p class="lede" data-i18n="hero.lede">ALICE is a small set of abstractions that can be materialized in many ways: a classroom, an office workflow, a research bench, a federation of secure instances, or something of your own design. In every form, its AI agents stay inside the bounds people set.</p>
+        <div class="cta">
+          <a class="btn" href="#forms" data-i18n="hero.b1">See the six forms</a>
+          <a class="btn ghost" href="#contact" data-i18n="hero.b2">Request a briefing</a>
+        </div>
+      </div>
 
-    <!-- ACCESSIBILITY DROPDOWN -->
-    <div class="a11y-menu" role="region" aria-label="Accessibility options">
-      <button class="a11y-trigger" id="a11y-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-dropdown">
-        <span class="a11y-icon" style="font-size:1.2em;line-height:1;" aria-hidden="true">♿</span>
-        <span>Accessibility</span>
-        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6 9l6 6 6-6"/>
-        </svg>
-      </button>
-
-      <div class="a11y-dropdown" id="a11y-dropdown" role="menu" aria-label="Accessibility controls">
-        <div class="a11y-dropdown-label">Display</div>
-
-        <button class="a11y-btn" id="btn-contrast" role="menuitemcheckbox" aria-checked="false" aria-label="Toggle high contrast">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/>
-            <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="currentColor" stroke="none"/>
-          </svg>
-          High contrast
-        </button>
-
-        <button class="a11y-btn" id="btn-motion" role="menuitemcheckbox" aria-checked="false" aria-label="Reduce animations">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M18.364 5.636a9 9 0 0 1 0 12.728M5.636 5.636a9 9 0 0 0 0 12.728M12 8v4l3 3"/>
-          </svg>
-          Reduce motion
-        </button>
-
-        <div class="a11y-divider" aria-hidden="true"></div>
-        <div class="a11y-dropdown-label">Color Vision</div>
-
-        <button class="a11y-btn" id="btn-cb-none" role="menuitemradio" aria-checked="true" aria-label="Default color scheme">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/>
-          </svg>
-          Default
-        </button>
-
-        <button class="a11y-btn" id="btn-cb-deut" role="menuitemradio" aria-checked="false" aria-label="Deuteranopia / Protanopia (red-green)">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="8" cy="12" r="5" fill="#f97316" opacity="0.8"/>
-            <circle cx="16" cy="12" r="5" fill="#3b82f6" opacity="0.8"/>
-          </svg>
-          Deuteranopia
-        </button>
-
-        <button class="a11y-btn" id="btn-cb-trit" role="menuitemradio" aria-checked="false" aria-label="Tritanopia (blue-yellow)">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="8" cy="12" r="5" fill="#ef4444" opacity="0.8"/>
-            <circle cx="16" cy="12" r="5" fill="#22c55e" opacity="0.8"/>
-          </svg>
-          Tritanopia
-        </button>
-
-        <button class="a11y-btn" id="btn-cb-mono" role="menuitemradio" aria-checked="false" aria-label="Monochromacy / grayscale">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#333"/><stop offset="1" stop-color="#ccc"/></linearGradient></defs>
-            <circle cx="12" cy="12" r="9" fill="url(#gr)"/>
-          </svg>
-          Monochromacy
-        </button>
-
-        <div class="a11y-divider" aria-hidden="true"></div>
-        <button class="a11y-reset" id="btn-reset" role="menuitem" aria-label="Reset all accessibility settings">
-          Reset to defaults
-        </button>
+      <div class="stage">
+        <div class="stage-view">
+          <canvas id="cloud" aria-hidden="true"></canvas>
+          <div class="stage-title"><span class="label" id="st-n">Kernel</span><strong id="st-name">ALICE</strong></div>
+          <div class="label stage-count" aria-hidden="true"><span id="st-i">0</span> / 6</div>
+        </div>
+        <div class="switch" role="group" aria-label="Show ALICE in one of its forms" data-i18n-aria="sw.aria">
+          <button type="button" class="k" data-form="0" aria-pressed="true"><em>◆</em><span class="nm">ALICE</span></button>
+          <button type="button" data-form="1" aria-pressed="false" style="--acc:var(--sky)"><em>I</em><span class="nm" data-i18n="fig.1">Classroom</span></button>
+          <button type="button" data-form="2" aria-pressed="false" style="--acc:var(--peach)"><em>II</em><span class="nm" data-i18n="fig.2">Workflow</span></button>
+          <button type="button" data-form="3" aria-pressed="false" style="--acc:var(--sage)"><em>III</em><span class="nm" data-i18n="fig.3">Federation</span></button>
+          <button type="button" data-form="4" aria-pressed="false" style="--acc:var(--pink)"><em>IV</em><span class="nm" data-i18n="fig.4">Research</span></button>
+          <button type="button" data-form="5" aria-pressed="false" style="--acc:var(--lilac)"><em>V</em><span class="nm" data-i18n="fig.6">Free</span></button>
+          <button type="button" data-form="6" aria-pressed="false" style="--acc:var(--amber)"><em>VI</em><span class="nm" data-i18n="fig.5">Bounds</span></button>
+        </div>
+        <a class="stage-desc" id="st-desc" href="#alice">One kernel: knowledge, the agents that work on it, and a record of what they did.</a>
+        <div class="label figcap" data-i18n="fig.cap">Fig. 1 · The same points, rearranged. Choose a form.</div>
       </div>
     </div>
 
-    <!-- BURGER -->
-    <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-panel">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="ledger">
+      <div><span class="label" data-i18n="led.1l">In production</span><strong data-i18n="led.1v">University courses and offices</strong></div>
+      <div><span class="label" data-i18n="led.2l">Intellectual property</span><strong data-i18n="led.2v">Patent-pending technologies</strong></div>
+      <div><span class="label" data-i18n="led.3l">Origin</span><strong data-i18n="led.3v">UTSA research spinout</strong></div>
+      <div><span class="label" data-i18n="led.4l">Home</span><strong>San Antonio, Texas</strong></div>
+    </div>
   </div>
-</nav>
-
-<!-- MOBILE NAV PANEL -->
-<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Mobile navigation">
-  <a href="#products" class="nav-mobile-link" data-i18n="nav.products">Products</a>
-  <a href="#vision" class="nav-mobile-link" data-i18n="nav.vision">Vision</a>
-  <a href="#cases" class="nav-mobile-link" data-i18n="nav.cases">Case Studies</a>
-  <a href="#licensing" class="nav-mobile-link" data-i18n="nav.licensing">Licensing</a>
-  <a href="#about" class="nav-mobile-link" data-i18n="nav.about">About</a>
-  <a href="#contact" class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><div class="ticker-set"><span data-i18n="fig.1">Classroom</span><i class="c1"></i><span data-i18n="fig.2">Workflow</span><i class="c2"></i><span data-i18n="fig.3">Federation</span><i class="c3"></i><span data-i18n="fig.4">Research</span><i class="c4"></i><span data-i18n="fig.6">Free</span><i class="c6"></i><span data-i18n="fig.5">Bounds</span><i class="c5"></i></div><div class="ticker-set"><span data-i18n="fig.1">Classroom</span><i class="c1"></i><span data-i18n="fig.2">Workflow</span><i class="c2"></i><span data-i18n="fig.3">Federation</span><i class="c3"></i><span data-i18n="fig.4">Research</span><i class="c4"></i><span data-i18n="fig.6">Free</span><i class="c6"></i><span data-i18n="fig.5">Bounds</span><i class="c5"></i></div><div class="ticker-set"><span data-i18n="fig.1">Classroom</span><i class="c1"></i><span data-i18n="fig.2">Workflow</span><i class="c2"></i><span data-i18n="fig.3">Federation</span><i class="c3"></i><span data-i18n="fig.4">Research</span><i class="c4"></i><span data-i18n="fig.6">Free</span><i class="c6"></i><span data-i18n="fig.5">Bounds</span><i class="c5"></i></div><div class="ticker-set"><span data-i18n="fig.1">Classroom</span><i class="c1"></i><span data-i18n="fig.2">Workflow</span><i class="c2"></i><span data-i18n="fig.3">Federation</span><i class="c3"></i><span data-i18n="fig.4">Research</span><i class="c4"></i><span data-i18n="fig.6">Free</span><i class="c6"></i><span data-i18n="fig.5">Bounds</span><i class="c5"></i></div></div></div>
 </div>
 
-<!-- ══════════════════════════════════════════════
-     HERO
-══════════════════════════════════════════════ -->
-<main id="main-content">
-<section id="hero" aria-label="Hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow" aria-hidden="true">
-        <div class="hero-eyebrow-dot"></div>
-        <span data-i18n="hero.eyebrow">Trust Infrastructure for AI</span>
-      </div>
-      <h1><span data-i18n="hero.h1pre">The</span> <em data-i18n="hero.h1em">verification layer</em> <span data-i18n="hero.h1rest">every AI transaction deserves.</span></h1>
-      <p class="hero-tagline" id="hero-tagline"></p>
-      <div class="hero-btns">
-        <a href="#products" class="btn-primary" data-i18n="hero.btn1">Explore the stack</a>
-        <a href="#contact" class="btn-ghost" data-i18n="hero.btn2">Talk to us</a>
-      </div>
+<!-- ═════════ 01 ALICE ═════════ -->
+<section id="alice" aria-labelledby="h-alice">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s1.label">01 · What ALICE is</div>
+      <h2 id="h-alice" data-i18n="s1.h">Hard to label, because it is one thing underneath.</h2>
     </div>
-    <div class="hero-right" aria-hidden="true">
-      <div class="hero-card">
-        <div class="hero-card-label" data-i18n="hero.card.label">The Attruvera Thesis</div>
-        <h3 data-i18n="hero.card.h3">Provable AI, at scale.</h3>
-        <p data-i18n="hero.card.p">Provenance, attribution, accountability, and audit.</p>
-        <div class="hero-card-stats">
-          <div class="hcs">
-            <div class="hcs-val">$2B</div>
-            <div class="hcs-lbl" data-i18n="hero.stat1">Healthcare spend optimized</div>
-          </div>
-          <div class="hcs">
-            <div class="hcs-val">PCT</div>
-            <div class="hcs-lbl" data-i18n="hero.stat2">International patent filing in progress</div>
-          </div>
-          <div class="hcs">
-            <div class="hcs-val">3</div>
-            <div class="hcs-lbl" data-i18n="hero.stat3">Core patent-pending<br>technologies</div>
-          </div>
-          <div class="hcs">
-            <div class="hcs-val">UTSA</div>
-            <div class="hcs-lbl" data-i18n="hero.stat4">Research spinout<br>San Antonio, TX</div>
-          </div>
-        </div>
+    <div class="what">
+      <div class="spacer"></div>
+      <div class="prose">
+        <p data-i18n="s1.p1">Most AI products are built for one job. ALICE (Adaptive Learning Intelligence via Cognitive Engines) starts somewhere else: a general way to hold knowledge, put AI agents to work on it, and keep a record of what they did.</p>
+        <p data-i18n="s1.p2">Each use on this page is the same software under a different configuration. Nothing was rebuilt to move from a calculus course to a technology-transfer office.</p>
       </div>
+      <dl class="defs">
+        <div><dt data-i18n="s1.d1t">Knowledge</dt><dd data-i18n="s1.d1d">Held as linked units of work that people and agents can both navigate.</dd></div>
+        <div><dt data-i18n="s1.d2t">Agents</dt><dd data-i18n="s1.d2d">Assigned where the work is, configurable, and independent of any one AI vendor.</dd></div>
+        <div><dt data-i18n="s1.d3t">Record</dt><dd data-i18n="s1.d3d">Who and what produced each result, kept alongside the result.</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM BAND -->
-<section id="problem" aria-label="The problem">
-  <div class="problem-inner">
-    <div class="prob-item fade-up">
-      <span class="prob-num" data-i18n="prob.num1">01 — THE PROBLEM</span>
-      <h4 data-i18n="prob.h1">No verification standard</h4>
-      <p data-i18n="prob.p1">LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.</p>
-    </div>
-    <div class="prob-item fade-up">
-      <span class="prob-num" data-i18n="prob.num2">02 — THE PROBLEM</span>
-      <h4 data-i18n="prob.h2">Attribution is invisible</h4>
-      <p data-i18n="prob.p2">When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.</p>
-    </div>
-    <div class="prob-item fade-up">
-      <span class="prob-num" data-i18n="prob.num3">03 — THE PROBLEM</span>
-      <h4 data-i18n="prob.h3">Learning without memory</h4>
-      <p data-i18n="prob.p3">AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products" aria-labelledby="products-heading">
-  <div class="products-header">
-    <div>
-      <span class="section-label" data-i18n="prod.label">The Technology Stack</span>
-      <h2 class="section-title" id="products-heading" data-i18n="prod.heading">Four layers.<br><em>One integrated platform.</em></h2>
-    </div>
-    <div>
-      <p class="section-body" data-i18n="prod.intro">Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.</p>
-    </div>
-  </div>
-
-  <div class="products-grid">
-
-    <!-- CANOPY -->
-    <div class="prod-card featured fade-up">
-      <div class="prod-card-glow" aria-hidden="true"></div>
-      <div class="prod-tag">
-        <span class="prod-tag-label" id="prod-platform-name" style="color:var(--moss);"></span>
-        <span class="prod-tag-free">OPEN SOURCE (CORE)</span>
-      </div>
-      <h3 id="prod-platform-h3"></h3>
-      <div class="prod-subtitle" data-i18n="prod.alice.sub">KNOWLEDGE PLATFORM</div>
-      <p data-i18n="prod.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.</p>
-      <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f1">Rhizomatic, non-hierarchical knowledge representation</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f2">Adaptive delivery: content surfaces at the moment of need</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f3">Multi-agent orchestration backbone</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f4">Open core; licensed extensions for attribution and harmonization</span></div>
-      </div>
-      <a href="#alice" class="contact-link prod-live" data-i18n="prod.alice.live">In production: ALICE at UTSA</a>
-    </div>
-
-    <!-- MAX -->
-    <div class="prod-card fade-up">
-      <div class="prod-tag">
-        <span class="prod-tag-label" style="color:var(--gold);">Max</span>
-        <span class="prod-tag-badge">PATENT PENDING</span>
-      </div>
-      <h3>Max</h3>
-      <div class="prod-subtitle" data-i18n="prod.max.sub">MULTI-AGENT HARMONIZATION</div>
-      <p data-i18n="prod.max.p">When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.</p>
-      <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f1">Cross-agent output harmonization and conflict resolution</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f2">Configurable adjudication logic with audit trail</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f3">Scales from two-agent tasks to enterprise orchestration</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f4">Patent-pending multi-agent coordination protocol</span></div>
-      </div>
-    </div>
-
-    <!-- HUDO -->
-    <div class="prod-card fade-up">
-      <div class="prod-tag">
-        <span class="prod-tag-label" style="color:var(--gold);">Hudo</span>
-        <span class="prod-tag-badge">PATENT PENDING</span>
-      </div>
-      <h3>Hudo</h3>
-      <div class="prod-subtitle" data-i18n="prod.hudo.sub">WHO DOES — ATTRIBUTION LAYER</div>
-      <p data-i18n="prod.hudo.p">Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.</p>
-      <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f1">Granular attribution: output ↔ agent ↔ source ↔ reasoning</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f2">Defensible documentation for compliance and litigation</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f3">Designed for healthcare, government, and financial services</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f4">Patent-pending attribution protocol</span></div>
-      </div>
-    </div>
-
-    <!-- VELA -->
-    <div class="prod-card fade-up">
-      <div class="prod-tag">
-        <span class="prod-tag-label" style="color:var(--gold);">Vela</span>
-        <span class="prod-tag-badge" data-i18n="prod.vela.badge">ON THE ALICE PLATFORM</span>
-      </div>
-      <h3>Vela</h3>
-      <div class="prod-subtitle" data-i18n="prod.vela.sub">INVENTION DISCLOSURE &amp; PORTFOLIO MANAGEMENT</div>
-      <p data-i18n="prod.vela.p">Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.</p>
-      <div class="prod-features">
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f1">Guided disclosure intake for inventors</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f2">Review, tracking and portfolio management for the office</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f3">One tenant per institution: its own database, storage and signing keys</span></div>
-        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f4">A configuration of the ALICE platform: same software, different content profile</span></div>
-      </div>
-      <a href="https://vela.attruvera.ai" class="contact-link prod-live" target="_blank" rel="noopener" data-i18n="prod.vela.live">In production: vela.attruvera.ai</a>
-    </div>
-
-    <!-- TVA — full width -->
-    <div class="prod-card tva-card fade-up">
-      <div class="prod-card-glow" aria-hidden="true" style="background:radial-gradient(ellipse,rgba(245,158,11,0.1) 0%,transparent 65%)"></div>
+<!-- ═════════ 02 FORMS ═════════ -->
+<section id="forms" aria-labelledby="h-forms">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s2.label">02 · Six forms</div>
       <div>
-        <div class="prod-tag">
-          <span class="prod-tag-label" style="color:var(--gold);">TVA</span>
-          <span class="prod-tag-badge">PCT FILING IN PROGRESS</span>
-        </div>
-        <h3>TVA</h3>
-        <div class="prod-subtitle" data-i18n="prod.tva.sub">TRUSTED VERIFICATION AUTHORITY</div>
-        <p data-i18n="prod.tva.p">The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.</p>
-        <div class="prod-features">
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f1">Cryptographic hash-chain over every AI interaction</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f2">Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f3">Proves what happened without exposing sensitive content</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f4">Enables AI liability insurance underwriting</span></div>
-          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f5">PCT international patent filing in progress</span></div>
-        </div>
-      </div>
-      <div class="tva-visual" aria-hidden="true">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(245,158,11,0.5);letter-spacing:0.12em;margin-bottom:14px;">VERIFICATION CHAIN — LIVE ILLUSTRATION</div>
-        <div class="tva-chain">
-          <div class="tva-block">
-            <div class="tva-block-icon">🧠</div>
-            <div class="tva-block-text">
-              <div class="tva-block-title">LLM Interaction</div>
-              <div class="tva-block-sub">User prompt received</div>
-            </div>
-            <div class="tva-block-hash" id="hash1">e1f4a7...</div>
-          </div>
-          <div class="tva-connector"></div>
-          <div class="tva-block">
-            <div class="tva-block-icon">⚙️</div>
-            <div class="tva-block-text">
-              <div class="tva-block-title">Agent Processing</div>
-              <div class="tva-block-sub">Max harmonization applied</div>
-            </div>
-            <div class="tva-block-hash" id="hash2">f0c5b2...</div>
-          </div>
-          <div class="tva-connector"></div>
-          <div class="tva-block">
-            <div class="tva-block-icon">🏷️</div>
-            <div class="tva-block-text">
-              <div class="tva-block-title">Hudo Attribution</div>
-              <div class="tva-block-sub">Sources and agents tagged</div>
-            </div>
-            <div class="tva-block-hash" id="hash3">a3f9c2...</div>
-          </div>
-          <div class="tva-connector"></div>
-          <div class="tva-block" style="border-color:rgba(245,158,11,0.35);background:rgba(245,158,11,0.05)">
-            <div class="tva-block-icon">🔐</div>
-            <div class="tva-block-text">
-              <div class="tva-block-title">TVA Seal</div>
-              <div class="tva-block-sub">Cryptographic record finalized</div>
-            </div>
-            <div class="tva-block-hash" id="hash4" style="color:var(--moss)">VERIFIED ✓</div>
-          </div>
-        </div>
+        <h2 id="h-forms" data-i18n="s2.h">The same kernel, materialized six ways.</h2>
+        <p data-i18n="s2.p">Four are places where people work. The fifth is an open space to build your own. The sixth is a property all of them share.</p>
       </div>
     </div>
 
+    <article class="form" id="f1">
+      <span class="tile c1" data-tile="1" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f1.n">Form I</span>
+        <h3 data-i18n="f1.h">Classroom</h3>
+        <p class="tag" data-i18n="f1.t">AI-mediated teaching and learning</p>
+      </div>
+      <p class="d" data-i18n="f1.d">Instructors author courses as linked lessons with objectives and rubrics. Students work with a tutor that knows the course, and instructors review AI-assisted feedback before it is released. In pilot sections, students held their exam performance better from the first exam to the second.</p>
+      <div class="status"><span data-i18n="f1.s">In production<br>UTSA course pilots</span></div>
+    </article>
+
+    <article class="form" id="f2">
+      <span class="tile c2" data-tile="2" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f2.n">Form II</span>
+        <h3 data-i18n="f2.h">Workflow</h3>
+        <p class="tag" data-i18n="f2.t">Transactional systems with agents that assist</p>
+      </div>
+      <p class="d" data-i18n="f2.d">Intake, review, approval and portfolio management, with agents that prepare and move the work while people make the decisions. Vela, our invention-disclosure service for technology-transfer offices, is ALICE in this form.</p>
+      <div class="status"><span><span data-i18n="f2.s">In production</span><br><a href="https://vela.attruvera.ai" target="_blank" rel="noopener">vela.attruvera.ai</a></span></div>
+    </article>
+
+    <article class="form" id="f3">
+      <span class="tile c3" data-tile="3" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f3.n">Form III</span>
+        <h3 data-i18n="f3.h">Federation</h3>
+        <p class="tag" data-i18n="f3.t">AI-driven clean rooms</p>
+      </div>
+      <p class="d" data-i18n="f3.d">ALICE can replicate itself into specialized instances that cooperate. Instances exchange encrypted, derived information across organizational boundaries to find overlaps and share memory, while each owner's records stay where they are.</p>
+      <div class="status open"><span data-i18n="f3.s">Demonstrated<br>between instances</span></div>
+    </article>
+
+    <article class="form" id="f4">
+      <span class="tile c4" data-tile="4" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f4.n">Form IV</span>
+        <h3 data-i18n="f4.h">Research</h3>
+        <p class="tag" data-i18n="f4.t">A bench for producing scholarship</p>
+      </div>
+      <p class="d" data-i18n="f4.d">Sources, data, drafts and review in one workspace, with agents that read, check and write under the researcher's direction. ALICE has assisted in published manuscripts and awarded grants.</p>
+      <div class="status"><span data-i18n="f4.s">In use<br>research groups</span></div>
+    </article>
+
+    <article class="form" id="f-free">
+      <span class="tile c6" data-tile="6" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f6.n">Form V</span>
+        <h3 data-i18n="f6.h">Free</h3>
+        <p class="tag" data-i18n="f6.t">Create what you want</p>
+      </div>
+      <p class="d" data-i18n="f6.d">Start from a blank space and describe what you need: a body of knowledge, a set of records, a process, an agent to work on them. ALICE assembles it from the same parts as every other form, by configuration and without new software.</p>
+      <div class="status"><span data-i18n="f6.s">Available<br>in every ALICE system</span></div>
+    </article>
+
+    <article class="form" id="f-bounds">
+      <span class="tile c5" data-tile="5" aria-hidden="true"></span>
+      <div>
+        <span class="label" data-i18n="f5.n">Form VI</span>
+        <h3 data-i18n="f5.h">Bounds</h3>
+        <p class="tag" data-i18n="f5.t">Agents that do not go rogue</p>
+      </div>
+      <p class="d" data-i18n="f5.d">ALICE's agents carry out tasks of arbitrary complexity without leaving the limits set for them. The limit is part of how the agents are built, so it holds in every other form on this list.</p>
+      <div class="status pat"><span data-i18n="f5.s">Patent pending<br>see section 03</span></div>
+    </article>
   </div>
 </section>
 
-<!-- VISA VISION -->
-<section id="vision" aria-labelledby="vision-heading">
-  <div class="vision-inner">
-    <div>
-      <span class="section-label" data-i18n="vision.label">The Market Position</span>
-      <h2 class="section-title" id="vision-heading" data-i18n="vision.heading">The clearing standard for AI.</h2>
-      <p class="section-body" style="margin-bottom:24px;" data-i18n="vision.p1">Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.</p>
-      <p class="section-body" data-i18n="vision.p2">Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.</p>
-    </div>
-    <div class="visa-diagram fade-up">
-      <div class="visa-center">
-        <div class="visa-center-label" data-i18n="vision.center.label">The Clearing Layer</div>
-        <h4 data-i18n="vision.center.h4">Attruvera Trust Infrastructure</h4>
-        <p data-i18n="vision.center.p">Every AI transaction, verified.</p>
-      </div>
-      <div class="visa-nodes">
-        <div class="visa-node">
-          <div class="visa-node-title" data-i18n="vision.n1.title">Healthcare</div>
-          <div class="visa-node-sub" data-i18n="vision.n1.sub">HIPAA · clinical AI · audit</div>
-        </div>
-        <div class="visa-node">
-          <div class="visa-node-title" data-i18n="vision.n2.title">Government</div>
-          <div class="visa-node-sub" data-i18n="vision.n2.sub">FedRAMP · procurement · accountability</div>
-        </div>
-        <div class="visa-node">
-          <div class="visa-node-title" data-i18n="vision.n3.title">Finance</div>
-          <div class="visa-node-sub" data-i18n="vision.n3.sub">Compliance · liability · underwriting</div>
-        </div>
-        <div class="visa-node">
-          <div class="visa-node-title" data-i18n="vision.n4.title">Education</div>
-          <div class="visa-node-sub" data-i18n="vision.n4.sub">FERPA · academic integrity · attribution</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDIES -->
-<section id="cases" aria-labelledby="cases-heading">
-  <div class="cases-header">
-    <span class="section-label" data-i18n="cases.label">Proven at Scale</span>
-    <h2 class="section-title" id="cases-heading" data-i18n="cases.heading">Not a prototype. A track record.</h2>
-  </div>
-  <div class="cases-grid">
-
-    <div class="case-card fade-up">
-      <div class="case-header">
-        <span class="case-tag" data-i18n="cases.apd.tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
-        <h3 data-i18n="cases.apd.h3">U.S. State Health Agency</h3>
-      </div>
-      <div class="case-body">
-        <div class="case-stat">
-          <span class="case-stat-val">$2B</span>
-          <span class="case-stat-unit" data-i18n="cases.apd.unit">annual spend optimized</span>
-        </div>
-        <p class="case-desc" data-i18n="cases.apd.p">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
+<!-- ═════════ 03 BOUNDED ═════════ -->
+<section id="bounded" aria-labelledby="h-bounded">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s3.label">03 · Bounded agents</div>
+      <div>
+        <h2 id="h-bounded" data-i18n="s3.h">What an agent can do is decided before it starts.</h2>
+        <p data-i18n="s3.p">An ALICE agent composes its work from a fixed vocabulary of actions. The plan can be as long as the task needs. The vocabulary cannot grow on its own.</p>
       </div>
     </div>
 
-    <div class="case-card fade-up" id="alice">
-      <div class="case-header">
-        <span class="case-tag" data-i18n="cases.alice.tag">EDUCATION · INSTALLED PRODUCT</span>
-        <h3 data-i18n="cases.alice.h3">ALICE at UTSA</h3>
-      </div>
-      <div class="case-body">
-        <div class="case-stat">
-          <span class="case-stat-val" data-i18n="cases.alice.val">Live</span>
-          <span class="case-stat-unit" data-i18n="cases.alice.unit">in UTSA courses</span>
-        </div>
-        <p class="case-desc" data-i18n="cases.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.</p>
-        <div class="case-links">
-          <a href="https://alice.attruvera.ai/nuntius/ALICE_ABOUT" class="contact-link" target="_blank" rel="noopener">alice.attruvera.ai</a>
-          <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" class="contact-link" target="_blank" rel="noopener" data-i18n="cases.alice.privacy">ALICE privacy policy</a>
-        </div>
-      </div>
+    <div class="steps">
+      <div class="step"><span class="label">A</span><h3 data-i18n="st1.h">Fixed vocabulary</h3><p data-i18n="st1.p">Every action an agent may take is enumerated in advance.</p></div>
+      <div class="step"><span class="label">B</span><h3 data-i18n="st2.h">Composed plan</h3><p data-i18n="st2.p">The agent arranges those actions into a plan for the task at hand.</p></div>
+      <div class="step key"><span class="label">C</span><h3 data-i18n="st3.h">A person approves</h3><p data-i18n="st3.p">The plan is shown in readable form before anything changes.</p></div>
+      <div class="step"><span class="label">D</span><h3 data-i18n="st4.h">Run and record</h3><p data-i18n="st4.p">The platform carries out the plan and keeps the record.</p></div>
     </div>
 
-  </div>
-</section>
-
-<!-- LICENSING -->
-<section id="licensing" aria-labelledby="licensing-heading">
-  <div class="section-inner">
-    <span class="section-label" data-i18n="lic.label">Licensing</span>
-    <h2 class="section-title" id="licensing-heading" data-i18n="lic.heading">Open where it matters. Protected where it counts.</h2>
-    <p class="section-body" style="max-width:560px;margin-top:12px;" data-i18n="lic.intro">The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.</p>
-  </div>
-
-  <div class="pricing-table">
-
-    <div class="price-card fade-up">
-      <div class="price-tier" data-i18n="lic.t1.tier">Open Source</div>
-      <div class="price-product" id="price-platform-name"></div>
-      <div class="price-tagline" data-i18n="lic.t1.tagline">Core knowledge representation platform — free for any use.</div>
-      <div class="price-amount">
-        <span class="price-free">Free</span>
-      </div>
-      <div class="price-features">
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f1">Rhizomatic knowledge architecture</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f2">Multi-agent delivery backbone</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f3">Community support</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f4">Open source license</span></div>
-      </div>
-    </div>
-
-    <div class="price-card fade-up">
-      <div class="price-tier" data-i18n="lic.t2.tier">Licensed Add-on</div>
-      <div class="price-product">Hudo + Max</div>
-      <div class="price-tagline" data-i18n="lic.t2.tagline">Attribution and multi-agent harmonization. Per seat, per year.</div>
-      <div class="price-amount">
-        <span class="price-num">$25K</span>
-        <span class="price-period">/ seat / year</span>
-      </div>
-      <div class="price-features">
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f1">Hudo attribution engine (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f2">Max multi-agent harmonization (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f3">Integration with open-source core</span></div>
-        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f4">Enterprise support SLA</span></div>
-      </div>
-    </div>
-
-    <div class="price-card featured-price fade-up">
-      <div class="price-tier" data-i18n="lic.t3.tier">Full Stack</div>
-      <div class="price-product" data-i18n="lic.t3.product">Complete Platform</div>
-      <div class="price-tagline" data-i18n="lic.t3.tagline">The full Attruvera trust infrastructure — all four layers.</div>
-      <div class="price-amount">
-        <span class="price-num">$25K</span>
-        <span class="price-period">/ seat / year</span>
-      </div>
-      <div class="price-features">
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span id="price-full-platform"></span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f2">Hudo attribution (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f3">Max harmonization (patent pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f4">TVA cryptographic audit (PCT pending)</span></div>
-        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f5">Priority support + onboarding</span></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" aria-labelledby="about-heading">
-  <div class="about-inner" style="grid-template-columns: 1fr; max-width: 880px;">
-    <div>
-      <span class="section-label" data-i18n="about.label">About Attruvera</span>
-      <h2 class="section-title" id="about-heading" data-i18n="about.heading">Built on mathematics. Grounded in accountability.</h2>
-      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.legal">© 2026 · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.</p>
-      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.p1">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, emerging from the university's research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization.</p>
-      <p class="section-body" data-i18n="about.p2">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
+    <div class="contrast">
+      <div class="spacer" style="border:0"></div>
+      <div><span class="label" data-i18n="ct1.l">The common approach</span><p data-i18n="ct1.p">The agent writes and runs its own instructions. Safeguards watch for misbehaviour and try to catch it afterwards.</p></div>
+      <div><span class="label" data-i18n="ct2.l">The ALICE approach</span><p data-i18n="ct2.p">The agent proposes; the platform executes. An action outside the vocabulary has no way to run.</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" aria-labelledby="contact-heading">
-  <div class="section-inner">
-    <span class="section-label" data-i18n="contact.label">Get in Touch</span>
-    <h2 class="section-title" id="contact-heading" data-i18n="contact.heading">Three conversations we want to have.</h2>
+<!-- ═════════ 04 STEWARDSHIP ═════════ -->
+<section id="stewardship" aria-labelledby="h-stew">
+  <div class="hazard" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <div class="sec-head">
+      <div class="label" data-i18n="s4.label">04 · Stewardship</div>
+      <div>
+        <h2 id="h-stew" data-i18n="s4.h">We handle it as a powerful technology.</h2>
+        <p data-i18n="s4.p">ALICE was designed with general intelligence in view. A system with that reach can do a great deal of good or a great deal of harm, and we build and release it with both outcomes in mind.</p>
+      </div>
+    </div>
+    <div class="pledges">
+      <div class="pledge"><span class="label">i</span><h3 data-i18n="pl1.h">Containment first</h3><p data-i18n="pl1.p">New capability is added only inside enumerated bounds. Reach never gets ahead of control.</p></div>
+      <div class="pledge"><span class="label">ii</span><h3 data-i18n="pl2.h">Attribution always</h3><p data-i18n="pl2.p">Results carry a record of the people, agents and sources behind them.</p></div>
+      <div class="pledge"><span class="label">iii</span><h3 data-i18n="pl3.h">Disclosure by agreement</h3><p data-i18n="pl3.p">The internals are not published here. Technical briefings are given to funders, partners and institutions under agreement.</p></div>
+    </div>
   </div>
-  <div class="contact-inner">
-    <div class="contact-card fade-up">
-      <div class="contact-card-label" data-i18n="contact.c1.label">For Investors</div>
-      <h4 data-i18n="contact.c1.h4">Seed Round</h4>
-      <p data-i18n="contact.c1.p">We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
+  <div class="hazard" aria-hidden="true"></div>
+</section>
+
+<!-- ═════════ 05 NAME ═════════ -->
+<section id="name" aria-labelledby="h-name">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s5.label">05 · The name</div>
+      <h2 id="h-name" data-i18n="s5.h">Three commitments, spelled into one word.</h2>
     </div>
-    <div class="contact-card fade-up">
-      <div class="contact-card-label" data-i18n="contact.c2.label">For Partners</div>
-      <h4 data-i18n="contact.c2.h4">Strategic Partnerships</h4>
-      <p data-i18n="contact.c2.p">We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
+    <div class="name">
+      <div class="syll"><span class="big" aria-hidden="true">At</span><h3 data-i18n="n1.h">Attribution</h3><p data-i18n="n1.p">Every result should say who and what produced it.</p></div>
+      <div class="syll"><span class="big" aria-hidden="true">tru</span><h3 data-i18n="n2.h">Trust</h3><p data-i18n="n2.p">Agents act within limits that people set and can inspect.</p></div>
+      <div class="syll"><span class="big" aria-hidden="true">vera</span><h3 data-i18n="n3.h">Veracity</h3><p data-i18n="n3.p">Records can be checked independently instead of taken on faith.</p></div>
     </div>
-    <div class="contact-card fade-up">
-      <div class="contact-card-label" data-i18n="contact.c3.label">For Licensees</div>
-      <h4 data-i18n="contact.c3.h4">Technology Licensing</h4>
-      <p data-i18n="contact.c3.p">Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
+  </div>
+</section>
+
+<!-- ═════════ 06 COMPANY ═════════ -->
+<section id="company" aria-labelledby="h-company">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s6.label">06 · Company</div>
+      <h2 id="h-company" data-i18n="s6.h">Built on mathematics, grown inside a university.</h2>
     </div>
+    <dl class="facts">
+      <div><dt data-i18n="c1.t">Company</dt><dd data-i18n="c1.d">Attruvera Technologies, Inc., a Delaware C-Corp.</dd></div>
+      <div><dt data-i18n="c2.t">Home</dt><dd><a href="https://maps.app.goo.gl/PFBMAoq3i4zrv9NFA" target="_blank" rel="noopener">3463 Magic Dr, Suite T-19, San Antonio, TX 78229</a></dd></div>
+      <div><dt data-i18n="c3.t">Origin</dt><dd data-i18n="c3.d">A research spinout of The University of Texas at San Antonio, from its work in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan.</dd></div>
+      <div><dt data-i18n="c4.t">Intellectual property</dt><dd data-i18n="c4.d">Patent-pending technologies, licensed from the university.</dd></div>
+      <div><dt data-i18n="c5.t">Research</dt><dd data-i18n="c5.d">The classroom pilots run as university research with support from the U.S. National Science Foundation.</dd></div>
+      <div><dt data-i18n="c6.t">Earlier work</dt><dd data-i18n="c6.d">Through ISF, Inc., our technology analyzed resource allocation for a U.S. state health agency covering $2B in annual spend.</dd></div>
+      <div><dt data-i18n="c7.t">Live systems</dt><dd><a href="https://alice.attruvera.ai/nuntius/ALICE_ABOUT" target="_blank" rel="noopener">alice.attruvera.ai</a> · <a href="https://vela.attruvera.ai" target="_blank" rel="noopener">vela.attruvera.ai</a> · <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" target="_blank" rel="noopener" data-i18n="c7.priv">ALICE privacy policy</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ═════════ 07 CONTACT ═════════ -->
+<section id="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="label" data-i18n="s7.label">07 · Contact</div>
+      <div>
+        <h2 id="h-contact" data-i18n="s7.h">Three conversations we want to have.</h2>
+        <p data-i18n="s7.p">This page says what ALICE does. How it does it is a conversation.</p>
+      </div>
+    </div>
+    <div class="talks">
+      <div class="talk c1"><span class="label" data-i18n="t1.l">Funders and investors</span><h3 data-i18n="t1.h">A briefing</h3><p data-i18n="t1.p">The architecture, the evidence and the plan, presented under agreement.</p></div>
+      <div class="talk c3"><span class="label" data-i18n="t2.l">Institutions</span><h3 data-i18n="t2.h">A pilot</h3><p data-i18n="t2.p">Universities, agencies and offices that want one of the six forms running on their own work.</p></div>
+      <div class="talk c4"><span class="label" data-i18n="t3.l">Researchers</span><h3 data-i18n="t3.h">A collaboration</h3><p data-i18n="t3.p">Groups studying learning, agent safety or federated systems who need a working platform to test on.</p></div>
+    </div>
+    <a class="mail" href="mailto:contact@attruvera.com">contact@attruvera.com</a>
   </div>
 </section>
 </main>
 
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-left">
-    © 2026 Attruvera Technologies, Inc. · <a href="https://maps.app.goo.gl/PFBMAoq3i4zrv9NFA" style="color: #CCCCCC;" target="_blank" rel="noopener">3463 Magic Dr, Suite T-19, San Antonio, TX 78229</a>
-  </div>
-  <div class="footer-right">
-    <a href="#products" data-i18n="nav.products">Products</a>
-    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
-    <a href="#about" data-i18n="nav.about">About</a>
-    <a href="https://alice.attruvera.ai/nuntius/ALICE_ABOUT" target="_blank" rel="noopener">ALICE</a>
-    <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" target="_blank" rel="noopener" data-i18n="footer.alicePrivacy">ALICE Privacy</a>
-    <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Attruvera Technologies, Inc. · <span data-i18n="ft.rights">All rights reserved.</span></div>
+    <nav aria-label="Footer">
+      <a href="#forms" data-i18n="nav.forms">Six forms</a>
+      <a href="#stewardship" data-i18n="nav.stew">Stewardship</a>
+      <a href="#company" data-i18n="nav.company">Company</a>
+      <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" target="_blank" rel="noopener" data-i18n="c7.priv">ALICE privacy policy</a>
+    </nav>
   </div>
 </footer>
 
-<!-- BACK TO TOP -->
-<a href="#hero" class="back-top" id="back-top" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M12 19V5M5 12l7-7 7 7"/>
-  </svg>
-</a>
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-
-  // ── Apply CONFIG ──
-  const pn = CONFIG.DELIVERY_PLATFORM_NAME;
-  document.getElementById('hero-tagline').textContent =
-    CONFIG.TAGLINE + ' ' + pn + ', Hudo, and Max make it possible. TVA makes it provable.';
-  document.getElementById('prod-platform-name').textContent = pn;
-  document.getElementById('prod-platform-h3').textContent = pn;
-  document.getElementById('price-platform-name').textContent = pn + ' (open core)';
-  document.getElementById('price-full-platform').textContent = pn + ' open core';
-
-  // ── Nav scroll effect ──
-  var nav = document.getElementById('main-nav');
-  var backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 60) {
-      nav.classList.add('scrolled');
-      backTop.classList.add('visible');
-    } else {
-      nav.classList.remove('scrolled');
-      backTop.classList.remove('visible');
+(function () {
+  // ── Fig. 1: one seed pattern, rendered once as the kernel and five times transformed ──
+  var SEED = ["0011000", "0111100", "1100110", "1101111", "1111011", "0100110", "0011100"];
+  var N = SEED.length;
+  var at = function (r, c) { return SEED[r][c] === "1"; };
+  var T = [
+    function (r, c) { return at(r, c); },                 // seed
+    function (r, c) { return at(N - 1 - c, r); },         // I    quarter turn
+    function (r, c) { return at(r, N - 1 - c); },         // II   mirror
+    function (r, c) { return at(N - 1 - r, N - 1 - c); }, // III  half turn
+    function (r, c) { return at(c, r); },                 // IV   transpose
+    function (r, c) { return at(c, N - 1 - r); },         // Bounds  quarter turn back
+    function (r, c) { return at(N - 1 - c, N - 1 - r); }  // Free    anti-transpose
+  ];
+  document.querySelectorAll("[data-tile]").forEach(function (el) {
+    var f = T[+el.getAttribute("data-tile")], fg = el.getAttribute("data-fg") || "#08384A", s = "", i = 0;
+    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) if (f(r, c)) {
+      s += '<rect class="px" style="--i:' + (i++) + '" x="' + (c + 0.05) + '" y="' + (r + 0.05) + '" width="0.9" height="0.9" fill="' + fg + '"/>';
     }
+    el.innerHTML = '<svg viewBox="0 0 ' + N + ' ' + N + '" aria-hidden="true">' + s + "</svg>";
   });
 
-  // ── Intersection observer for fade-up ──
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+  // ── Fig. 1: one set of points, six arrangements ──
+  var cloud = (function () {
+    var cv = document.getElementById("cloud"), ctx = cv.getContext("2d");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var NP = window.innerWidth < 720 ? 1100 : 1800, PI = Math.PI, R = Math.random;
+    var ACC = ["#FBB616", "#7FBEDA", "#F5A566", "#6FA890", "#EE6F84", "#9A8BE0", "#FBB616"];
+    var EDGES = [[0,1],[1,3],[3,2],[2,0],[4,5],[5,7],[7,6],[6,4],[0,4],[1,5],[2,6],[3,7]];
+    var side = Math.ceil(Math.sqrt(NP)), cols = 16, rows = Math.ceil(NP / 4 / cols);
+    var gen = [
+      function (i) { var y = 1 - 2 * (i + 0.5) / NP, r = Math.sqrt(1 - y * y), t = i * 2.399963; return [Math.cos(t) * r * 0.8, y * 0.8, Math.sin(t) * r * 0.8]; },
+      function (i) { var x = ((i % side) / (side - 1) - 0.5) * 1.5, z = (Math.floor(i / side) / (side - 1) - 0.5) * 1.5; return [x, 0.17 * Math.sin(x * 3.3) * Math.cos(z * 3.3), z]; },
+      function (i) { var k = i % 4, j = Math.floor(i / 4), u = (j % cols) / (cols - 1), v = (Math.floor(j / cols) % rows) / (rows - 1); return [(k - 1.5) * 0.46 + (u - 0.5) * 0.4, (k - 1.5) * 0.36, (v - 0.5) * 1.0]; },
+      function (i) {
+        var c = i % 6, a = c * PI / 3, b = (c + 1) * PI / 3, cx = Math.cos(a) * 0.64, cy = Math.sin(a) * 0.64;
+        if (i % 11 === 0) { var t = R(); return [cx + (Math.cos(b) * 0.64 - cx) * t, cy + (Math.sin(b) * 0.64 - cy) * t, 0]; }
+        var th = R() * 2 * PI, ph = Math.acos(2 * R() - 1), r = 0.19;
+        return [cx + r * Math.sin(ph) * Math.cos(th), cy + r * Math.sin(ph) * Math.sin(th), r * Math.cos(ph)];
+      },
+      function (i) { var t = i / NP, r = 0.06 + 0.86 * t, th = t * 7.2 + (i % 3) * 2.0944 + (R() - 0.5) * 0.25; return [r * Math.cos(th), (R() - 0.5) * 0.1 * (1.3 - t), r * Math.sin(th)]; },
+      function (i) { var t = i / NP * 2 * PI, q = 0.04; return [(Math.sin(t) + 2 * Math.sin(2 * t)) * 0.27 + (R() - 0.5) * q, (Math.cos(t) - 2 * Math.cos(2 * t)) * 0.27 + (R() - 0.5) * q, -Math.sin(3 * t) * 0.32 + (R() - 0.5) * q]; },
+      function (i) {
+        if (i % 8 < 5) { var e = EDGES[i % 12], t = R(), h = 0.52, p = function (n) { return [(n & 1 ? h : -h), (n & 2 ? h : -h), (n & 4 ? h : -h)]; }, A = p(e[0]), B = p(e[1]); return [A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, A[2] + (B[2] - A[2]) * t]; }
+        var th = R() * 2 * PI, ph = Math.acos(2 * R() - 1), r = 0.3 * Math.cbrt(R());
+        return [r * Math.sin(ph) * Math.cos(th), r * Math.sin(ph) * Math.sin(th), r * Math.cos(ph)];
       }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+    ];
+    var shapes = gen.map(function (f) { var a = new Float32Array(NP * 3); for (var i = 0; i < NP; i++) a.set(f(i), i * 3); return a; });
+    var cur = new Float32Array(shapes[0]), ease = new Float32Array(NP);
+    for (var i = 0; i < NP; i++) ease[i] = 0.035 + R() * 0.07;
+    var active = 0, yaw = 0.6, mx = 0, my = 0, w = 0, h = 0, dpr = 1, visible = true, auto = !reduce, timer = null;
 
-  // ── TVA hash animation ──
-  var hashes = ['a3f9c2', 'b7e1d4', 'c2a8f0', 'd6b3e9', 'e1f4a7', 'f0c5b2'];
-  var hi = 0;
-  setInterval(function() {
-    hi = (hi + 1) % hashes.length;
-    ['hash1','hash2','hash3'].forEach(function(id, i) {
-      var el = document.getElementById(id);
-      if (el) el.textContent = hashes[(hi + i) % hashes.length] + '...';
-    });
-  }, 2800);
-
-  // ══════════════════════════════════════════════
-  // ACCESSIBILITY DROPDOWN
-  // ══════════════════════════════════════════════
-
-  var a11y = JSON.parse(localStorage.getItem('a11y') || '{}');
-  var trigger = document.getElementById('a11y-trigger');
-  var dropdown = document.getElementById('a11y-dropdown');
-
-  // Toggle dropdown
-  trigger.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var open = dropdown.classList.toggle('open');
-    trigger.setAttribute('aria-expanded', String(open));
-  });
-  document.addEventListener('click', function() {
-    dropdown.classList.remove('open');
-    trigger.setAttribute('aria-expanded', 'false');
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      dropdown.classList.remove('open');
-      trigger.setAttribute('aria-expanded', 'false');
-      trigger.focus();
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
     }
-  });
-  dropdown.addEventListener('click', function(e) { e.stopPropagation(); });
-
-  // ── Burger menu ──
-  var burger = document.getElementById('nav-burger');
-  var mobilePanel = document.getElementById('nav-mobile-panel');
-  var mainNav = document.getElementById('main-nav');
-
-  burger.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var open = mobilePanel.classList.toggle('open');
-    mainNav.classList.toggle('menu-open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    // Close a11y dropdown if open
-    dropdown.classList.remove('open');
-    trigger.setAttribute('aria-expanded', 'false');
-  });
-
-  // Close mobile menu on link click or outside click
-  mobilePanel.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      mobilePanel.classList.remove('open');
-      mainNav.classList.remove('menu-open');
-      burger.setAttribute('aria-expanded', 'false');
-    });
-  });
-  document.addEventListener('click', function() {
-    mobilePanel.classList.remove('open');
-    mainNav.classList.remove('menu-open');
-    burger.setAttribute('aria-expanded', 'false');
-  });
-  mobilePanel.addEventListener('click', function(e) { e.stopPropagation(); });
-  mainNav.addEventListener('click', function(e) { e.stopPropagation(); });
-
-  function applyA11y() {
-    // ── High contrast ──
-    document.body.classList.toggle('high-contrast', !!a11y.contrast);
-    var btnC = document.getElementById('btn-contrast');
-    btnC.classList.toggle('active', !!a11y.contrast);
-    btnC.setAttribute('aria-checked', String(!!a11y.contrast));
-
-    // ── Reduce motion ──
-    var btnM = document.getElementById('btn-motion');
-    btnM.classList.toggle('active', !!a11y.motion);
-    btnM.setAttribute('aria-checked', String(!!a11y.motion));
-    var ms = document.getElementById('motion-style');
-    if (a11y.motion) {
-      if (!ms) { ms = document.createElement('style'); ms.id = 'motion-style'; document.head.appendChild(ms); }
-      ms.textContent = '*, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; } .fade-up{opacity:1!important;transform:none!important;} html{scroll-behavior:auto!important;}';
-    } else { if (ms) ms.remove(); }
-
-    // ── Color blindness ──
-    document.body.classList.remove('cb-deuteranopia', 'cb-tritanopia', 'cb-mono');
-    var cbMode = a11y.colorBlind || 'none';
-    if (cbMode === 'deuteranopia') document.body.classList.add('cb-deuteranopia');
-    if (cbMode === 'tritanopia')   document.body.classList.add('cb-tritanopia');
-    if (cbMode === 'mono')         document.body.classList.add('cb-mono');
-    ['btn-cb-none','btn-cb-deut','btn-cb-trit','btn-cb-mono'].forEach(function(id, i) {
-      var modes = ['none','deuteranopia','tritanopia','mono'];
-      var btn = document.getElementById(id);
-      if (btn) {
-        var active = cbMode === modes[i];
-        btn.classList.toggle('active', active);
-        btn.setAttribute('aria-checked', String(active));
+    function draw(snap) {
+      var tg = shapes[active], cyaw = Math.cos(yaw + mx * 0.35), syaw = Math.sin(yaw + mx * 0.35);
+      var tilt = 0.42 + my * 0.18, ct = Math.cos(tilt), st = Math.sin(tilt);
+      var S = Math.min(w, h) * 0.43 * dpr, ox = cv.width / 2, oy = cv.height / 2 + 0.055 * cv.height;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      for (var pass = 0; pass < 2; pass++) {
+        ctx.fillStyle = pass ? ACC[active] : "#08384A";
+        for (var i = 0; i < NP; i++) {
+          var hot = i % 5 === 0;
+          if ((pass === 1) !== hot) continue;
+          var j = i * 3;
+          if (pass === 0 || true) {
+            var k = snap ? 1 : ease[i];
+            cur[j] += (tg[j] - cur[j]) * k; cur[j + 1] += (tg[j + 1] - cur[j + 1]) * k; cur[j + 2] += (tg[j + 2] - cur[j + 2]) * k;
+          }
+          var x = cur[j] * cyaw + cur[j + 2] * syaw, z = -cur[j] * syaw + cur[j + 2] * cyaw;
+          var y = cur[j + 1] * ct - z * st; z = cur[j + 1] * st + z * ct;
+          var p = 2.8 / (2.8 + z), d = (hot ? 3.4 : 1.9) * p * dpr;
+          ctx.globalAlpha = hot ? 1 : Math.max(0.18, Math.min(1, 0.62 - z * 0.45));
+          ctx.fillRect(ox + x * S * p - d / 2, oy + y * S * p - d / 2, d, d);
+        }
       }
-    });
-  }
-
-  applyA11y();
-
-  document.getElementById('btn-contrast').addEventListener('click', function() {
-    a11y.contrast = !a11y.contrast;
-    localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
-  });
-  document.getElementById('btn-motion').addEventListener('click', function() {
-    a11y.motion = !a11y.motion;
-    localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
-  });
-  // Color blindness radio buttons
-  [['btn-cb-none','none'],['btn-cb-deut','deuteranopia'],['btn-cb-trit','tritanopia'],['btn-cb-mono','mono']].forEach(function(pair) {
-    var btn = document.getElementById(pair[0]);
-    if (btn) btn.addEventListener('click', function() {
-      a11y.colorBlind = pair[1];
-      localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
-    });
-  });
-  document.getElementById('btn-reset').addEventListener('click', function() {
-    a11y = {};
-    localStorage.removeItem('a11y');
-    applyA11y();
-    dropdown.classList.remove('open');
-    trigger.setAttribute('aria-expanded', 'false');
-  });
-
-  // ══════════════════════════════════════════════
-  // INTERNATIONALISATION (EN / ES)
-  // ══════════════════════════════════════════════
-
-  var TRANSLATIONS = {
-    en: {
-      skip: 'Skip to main content',
-      'nav.products': 'Products',
-      'nav.vision': 'Vision',
-      'nav.cases': 'Case Studies',
-      'nav.licensing': 'Licensing',
-      'nav.about': 'About',
-      'nav.contact': 'Contact',
-      'hero.eyebrow': 'Trust Infrastructure for AI',
-      'hero.h1pre': 'The',
-      'hero.h1em': 'verification layer',
-      'hero.h1rest': 'every AI transaction deserves.',
-      'hero.tagline': CONFIG.TAGLINE + ' ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo, and Max make it possible. TVA makes it provable.',
-      'hero.btn1': 'Explore the stack',
-      'hero.btn2': 'Talk to us',
-      'hero.card.label': 'The Attruvera Thesis',
-      'hero.card.h3': 'Provable AI, at scale.',
-      'hero.card.p': 'Provenance, attribution, accountability, and audit.',
-      'hero.stat1': 'Healthcare spend optimized',
-      'hero.stat2': 'International patent filing in progress',
-      'hero.stat3': 'Core patent-pending<br>technologies',
-      'hero.stat4': 'Research spinout<br>San Antonio, TX',
-      'prob.num1': '01 — THE PROBLEM',
-      'prob.num2': '02 — THE PROBLEM',
-      'prob.num3': '03 — THE PROBLEM',
-      'prob.h1': 'No verification standard',
-      'prob.h2': 'Attribution is invisible',
-      'prob.h3': 'Learning without memory',
-      'prob.p1': 'LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.',
-      'prob.p2': 'When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.',
-      'prob.p3': 'AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.',
-      'prod.label': 'The Technology Stack',
-      'prod.heading': 'Four layers.<br><em>One integrated platform.</em>',
-      'prod.intro': 'Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.',
-      'prod.alice.sub': 'KNOWLEDGE PLATFORM',
-      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.',
-      'prod.alice.f1': 'Rhizomatic, non-hierarchical knowledge representation',
-      'prod.alice.f2': 'Adaptive delivery: content surfaces at the moment of need',
-      'prod.alice.f3': 'Multi-agent orchestration backbone',
-      'prod.alice.f4': 'Open core; licensed extensions for attribution and harmonization',
-      'prod.alice.live': 'In production: ALICE at UTSA',
-      'prod.max.sub': 'MULTI-AGENT HARMONIZATION',
-      'prod.max.p': 'When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.',
-      'prod.max.f1': 'Cross-agent output harmonization and conflict resolution',
-      'prod.max.f2': 'Configurable adjudication logic with audit trail',
-      'prod.max.f3': 'Scales from two-agent tasks to enterprise orchestration',
-      'prod.max.f4': 'Patent-pending multi-agent coordination protocol',
-      'prod.hudo.sub': 'WHO DOES — ATTRIBUTION LAYER',
-      'prod.hudo.p': 'Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.',
-      'prod.hudo.f1': 'Granular attribution: output ↔ agent ↔ source ↔ reasoning',
-      'prod.hudo.f2': 'Defensible documentation for compliance and litigation',
-      'prod.hudo.f3': 'Designed for healthcare, government, and financial services',
-      'prod.hudo.f4': 'Patent-pending attribution protocol',
-      'prod.vela.badge': 'ON THE ALICE PLATFORM',
-      'prod.vela.sub': 'INVENTION DISCLOSURE & PORTFOLIO MANAGEMENT',
-      'prod.vela.p': 'Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.',
-      'prod.vela.f1': 'Guided disclosure intake for inventors',
-      'prod.vela.f2': 'Review, tracking and portfolio management for the office',
-      'prod.vela.f3': 'One tenant per institution: its own database, storage and signing keys',
-      'prod.vela.f4': 'A configuration of the ALICE platform: same software, different content profile',
-      'prod.vela.live': 'In production: vela.attruvera.ai',
-      'prod.tva.sub': 'TRUSTED VERIFICATION AUTHORITY',
-      'prod.tva.p': 'The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.',
-      'prod.tva.f1': 'Cryptographic hash-chain over every AI interaction',
-      'prod.tva.f2': 'Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready',
-      'prod.tva.f3': 'Proves what happened without exposing sensitive content',
-      'prod.tva.f4': 'Enables AI liability insurance underwriting',
-      'prod.tva.f5': 'PCT international patent filing in progress',
-      'vision.label': 'The Market Position',
-      'vision.heading': 'The clearing standard for AI.',
-      'vision.p1': 'Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.',
-      'vision.p2': 'Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.',
-      'vision.center.label': 'The Clearing Layer',
-      'vision.center.h4': 'Attruvera Trust Infrastructure',
-      'vision.center.p': 'Every AI transaction, verified.',
-      'vision.n1.title': 'Healthcare',
-      'vision.n1.sub': 'HIPAA · clinical AI · audit',
-      'vision.n2.title': 'Government',
-      'vision.n2.sub': 'FedRAMP · procurement · accountability',
-      'vision.n3.title': 'Finance',
-      'vision.n3.sub': 'Compliance · liability · underwriting',
-      'vision.n4.title': 'Education',
-      'vision.n4.sub': 'FERPA · academic integrity · attribution',
-      'cases.label': 'Proven at Scale',
-      'cases.heading': 'Not a prototype. A track record.',
-      'cases.apd.tag': 'GOVERNMENT · HEALTHCARE ALLOCATION',
-      'cases.apd.h3': 'U.S. State Health Agency',
-      'cases.apd.unit': 'annual spend optimized',
-      'cases.apd.p': 'Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.',
-      'cases.alice.tag': 'EDUCATION · INSTALLED PRODUCT',
-      'cases.alice.h3': 'ALICE at UTSA',
-      'cases.alice.val': 'Live',
-      'cases.alice.unit': 'in UTSA courses',
-      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.',
-      'cases.alice.privacy': 'ALICE privacy policy',
-      'lic.label': 'Licensing',
-      'lic.heading': 'Open where it matters. Protected where it counts.',
-      'lic.intro': 'The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.',
-      'lic.t1.tier': 'Open Source',
-      'lic.t1.tagline': 'Core knowledge representation platform — free for any use.',
-      'lic.t1.f1': 'Rhizomatic knowledge architecture',
-      'lic.t1.f2': 'Multi-agent delivery backbone',
-      'lic.t1.f3': 'Community support',
-      'lic.t1.f4': 'Open source license',
-      'lic.t1.cta': 'Access repository',
-      'lic.t2.tier': 'Licensed Add-on',
-      'lic.t2.tagline': 'Attribution and multi-agent harmonization. Per seat, per year.',
-      'lic.t2.f1': 'Hudo attribution engine (patent pending)',
-      'lic.t2.f2': 'Max multi-agent harmonization (patent pending)',
-      'lic.t2.f3': 'Integration with open-source core',
-      'lic.t2.f4': 'Enterprise support SLA',
-      'lic.t2.cta': 'Inquire about licensing',
-      'lic.t3.tier': 'Full Stack',
-      'lic.t3.product': 'Complete Platform',
-      'lic.t3.tagline': 'The full Attruvera trust infrastructure — all four layers.',
-      'lic.t3.f2': 'Hudo attribution (patent pending)',
-      'lic.t3.f3': 'Max harmonization (patent pending)',
-      'lic.t3.f4': 'TVA cryptographic audit (PCT pending)',
-      'lic.t3.f5': 'Priority support + onboarding',
-      'lic.t3.cta': 'Start the conversation',
-      'about.label': 'About Attruvera',
-      'about.heading': 'Built on mathematics. Grounded in accountability.',
-      'about.legal': '© 2026 · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.',
-      'about.p1': 'Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, emerging from the university\'s research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization.',
-      'about.p2': 'The company\'s foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI\'s failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.',
-      'contact.label': 'Get in Touch',
-      'contact.heading': 'Three conversations we want to have.',
-      'contact.c1.label': 'For Investors',
-      'contact.c1.h4': 'Seed Round',
-      'contact.c1.p': 'We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.',
-      'contact.c2.label': 'For Partners',
-      'contact.c2.h4': 'Strategic Partnerships',
-      'contact.c2.p': 'We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.',
-      'contact.c3.label': 'For Licensees',
-      'contact.c3.h4': 'Technology Licensing',
-      'contact.c3.p': 'Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.',
-      'footer.alicePrivacy': 'ALICE Privacy',
-    },
-    es: {
-      skip: 'Saltar al contenido principal',
-      'nav.products': 'Productos',
-      'nav.vision': 'Visión',
-      'nav.cases': 'Casos de Uso',
-      'nav.licensing': 'Licencias',
-      'nav.about': 'Nosotros',
-      'nav.contact': 'Contacto',
-      'hero.eyebrow': 'Infraestructura de Confianza para IA',
-      'hero.h1pre': 'La',
-      'hero.h1em': 'capa de verificación',
-      'hero.h1rest': 'que toda transacción de IA merece.',
-      'hero.tagline': 'Atribución · Confianza · Veracidad. IA con los humanos primero. ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo y Max lo hacen posible. TVA lo hace demostrable.',
-      'hero.btn1': 'Explorar la plataforma',
-      'hero.btn2': 'Contáctenos',
-      'hero.card.label': 'La Tesis de Attruvera',
-      'hero.card.h3': 'IA demostrable, a escala.',
-      'hero.card.p': 'Procedencia, atribución, responsabilidad y auditoría.',
-      'hero.stat1': 'Gasto de salud pública optimizado',
-      'hero.stat2': 'Solicitud internacional de patente en curso',
-      'hero.stat3': 'Tecnologías con<br>patente pendiente',
-      'hero.stat4': 'Empresa derivada de UTSA<br>San Antonio, TX',
-      'prob.num1': '01 — EL PROBLEMA',
-      'prob.num2': '02 — EL PROBLEMA',
-      'prob.num3': '03 — EL PROBLEMA',
-      'prob.h1': 'Sin estándar de verificación',
-      'prob.h2': 'La atribución es invisible',
-      'prob.h3': 'Aprendizaje sin memoria',
-      'prob.p1': 'Las salidas de los LLM se consumen diariamente en contextos de alto riesgo — medicina, derecho, gobierno — sin ningún mecanismo estandarizado para demostrar qué se preguntó, qué se respondió, o si fue validado.',
-      'prob.p2': 'Cuando los sistemas multiagente de IA producen un resultado, ninguna capa rastrea qué agente contribuyó con qué. La responsabilidad es difusa. La responsabilidad legal está indefinida. Los reguladores no tienen control del proceso.',
-      'prob.p3': 'Los sistemas de IA optimizan para sesiones individuales. El conocimiento construido mediante la interacción se pierde. Las organizaciones re-entrenan los sistemas constantemente — sin infraestructura para un aprendizaje acumulativo y atribuido.',
-      'prod.label': 'La Plataforma Tecnológica',
-      'prod.heading': 'Cuatro capas.<br><em>Una plataforma integrada.</em>',
-      'prod.intro': 'Attruvera no es una herramienta única — es una infraestructura de confianza verticalmente integrada. Cada capa tiene valor independiente; juntas forman la única solución completa para el despliegue responsable de IA.',
-      'prod.alice.sub': 'PLATAFORMA DE CONOCIMIENTO',
-      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es una plataforma de conocimiento basada en web que aloja cuerpos estructurados de trabajo como grafos de unidades enlazadas y asocia agentes de IA configurables a cada unidad. La base de toda la plataforma: libre y abierta en su núcleo. Vela y la configuración educativa son el mismo software con distintos perfiles de contenido.',
-      'prod.alice.f1': 'Representación del conocimiento rizomática y no jerárquica',
-      'prod.alice.f2': 'Entrega adaptativa: el contenido aparece cuando se necesita',
-      'prod.alice.f3': 'Columna vertebral de orquestación multiagente',
-      'prod.alice.f4': 'Núcleo abierto; extensiones licenciadas para atribución y armonización',
-      'prod.alice.live': 'En producción: ALICE en UTSA',
-      'prod.max.sub': 'ARMONIZACIÓN MULTIAGENTE',
-      'prod.max.p': 'Cuando múltiples agentes de IA colaboran en una tarea, Max coordina sus resultados — resolviendo conflictos, aplicando consistencia y produciendo un único resultado armonizado con un registro de decisiones rastreable. Sin más contradicciones entre agentes; sin más consenso opaco.',
-      'prod.max.f1': 'Armonización de salidas entre agentes y resolución de conflictos',
-      'prod.max.f2': 'Lógica de adjudicación configurable con pista de auditoría',
-      'prod.max.f3': 'Escala desde tareas de dos agentes hasta orquestación empresarial',
-      'prod.max.f4': 'Protocolo de coordinación multiagente con patente pendiente',
-      'prod.hudo.sub': 'QUIÉN LO HACE — CAPA DE ATRIBUCIÓN',
-      'prod.hudo.p': 'Hudo responde la pregunta que toda industria regulada debe poder contestar: ¿quién — o qué — produjo este resultado, y con qué base? Un motor de atribución con patente pendiente que vincula las salidas de IA con sus agentes contribuyentes, fuentes y cadenas de razonamiento.',
-      'prod.hudo.f1': 'Atribución granular: salida ↔ agente ↔ fuente ↔ razonamiento',
-      'prod.hudo.f2': 'Documentación defendible para cumplimiento normativo y litigios',
-      'prod.hudo.f3': 'Diseñado para salud, gobierno y servicios financieros',
-      'prod.hudo.f4': 'Protocolo de atribución con patente pendiente',
-      'prod.vela.badge': 'SOBRE LA PLATAFORMA ALICE',
-      'prod.vela.sub': 'DIVULGACIÓN DE INVENCIONES Y GESTIÓN DE CARTERA',
-      'prod.vela.p': 'Vela es un servicio de divulgación de invenciones y gestión de cartera para oficinas de transferencia de tecnología, ofrecido como software como servicio. Los inventores presentan sus divulgaciones mediante un formulario guiado; la oficina las revisa, les da seguimiento y gestiona la cartera resultante. Vela es una configuración de la plataforma ALICE: el mismo software con un perfil de contenido distinto.',
-      'prod.vela.f1': 'Recepción guiada de divulgaciones para inventores',
-      'prod.vela.f2': 'Revisión, seguimiento y gestión de cartera para la oficina',
-      'prod.vela.f3': 'Un inquilino por institución: base de datos, almacenamiento y claves de firma propias',
-      'prod.vela.f4': 'Una configuración de la plataforma ALICE: el mismo software, distinto perfil de contenido',
-      'prod.vela.live': 'En producción: vela.attruvera.ai',
-      'prod.tva.sub': 'AUTORIDAD DE VERIFICACIÓN CONFIABLE',
-      'prod.tva.p': 'La base criptográfica de toda la plataforma. TVA crea un registro de auditoría inmutable y resistente a manipulaciones de cada interacción de IA — qué se preguntó, qué se produjo, qué se verificó — usando una arquitectura de cadena de hash con patente pendiente. Piense en ella como la capa de compensación y liquidación de las transacciones con LLM.',
-      'prod.tva.f1': 'Cadena de hash criptográfica sobre cada interacción de IA',
-      'prod.tva.f2': 'Pista de auditoría resistente a manipulaciones: preparada para HIPAA, FERPA y FedRAMP',
-      'prod.tva.f3': 'Demuestra lo ocurrido sin exponer contenido sensible',
-      'prod.tva.f4': 'Permite la suscripción de seguros de responsabilidad para IA',
-      'prod.tva.f5': 'Solicitud internacional de patente PCT en curso',
-      'vision.label': 'Posicionamiento en el Mercado',
-      'vision.heading': 'El estándar de compensación para la IA.',
-      'vision.p1': 'Visa no reemplazó a los bancos ni a las redes de pago. Se convirtió en la capa de compensación confiable entre ellos — el estándar que hizo las transacciones verificables, responsables y asegurables a escala global.',
-      'vision.p2': 'Attruvera ocupa la misma posición en la economía de la IA. No reemplazamos su LLM, sus agentes ni sus aplicaciones. Nos convertimos en la capa que hace cada interacción demostrable — y por tanto desplegable en entornos regulados y de alto riesgo donde la confianza no es negociable.',
-      'vision.center.label': 'La Capa de Compensación',
-      'vision.center.h4': 'Infraestructura de Confianza Attruvera',
-      'vision.center.p': 'Cada transacción de IA, verificada.',
-      'vision.n1.title': 'Salud',
-      'vision.n1.sub': 'HIPAA · IA clínica · auditoría',
-      'vision.n2.title': 'Gobierno',
-      'vision.n2.sub': 'FedRAMP · contratación · responsabilidad',
-      'vision.n3.title': 'Finanzas',
-      'vision.n3.sub': 'Cumplimiento · responsabilidad · suscripción',
-      'vision.n4.title': 'Educación',
-      'vision.n4.sub': 'FERPA · integridad académica · atribución',
-      'cases.label': 'Probado a Escala',
-      'cases.heading': 'No es un prototipo. Es un historial.',
-      'cases.apd.tag': 'GOBIERNO · ASIGNACIÓN DE RECURSOS EN SALUD',
-      'cases.apd.h3': 'Agencia Estatal de Salud de EE. UU.',
-      'cases.apd.unit': 'gasto anual optimizado',
-      'cases.apd.p': 'La tecnología de Attruvera fue desplegada a través de ISF, Inc. para analizar y optimizar la asignación de recursos para una agencia estatal de salud de EE. UU. — uno de los ejercicios de asignación presupuestaria algorítmica más grandes del gobierno estatal. El sistema produjo recomendaciones auditables y defendibles a una escala que ningún proceso manual podría lograr.',
-      'cases.alice.tag': 'EDUCACIÓN · PRODUCTO INSTALADO',
-      'cases.alice.h3': 'ALICE en UTSA',
-      'cases.alice.val': 'Activo',
-      'cases.alice.unit': 'en cursos de UTSA',
-      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es la plataforma de conocimiento de Attruvera. En su configuración educativa, los instructores crean cursos como lecciones enlazadas con objetivos de aprendizaje y rúbricas, los estudiantes entregan trabajos y conversan con un tutor acotado al curso, y los instructores revisan la retroalimentación asistida por IA antes de publicarla. Attruvera Technologies desarrolla y opera ALICE; la Universidad de Texas en San Antonio la utiliza en cursos ofrecidos dentro de programas piloto de investigación.',
-      'cases.alice.privacy': 'Política de privacidad de ALICE',
-      'lic.label': 'Licencias',
-      'lic.heading': 'Abierto donde importa. Protegido donde cuenta.',
-      'lic.intro': 'La capa central de representación del conocimiento es de código abierto — creemos que la infraestructura del conocimiento debe ser accesible. Las capas de atribución, armonización y verificación que hacen que la IA sea confiable en entornos regulados están licenciadas.',
-      'lic.t1.tier': 'Código Abierto',
-      'lic.t1.tagline': 'Plataforma central de representación del conocimiento — gratuita para cualquier uso.',
-      'lic.t1.f1': 'Arquitectura de conocimiento rizomática',
-      'lic.t1.f2': 'Columna vertebral de entrega multiagente',
-      'lic.t1.f3': 'Soporte comunitario',
-      'lic.t1.f4': 'Licencia de código abierto',
-      'lic.t1.cta': 'Acceder al repositorio',
-      'lic.t2.tier': 'Complemento Licenciado',
-      'lic.t2.tagline': 'Atribución y armonización multiagente. Por asiento, por año.',
-      'lic.t2.f1': 'Motor de atribución Hudo (patente pendiente)',
-      'lic.t2.f2': 'Armonización multiagente Max (patente pendiente)',
-      'lic.t2.f3': 'Integración con el núcleo de código abierto',
-      'lic.t2.f4': 'SLA de soporte empresarial',
-      'lic.t2.cta': 'Consultar sobre licencias',
-      'lic.t3.tier': 'Plataforma Completa',
-      'lic.t3.product': 'Plataforma Completa',
-      'lic.t3.tagline': 'La infraestructura de confianza completa de Attruvera — las cuatro capas.',
-      'lic.t3.f2': 'Atribución Hudo (patente pendiente)',
-      'lic.t3.f3': 'Armonización Max (patente pendiente)',
-      'lic.t3.f4': 'Auditoría criptográfica TVA (PCT pendiente)',
-      'lic.t3.f5': 'Soporte prioritario + incorporación',
-      'lic.t3.cta': 'Iniciar la conversación',
-      'about.label': 'Sobre Attruvera',
-      'about.heading': 'Construido sobre matemáticas. Fundamentado en responsabilidad.',
-      'about.legal': '© 2026 · Attruvera Technologies, Inc. es una C-Corp de Delaware · Todos los derechos reservados.',
-      'about.p1': 'Attruvera Technologies es una empresa de tecnología avanzada constituida en Delaware y con sede en San Antonio, Texas. Es una empresa derivada de la Universidad de Texas en San Antonio, surgida de su investigación en matemáticas computacionales y gobernanza de IA. UTSA posee participación en la empresa bajo un plan de gestión de conflictos de interés — una estructura que refleja la confianza institucional y garantiza una supervisión rigurosa de la comercialización.',
-      'about.p2': 'La perspectiva fundamental de la empresa es matemática: el error cero en la IA es demostrablemente imposible, lo que significa que la pregunta correcta para cualquier despliegue no es "¿es confiable esta IA?" sino "¿es el modo de fallo de esta IA aceptable y visible?" Attruvera construye la infraestructura que hace visibles los modos de fallo — y por tanto manejables.',
-      'contact.label': 'Contáctenos',
-      'contact.heading': 'Tres conversaciones que queremos tener.',
-      'contact.c1.label': 'Para Inversores',
-      'contact.c1.h4': 'Ronda Semilla',
-      'contact.c1.p': 'Estamos construyendo la capa de infraestructura de confianza para la economía de la IA. Si está invirtiendo en la pila de gobernanza, cumplimiento o responsabilidad para la IA empresarial, deberíamos hablar.',
-      'contact.c2.label': 'Para Socios',
-      'contact.c2.h4': 'Alianzas Estratégicas',
-      'contact.c2.p': 'Trabajamos con integradores de sistemas, contratistas gubernamentales y proveedores de software empresarial que necesitan una capa de responsabilidad de IA creíble y auditable para sus clientes y despliegues.',
-      'contact.c3.label': 'Para Licenciatarios',
-      'contact.c3.h4': 'Licencias Tecnológicas',
-      'contact.c3.p': 'Ya sea que necesite Hudo, Max, TVA o la plataforma completa, nuestro equipo de licencias puede definir un despliegue que se adapte a su entorno regulatorio, perfil de riesgo y presupuesto.',
-      'footer.alicePrivacy': 'Privacidad de ALICE',
+      ctx.globalAlpha = 1;
     }
+    function frame() {
+      if (!visible) return;
+      yaw += 0.0032; draw(false);
+      window.requestAnimationFrame(frame);
+    }
+    var buttons = document.querySelectorAll(".switch button");
+    var KICK = { en: ["Kernel", "Form I", "Form II", "Form III", "Form IV", "Form V", "Form VI"], es: ["Núcleo", "Forma I", "Forma II", "Forma III", "Forma IV", "Forma V", "Forma VI"] };
+    var HREF = ["#alice", "#f1", "#f2", "#f3", "#f4", "#f-free", "#f-bounds"];
+    var DESC = {
+      en: [
+        "One kernel: knowledge, the agents that work on it, and a record of what they did.",
+        "A course as linked lessons, with a tutor that knows the material and an instructor who reviews what the AI says.",
+        "Intake, review and approval, with agents that move the work and people who decide.",
+        "Separate instances that find what they have in common without handing over their records.",
+        "Sources, data and drafts on one bench, with agents that read, check and write.",
+        "A blank space: describe what you need and build it from the same parts.",
+        "Agents that take on tasks of any complexity and stay inside the limits set for them."
+      ],
+      es: [
+        "Un núcleo: el conocimiento, los agentes que trabajan sobre él y un registro de lo que hicieron.",
+        "Un curso como lecciones enlazadas, con un tutor que conoce el material y un docente que revisa lo que dice la IA.",
+        "Recepción, revisión y aprobación, con agentes que mueven el trabajo y personas que deciden.",
+        "Instancias separadas que encuentran lo que tienen en común sin entregar sus registros.",
+        "Fuentes, datos y borradores en un mismo banco, con agentes que leen, verifican y escriben.",
+        "Un espacio en blanco: describa lo que necesita y constrúyalo con las mismas piezas.",
+        "Agentes que asumen tareas de cualquier complejidad y permanecen dentro de los límites que se les fijan."
+      ]
+    };
+    function title() {
+      var l = document.documentElement.lang === "es" ? "es" : "en";
+      document.getElementById("st-n").textContent = KICK[l][active];
+      document.getElementById("st-name").textContent = buttons[active].querySelector(".nm").textContent;
+      document.getElementById("st-i").textContent = active;
+      var d = document.getElementById("st-desc"); d.textContent = DESC[l][active]; d.setAttribute("href", HREF[active]);
+    }
+    function select(n, byUser) {
+      active = n;
+      buttons.forEach(function (b, i) { b.setAttribute("aria-pressed", String(i === n)); });
+      title();
+      if (byUser) { auto = false; window.clearInterval(timer); }
+      if (reduce) draw(true);
+    }
+    buttons.forEach(function (b, i) { b.addEventListener("click", function () { select(i, true); }); });
+    cv.parentNode.addEventListener("pointermove", function (e) {
+      var r = cv.getBoundingClientRect();
+      mx = (e.clientX - r.left) / r.width - 0.5; my = (e.clientY - r.top) / r.height - 0.5;
+    });
+    cv.parentNode.addEventListener("pointerleave", function () { mx = 0; my = 0; });
+    window.addEventListener("resize", function () { size(); if (reduce) draw(true); });
+    size();
+    if (reduce) { draw(true); }
+    else {
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (en) {
+          var was = visible; visible = en[0].isIntersecting;
+          if (visible && !was) window.requestAnimationFrame(frame);
+        }).observe(cv);
+      }
+      window.requestAnimationFrame(frame);
+      timer = window.setInterval(function () { if (auto && visible && !document.hidden) select((active + 1) % 7, false); }, 4600);
+    }
+    return { title: title };
+  })();
+
+  // ── mobile menu ──
+  var menuBtn = document.getElementById("menu-btn"), links = document.getElementById("nav-links");
+  menuBtn.addEventListener("click", function () {
+    var open = links.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(open));
+  });
+  links.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+  });
+
+  // ── EN / ES ──
+  var ES = {
+    "skip": "Saltar al contenido principal",
+    "nav.forms": "Seis formas", "nav.bounded": "Agentes acotados", "nav.stew": "Custodia", "nav.company": "Empresa",
+    "nav.cta": "Solicitar una presentación", "nav.menu": "Menú",
+    "hero.a": "Atribución", "hero.t": "Confianza", "hero.v": "Veracidad",
+    "hero.h1": 'Una plataforma para producir conocimiento. <span class="hl">Seis formas</span> ya en funcionamiento.',
+    "hero.lede": "ALICE es un conjunto pequeño de abstracciones que puede materializarse de muchas maneras: un aula, un flujo de trabajo de oficina, un banco de investigación, una federación de instancias seguras, o algo diseñado por usted. En todas sus formas, sus agentes de IA permanecen dentro de los límites que fijan las personas.",
+    "hero.b1": "Ver las seis formas", "hero.b2": "Solicitar una presentación",
+    "fig.1": "Aula", "fig.2": "Flujo", "fig.3": "Federación", "fig.4": "Investigación", "fig.5": "Límites", "fig.6": "Libre",
+    "fig.cap": "Fig. 1 · Los mismos puntos, reordenados. Elija una forma.",
+    "led.1l": "En producción", "led.1v": "Cursos y oficinas universitarias",
+    "led.2l": "Propiedad intelectual", "led.2v": "Tecnologías con patente en trámite",
+    "led.3l": "Origen", "led.3v": "Empresa derivada de la investigación de UTSA",
+    "led.4l": "Sede",
+    "s1.label": "01 · Qué es ALICE",
+    "s1.h": "Difícil de etiquetar, porque por debajo es una sola cosa.",
+    "s1.p1": "La mayoría de los productos de IA se construyen para una sola tarea. ALICE (Adaptive Learning Intelligence via Cognitive Engines) parte de otro lugar: una manera general de sostener el conocimiento, poner agentes de IA a trabajar sobre él y conservar un registro de lo que hicieron.",
+    "s1.p2": "Cada uso que aparece en esta página es el mismo software con una configuración distinta. No hubo que reconstruir nada para pasar de un curso de cálculo a una oficina de transferencia de tecnología.",
+    "s1.d1t": "Conocimiento", "s1.d1d": "Organizado en unidades de trabajo enlazadas que tanto las personas como los agentes pueden recorrer.",
+    "s1.d2t": "Agentes", "s1.d2d": "Asignados donde está el trabajo, configurables e independientes de cualquier proveedor de IA.",
+    "s1.d3t": "Registro", "s1.d3d": "Quién y qué produjo cada resultado, guardado junto al resultado.",
+    "s2.label": "02 · Seis formas",
+    "s2.h": "El mismo núcleo, materializado de seis maneras.",
+    "s2.p": "Cuatro son lugares donde la gente trabaja. La quinta es un espacio abierto para construir lo propio. La sexta es una propiedad que todas comparten.",
+    "f1.n": "Forma I", "f1.h": "Aula", "f1.t": "Enseñanza y aprendizaje mediados por IA",
+    "f1.d": "Los docentes crean cursos como lecciones enlazadas con objetivos y rúbricas. Los estudiantes trabajan con un tutor que conoce el curso, y los docentes revisan la retroalimentación asistida por IA antes de publicarla. En las secciones piloto, los estudiantes sostuvieron mejor su desempeño del primer examen al segundo.",
+    "f1.s": "En producción<br>pilotos en cursos de UTSA",
+    "f2.n": "Forma II", "f2.h": "Flujo de trabajo", "f2.t": "Sistemas transaccionales con agentes que asisten",
+    "f2.d": "Recepción, revisión, aprobación y gestión de portafolios, con agentes que preparan y mueven el trabajo mientras las personas toman las decisiones. Vela, nuestro servicio de divulgación de invenciones para oficinas de transferencia de tecnología, es ALICE en esta forma.",
+    "f2.s": "En producción",
+    "f3.n": "Forma III", "f3.h": "Federación", "f3.t": "Salas limpias impulsadas por IA",
+    "f3.d": "ALICE puede replicarse en instancias especializadas que cooperan. Las instancias intercambian información derivada y cifrada a través de fronteras organizacionales para encontrar coincidencias y compartir memoria, mientras los registros de cada dueño permanecen donde están.",
+    "f3.s": "Demostrado<br>entre instancias",
+    "f4.n": "Forma IV", "f4.h": "Investigación", "f4.t": "Un banco de trabajo para producir ciencia",
+    "f4.d": "Fuentes, datos, borradores y revisión en un solo espacio, con agentes que leen, verifican y escriben bajo la dirección del investigador. ALICE ha asistido en manuscritos publicados y en subvenciones otorgadas.",
+    "f4.s": "En uso<br>grupos de investigación",
+    "f6.n": "Forma V", "f6.h": "Libre", "f6.t": "Cree lo que quiera",
+    "f6.d": "Parta de un espacio en blanco y describa lo que necesita: un cuerpo de conocimiento, un conjunto de registros, un proceso, un agente que trabaje sobre ellos. ALICE lo arma con las mismas piezas que todas las demás formas, por configuración y sin software nuevo.",
+    "f6.s": "Disponible<br>en todo sistema ALICE",
+    "f5.n": "Forma VI", "f5.h": "Límites", "f5.t": "Agentes que no se salen de control",
+    "f5.d": "Los agentes de ALICE realizan tareas de complejidad arbitraria sin salir de los límites que se les fijan. El límite forma parte de cómo están construidos los agentes, de modo que vale en todas las demás formas de esta lista.",
+    "f5.s": "Patente en trámite<br>ver la sección 03",
+    "s3.label": "03 · Agentes acotados",
+    "s3.h": "Lo que un agente puede hacer se decide antes de que empiece.",
+    "s3.p": "Un agente de ALICE compone su trabajo a partir de un vocabulario fijo de acciones. El plan puede ser tan largo como la tarea lo requiera. El vocabulario no puede crecer por sí solo.",
+    "st1.h": "Vocabulario fijo", "st1.p": "Toda acción que un agente puede ejecutar está enumerada de antemano.",
+    "st2.h": "Plan compuesto", "st2.p": "El agente ordena esas acciones en un plan para la tarea en curso.",
+    "st3.h": "Una persona aprueba", "st3.p": "El plan se muestra en forma legible antes de que algo cambie.",
+    "st4.h": "Ejecutar y registrar", "st4.p": "La plataforma ejecuta el plan y conserva el registro.",
+    "ct1.l": "El enfoque habitual", "ct1.p": "El agente escribe y ejecuta sus propias instrucciones. Las salvaguardas vigilan el mal comportamiento e intentan detectarlo después.",
+    "ct2.l": "El enfoque de ALICE", "ct2.p": "El agente propone; la plataforma ejecuta. Una acción fuera del vocabulario no tiene cómo ejecutarse.",
+    "s4.label": "04 · Custodia",
+    "s4.h": "La tratamos como una tecnología poderosa.",
+    "s4.p": "ALICE se diseñó con la inteligencia general en la mira. Un sistema con ese alcance puede hacer mucho bien o mucho daño, y lo construimos y lo liberamos teniendo presentes ambos desenlaces.",
+    "pl1.h": "Primero la contención", "pl1.p": "Toda capacidad nueva se añade solo dentro de límites enumerados. El alcance nunca se adelanta al control.",
+    "pl2.h": "Atribución siempre", "pl2.p": "Los resultados llevan un registro de las personas, los agentes y las fuentes que los respaldan.",
+    "pl3.h": "Divulgación bajo acuerdo", "pl3.p": "Los detalles internos no se publican aquí. Las presentaciones técnicas se ofrecen a financiadores, aliados e instituciones bajo acuerdo.",
+    "s5.label": "05 · El nombre",
+    "s5.h": "Tres compromisos, deletreados en una palabra.",
+    "n1.h": "Atribución", "n1.p": "Todo resultado debe decir quién y qué lo produjo.",
+    "n2.h": "Confianza", "n2.p": "Los agentes actúan dentro de límites que las personas fijan y pueden inspeccionar.",
+    "n3.h": "Veracidad", "n3.p": "Los registros pueden verificarse de forma independiente en lugar de aceptarse por fe.",
+    "s6.label": "06 · Empresa",
+    "s6.h": "Construida sobre matemáticas, crecida dentro de una universidad.",
+    "c1.t": "Empresa", "c1.d": "Attruvera Technologies, Inc., una C-Corp de Delaware.",
+    "c2.t": "Sede",
+    "c3.t": "Origen", "c3.d": "Empresa derivada de la investigación de The University of Texas at San Antonio, de su trabajo en matemática computacional y gobernanza de la IA. UTSA tiene participación accionaria en la empresa bajo un plan de manejo de conflictos de interés.",
+    "c4.t": "Propiedad intelectual", "c4.d": "Tecnologías con patente en trámite, licenciadas por la universidad.",
+    "c5.t": "Investigación", "c5.d": "Los pilotos en aula se realizan como investigación universitaria con apoyo de la National Science Foundation de los Estados Unidos.",
+    "c6.t": "Trabajo previo", "c6.d": "A través de ISF, Inc., nuestra tecnología analizó la asignación de recursos de una agencia estatal de salud de los Estados Unidos, con un gasto anual de 2 mil millones de dólares.",
+    "c7.t": "Sistemas en vivo", "c7.priv": "Política de privacidad de ALICE",
+    "s7.label": "07 · Contacto",
+    "s7.h": "Tres conversaciones que queremos tener.",
+    "s7.p": "Esta página dice qué hace ALICE. Cómo lo hace es una conversación.",
+    "t1.l": "Financiadores e inversionistas", "t1.h": "Una presentación", "t1.p": "La arquitectura, la evidencia y el plan, presentados bajo acuerdo.",
+    "t2.l": "Instituciones", "t2.h": "Un piloto", "t2.p": "Universidades, agencias y oficinas que quieren una de las seis formas funcionando sobre su propio trabajo.",
+    "t3.l": "Investigadores", "t3.h": "Una colaboración", "t3.p": "Grupos que estudian el aprendizaje, la seguridad de agentes o los sistemas federados y necesitan una plataforma real donde probar.",
+    "ft.rights": "Todos los derechos reservados."
   };
-
-  var currentLang = localStorage.getItem('lang') || 'en';
-
-  function applyLang(lang) {
-    currentLang = lang;
-    localStorage.setItem('lang', lang);
-    var t = TRANSLATIONS[lang];
-    document.documentElement.lang = lang;
-
-    // Update lang button label
-    document.getElementById('lang-label').textContent = lang === 'en' ? 'ES' : 'EN';
-    document.getElementById('lang-btn').setAttribute('aria-label',
-      lang === 'en' ? 'Switch to Spanish' : 'Switch to English');
-
-    // Update all data-i18n elements
-    document.querySelectorAll('[data-i18n]').forEach(function(el) {
-      var key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) el.innerHTML = t[key];
+  var nodes = document.querySelectorAll("[data-i18n]"), EN = [];
+  nodes.forEach(function (el, i) { EN[i] = el.innerHTML; });
+  var langBtn = document.getElementById("lang");
+  function setLang(l) {
+    nodes.forEach(function (el, i) {
+      var k = el.getAttribute("data-i18n");
+      el.innerHTML = (l === "es" && ES[k]) ? ES[k] : EN[i];
     });
-
-    // Update hero tagline (set by CONFIG JS)
-    var tl = document.getElementById('hero-tagline');
-    if (tl) tl.textContent = t['hero.tagline'] || '';
-
-    // Update page title
-    document.title = lang === 'es'
-      ? 'Attruvera Technologies — Atribución · Confianza · Veracidad'
-      : 'Attruvera Technologies — Attribution · Trust · Veracity';
+    document.documentElement.lang = l;
+    cloud.title();
+    langBtn.textContent = l === "es" ? "EN" : "ES";
+    langBtn.setAttribute("aria-label", l === "es" ? "Switch to English" : "Cambiar a español");
+    try { localStorage.setItem("lang", l); } catch (e) {}
   }
-
-  // Apply on load
-  applyLang(currentLang);
-
-  // Lang button toggle
-  document.getElementById('lang-btn').addEventListener('click', function(e) {
-    e.stopPropagation();
-    applyLang(currentLang === 'en' ? 'es' : 'en');
-  });
-
-});
+  langBtn.addEventListener("click", function () { setLang(document.documentElement.lang === "es" ? "en" : "es"); });
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (saved === "es") setLang("es");
+})();
 </script>
 </body>
 </html>

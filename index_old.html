@@ -1,0 +1,1084 @@
+<!--   
+     ___         _____         ____    
+    /\__\       /::\  \       /:/ _/_   
+   /:/__/      /:/\:\  \     /:/ /\  \  
+  /::\  \     /:/ /::\__\   /:/ /::\  \ 
+  \/\:\  \   /:/_/:/\:|__| /:/__\/\:\__\
+     /\  ┬  ┬  ┌   \_/   \/  ☰  ┌    /\
+     \:\  \  \:\/:/ /:/  / \:\  \ /:/  /
+      \:\__\  \::/_/:/  /   \:\  /:/  / 
+      /:/  /   \:\/:/  /     \:\/:/  /  
+     /:/  /     \::/  /       \::/  /   
+     \/__/       \/__/         \/__/   
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LRV1MPPFSJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LRV1MPPFSJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attruvera Technologies — Attribution · Trust · Veracity</title>
+
+<!-- ============================================================
+     CONFIGURABLE PARAMETERS — edit here only
+     ============================================================ -->
+<script>
+const CONFIG = {
+  DELIVERY_PLATFORM_NAME: "ALICE",    // The platform itself; Vela and the education configuration are its content profiles
+  COMPANY_NAME: "Attruvera Technologies",
+  CONTACT_EMAIL: "contact@attruvera.com",
+  TAGLINE: "Attribution · Trust · Veracity. AI with humans first.",
+};
+</script>
+<link href="css1.css" rel="stylesheet">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+</head>
+<body>
+<!-- ── SKIP TO CONTENT (keyboard / screen reader) ── -->
+<a class="skip-link" href="#main-content" data-i18n="skip">Skip to main content</a>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav id="main-nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav-logo" aria-label="Attruvera Technologies — home">
+    <div class="nav-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3L4 7V17L12 21L20 17V7L12 3Z" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+        <circle cx="12" cy="12" r="2.5" fill="#06b6d4"/>
+        <path d="M12 9.5V7M12 17V14.5M9.5 12H7M17 12H14.5" stroke="#06b6d4" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-wordmark">Attruvera</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="#products" data-i18n="nav.products">Products</a>
+    <a href="#vision" data-i18n="nav.vision">Vision</a>
+    <a href="#cases" data-i18n="nav.cases">Case Studies</a>
+    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+  </div>
+
+  <div class="nav-right">
+    <a href="#contact" class="nav-contact" data-i18n="nav.contact">Contact</a>
+
+    <!-- LANGUAGE SWITCHER -->
+    <button class="lang-btn" id="lang-btn" aria-label="Switch to Spanish">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:14px;height:14px;flex-shrink:0;">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 3c-2.5 3-4 5.5-4 9s1.5 6 4 9"/>
+        <path d="M12 3c2.5 3 4 5.5 4 9s-1.5 6-4 9"/>
+        <path d="M3 12h18"/>
+      </svg>
+      <span id="lang-label">ES</span>
+    </button>
+
+    <!-- ACCESSIBILITY DROPDOWN -->
+    <div class="a11y-menu" role="region" aria-label="Accessibility options">
+      <button class="a11y-trigger" id="a11y-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-dropdown">
+        <span class="a11y-icon" style="font-size:1.2em;line-height:1;" aria-hidden="true">♿</span>
+        <span>Accessibility</span>
+        <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+
+      <div class="a11y-dropdown" id="a11y-dropdown" role="menu" aria-label="Accessibility controls">
+        <div class="a11y-dropdown-label">Display</div>
+
+        <button class="a11y-btn" id="btn-contrast" role="menuitemcheckbox" aria-checked="false" aria-label="Toggle high contrast">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3 A9 9 0 0 1 12 21 Z" fill="currentColor" stroke="none"/>
+          </svg>
+          High contrast
+        </button>
+
+        <button class="a11y-btn" id="btn-motion" role="menuitemcheckbox" aria-checked="false" aria-label="Reduce animations">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M18.364 5.636a9 9 0 0 1 0 12.728M5.636 5.636a9 9 0 0 0 0 12.728M12 8v4l3 3"/>
+          </svg>
+          Reduce motion
+        </button>
+
+        <div class="a11y-divider" aria-hidden="true"></div>
+        <div class="a11y-dropdown-label">Color Vision</div>
+
+        <button class="a11y-btn" id="btn-cb-none" role="menuitemradio" aria-checked="true" aria-label="Default color scheme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          Default
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-deut" role="menuitemradio" aria-checked="false" aria-label="Deuteranopia / Protanopia (red-green)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="8" cy="12" r="5" fill="#f97316" opacity="0.8"/>
+            <circle cx="16" cy="12" r="5" fill="#3b82f6" opacity="0.8"/>
+          </svg>
+          Deuteranopia
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-trit" role="menuitemradio" aria-checked="false" aria-label="Tritanopia (blue-yellow)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="8" cy="12" r="5" fill="#ef4444" opacity="0.8"/>
+            <circle cx="16" cy="12" r="5" fill="#22c55e" opacity="0.8"/>
+          </svg>
+          Tritanopia
+        </button>
+
+        <button class="a11y-btn" id="btn-cb-mono" role="menuitemradio" aria-checked="false" aria-label="Monochromacy / grayscale">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs><linearGradient id="gr" x1="0" x2="1"><stop offset="0" stop-color="#333"/><stop offset="1" stop-color="#ccc"/></linearGradient></defs>
+            <circle cx="12" cy="12" r="9" fill="url(#gr)"/>
+          </svg>
+          Monochromacy
+        </button>
+
+        <div class="a11y-divider" aria-hidden="true"></div>
+        <button class="a11y-reset" id="btn-reset" role="menuitem" aria-label="Reset all accessibility settings">
+          Reset to defaults
+        </button>
+      </div>
+    </div>
+
+    <!-- BURGER -->
+    <button class="nav-burger" id="nav-burger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile-panel">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV PANEL -->
+<div class="nav-mobile-panel" id="nav-mobile-panel" role="navigation" aria-label="Mobile navigation">
+  <a href="#products" class="nav-mobile-link" data-i18n="nav.products">Products</a>
+  <a href="#vision" class="nav-mobile-link" data-i18n="nav.vision">Vision</a>
+  <a href="#cases" class="nav-mobile-link" data-i18n="nav.cases">Case Studies</a>
+  <a href="#licensing" class="nav-mobile-link" data-i18n="nav.licensing">Licensing</a>
+  <a href="#about" class="nav-mobile-link" data-i18n="nav.about">About</a>
+  <a href="#contact" class="nav-mobile-link" data-i18n="nav.contact">Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<main id="main-content">
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow" aria-hidden="true">
+        <div class="hero-eyebrow-dot"></div>
+        <span data-i18n="hero.eyebrow">Trust Infrastructure for AI</span>
+      </div>
+      <h1><span data-i18n="hero.h1pre">The</span> <em data-i18n="hero.h1em">verification layer</em> <span data-i18n="hero.h1rest">every AI transaction deserves.</span></h1>
+      <p class="hero-tagline" id="hero-tagline"></p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary" data-i18n="hero.btn1">Explore the stack</a>
+        <a href="#contact" class="btn-ghost" data-i18n="hero.btn2">Talk to us</a>
+      </div>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-card">
+        <div class="hero-card-label" data-i18n="hero.card.label">The Attruvera Thesis</div>
+        <h3 data-i18n="hero.card.h3">Provable AI, at scale.</h3>
+        <p data-i18n="hero.card.p">Provenance, attribution, accountability, and audit.</p>
+        <div class="hero-card-stats">
+          <div class="hcs">
+            <div class="hcs-val">$2B</div>
+            <div class="hcs-lbl" data-i18n="hero.stat1">Healthcare spend optimized</div>
+          </div>
+          <div class="hcs">
+            <div class="hcs-val">PCT</div>
+            <div class="hcs-lbl" data-i18n="hero.stat2">International patent filing in progress</div>
+          </div>
+          <div class="hcs">
+            <div class="hcs-val">3</div>
+            <div class="hcs-lbl" data-i18n="hero.stat3">Core patent-pending<br>technologies</div>
+          </div>
+          <div class="hcs">
+            <div class="hcs-val">UTSA</div>
+            <div class="hcs-lbl" data-i18n="hero.stat4">Research spinout<br>San Antonio, TX</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM BAND -->
+<section id="problem" aria-label="The problem">
+  <div class="problem-inner">
+    <div class="prob-item fade-up">
+      <span class="prob-num" data-i18n="prob.num1">01 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h1">No verification standard</h4>
+      <p data-i18n="prob.p1">LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.</p>
+    </div>
+    <div class="prob-item fade-up">
+      <span class="prob-num" data-i18n="prob.num2">02 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h2">Attribution is invisible</h4>
+      <p data-i18n="prob.p2">When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.</p>
+    </div>
+    <div class="prob-item fade-up">
+      <span class="prob-num" data-i18n="prob.num3">03 — THE PROBLEM</span>
+      <h4 data-i18n="prob.h3">Learning without memory</h4>
+      <p data-i18n="prob.p3">AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" aria-labelledby="products-heading">
+  <div class="products-header">
+    <div>
+      <span class="section-label" data-i18n="prod.label">The Technology Stack</span>
+      <h2 class="section-title" id="products-heading" data-i18n="prod.heading">Four layers.<br><em>One integrated platform.</em></h2>
+    </div>
+    <div>
+      <p class="section-body" data-i18n="prod.intro">Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.</p>
+    </div>
+  </div>
+
+  <div class="products-grid">
+
+    <!-- CANOPY -->
+    <div class="prod-card featured fade-up">
+      <div class="prod-card-glow" aria-hidden="true"></div>
+      <div class="prod-tag">
+        <span class="prod-tag-label" id="prod-platform-name" style="color:var(--moss);"></span>
+        <span class="prod-tag-free">OPEN SOURCE (CORE)</span>
+      </div>
+      <h3 id="prod-platform-h3"></h3>
+      <div class="prod-subtitle" data-i18n="prod.alice.sub">KNOWLEDGE PLATFORM</div>
+      <p data-i18n="prod.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.</p>
+      <div class="prod-features">
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f1">Rhizomatic, non-hierarchical knowledge representation</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f2">Adaptive delivery: content surfaces at the moment of need</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f3">Multi-agent orchestration backbone</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.alice.f4">Open core; licensed extensions for attribution and harmonization</span></div>
+      </div>
+      <a href="#alice" class="contact-link prod-live" data-i18n="prod.alice.live">In production: ALICE at UTSA</a>
+    </div>
+
+    <!-- MAX -->
+    <div class="prod-card fade-up">
+      <div class="prod-tag">
+        <span class="prod-tag-label" style="color:var(--gold);">Max</span>
+        <span class="prod-tag-badge">PATENT PENDING</span>
+      </div>
+      <h3>Max</h3>
+      <div class="prod-subtitle" data-i18n="prod.max.sub">MULTI-AGENT HARMONIZATION</div>
+      <p data-i18n="prod.max.p">When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.</p>
+      <div class="prod-features">
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f1">Cross-agent output harmonization and conflict resolution</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f2">Configurable adjudication logic with audit trail</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f3">Scales from two-agent tasks to enterprise orchestration</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.max.f4">Patent-pending multi-agent coordination protocol</span></div>
+      </div>
+    </div>
+
+    <!-- HUDO -->
+    <div class="prod-card fade-up">
+      <div class="prod-tag">
+        <span class="prod-tag-label" style="color:var(--gold);">Hudo</span>
+        <span class="prod-tag-badge">PATENT PENDING</span>
+      </div>
+      <h3>Hudo</h3>
+      <div class="prod-subtitle" data-i18n="prod.hudo.sub">WHO DOES — ATTRIBUTION LAYER</div>
+      <p data-i18n="prod.hudo.p">Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.</p>
+      <div class="prod-features">
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f1">Granular attribution: output ↔ agent ↔ source ↔ reasoning</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f2">Defensible documentation for compliance and litigation</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f3">Designed for healthcare, government, and financial services</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.hudo.f4">Patent-pending attribution protocol</span></div>
+      </div>
+    </div>
+
+    <!-- VELA -->
+    <div class="prod-card fade-up">
+      <div class="prod-tag">
+        <span class="prod-tag-label" style="color:var(--gold);">Vela</span>
+        <span class="prod-tag-badge" data-i18n="prod.vela.badge">ON THE ALICE PLATFORM</span>
+      </div>
+      <h3>Vela</h3>
+      <div class="prod-subtitle" data-i18n="prod.vela.sub">INVENTION DISCLOSURE &amp; PORTFOLIO MANAGEMENT</div>
+      <p data-i18n="prod.vela.p">Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.</p>
+      <div class="prod-features">
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f1">Guided disclosure intake for inventors</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f2">Review, tracking and portfolio management for the office</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f3">One tenant per institution: its own database, storage and signing keys</span></div>
+        <div class="pf"><div class="pf-dot"></div><span data-i18n="prod.vela.f4">A configuration of the ALICE platform: same software, different content profile</span></div>
+      </div>
+      <a href="https://vela.attruvera.ai" class="contact-link prod-live" target="_blank" rel="noopener" data-i18n="prod.vela.live">In production: vela.attruvera.ai</a>
+    </div>
+
+    <!-- TVA — full width -->
+    <div class="prod-card tva-card fade-up">
+      <div class="prod-card-glow" aria-hidden="true" style="background:radial-gradient(ellipse,rgba(245,158,11,0.1) 0%,transparent 65%)"></div>
+      <div>
+        <div class="prod-tag">
+          <span class="prod-tag-label" style="color:var(--gold);">TVA</span>
+          <span class="prod-tag-badge">PCT FILING IN PROGRESS</span>
+        </div>
+        <h3>TVA</h3>
+        <div class="prod-subtitle" data-i18n="prod.tva.sub">TRUSTED VERIFICATION AUTHORITY</div>
+        <p data-i18n="prod.tva.p">The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.</p>
+        <div class="prod-features">
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f1">Cryptographic hash-chain over every AI interaction</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f2">Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f3">Proves what happened without exposing sensitive content</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f4">Enables AI liability insurance underwriting</span></div>
+          <div class="pf"><div class="pf-dot" style="background:var(--gold)"></div><span data-i18n="prod.tva.f5">PCT international patent filing in progress</span></div>
+        </div>
+      </div>
+      <div class="tva-visual" aria-hidden="true">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(245,158,11,0.5);letter-spacing:0.12em;margin-bottom:14px;">VERIFICATION CHAIN — LIVE ILLUSTRATION</div>
+        <div class="tva-chain">
+          <div class="tva-block">
+            <div class="tva-block-icon">🧠</div>
+            <div class="tva-block-text">
+              <div class="tva-block-title">LLM Interaction</div>
+              <div class="tva-block-sub">User prompt received</div>
+            </div>
+            <div class="tva-block-hash" id="hash1">e1f4a7...</div>
+          </div>
+          <div class="tva-connector"></div>
+          <div class="tva-block">
+            <div class="tva-block-icon">⚙️</div>
+            <div class="tva-block-text">
+              <div class="tva-block-title">Agent Processing</div>
+              <div class="tva-block-sub">Max harmonization applied</div>
+            </div>
+            <div class="tva-block-hash" id="hash2">f0c5b2...</div>
+          </div>
+          <div class="tva-connector"></div>
+          <div class="tva-block">
+            <div class="tva-block-icon">🏷️</div>
+            <div class="tva-block-text">
+              <div class="tva-block-title">Hudo Attribution</div>
+              <div class="tva-block-sub">Sources and agents tagged</div>
+            </div>
+            <div class="tva-block-hash" id="hash3">a3f9c2...</div>
+          </div>
+          <div class="tva-connector"></div>
+          <div class="tva-block" style="border-color:rgba(245,158,11,0.35);background:rgba(245,158,11,0.05)">
+            <div class="tva-block-icon">🔐</div>
+            <div class="tva-block-text">
+              <div class="tva-block-title">TVA Seal</div>
+              <div class="tva-block-sub">Cryptographic record finalized</div>
+            </div>
+            <div class="tva-block-hash" id="hash4" style="color:var(--moss)">VERIFIED ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISA VISION -->
+<section id="vision" aria-labelledby="vision-heading">
+  <div class="vision-inner">
+    <div>
+      <span class="section-label" data-i18n="vision.label">The Market Position</span>
+      <h2 class="section-title" id="vision-heading" data-i18n="vision.heading">The clearing standard for AI.</h2>
+      <p class="section-body" style="margin-bottom:24px;" data-i18n="vision.p1">Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.</p>
+      <p class="section-body" data-i18n="vision.p2">Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.</p>
+    </div>
+    <div class="visa-diagram fade-up">
+      <div class="visa-center">
+        <div class="visa-center-label" data-i18n="vision.center.label">The Clearing Layer</div>
+        <h4 data-i18n="vision.center.h4">Attruvera Trust Infrastructure</h4>
+        <p data-i18n="vision.center.p">Every AI transaction, verified.</p>
+      </div>
+      <div class="visa-nodes">
+        <div class="visa-node">
+          <div class="visa-node-title" data-i18n="vision.n1.title">Healthcare</div>
+          <div class="visa-node-sub" data-i18n="vision.n1.sub">HIPAA · clinical AI · audit</div>
+        </div>
+        <div class="visa-node">
+          <div class="visa-node-title" data-i18n="vision.n2.title">Government</div>
+          <div class="visa-node-sub" data-i18n="vision.n2.sub">FedRAMP · procurement · accountability</div>
+        </div>
+        <div class="visa-node">
+          <div class="visa-node-title" data-i18n="vision.n3.title">Finance</div>
+          <div class="visa-node-sub" data-i18n="vision.n3.sub">Compliance · liability · underwriting</div>
+        </div>
+        <div class="visa-node">
+          <div class="visa-node-title" data-i18n="vision.n4.title">Education</div>
+          <div class="visa-node-sub" data-i18n="vision.n4.sub">FERPA · academic integrity · attribution</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" aria-labelledby="cases-heading">
+  <div class="cases-header">
+    <span class="section-label" data-i18n="cases.label">Proven at Scale</span>
+    <h2 class="section-title" id="cases-heading" data-i18n="cases.heading">Not a prototype. A track record.</h2>
+  </div>
+  <div class="cases-grid">
+
+    <div class="case-card fade-up">
+      <div class="case-header">
+        <span class="case-tag" data-i18n="cases.apd.tag">GOVERNMENT · HEALTHCARE ALLOCATION</span>
+        <h3 data-i18n="cases.apd.h3">U.S. State Health Agency</h3>
+      </div>
+      <div class="case-body">
+        <div class="case-stat">
+          <span class="case-stat-val">$2B</span>
+          <span class="case-stat-unit" data-i18n="cases.apd.unit">annual spend optimized</span>
+        </div>
+        <p class="case-desc" data-i18n="cases.apd.p">Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.</p>
+      </div>
+    </div>
+
+    <div class="case-card fade-up" id="alice">
+      <div class="case-header">
+        <span class="case-tag" data-i18n="cases.alice.tag">EDUCATION · INSTALLED PRODUCT</span>
+        <h3 data-i18n="cases.alice.h3">ALICE at UTSA</h3>
+      </div>
+      <div class="case-body">
+        <div class="case-stat">
+          <span class="case-stat-val" data-i18n="cases.alice.val">Live</span>
+          <span class="case-stat-unit" data-i18n="cases.alice.unit">in UTSA courses</span>
+        </div>
+        <p class="case-desc" data-i18n="cases.alice.p">ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.</p>
+        <div class="case-links">
+          <a href="https://alice.attruvera.ai/nuntius/ALICE_ABOUT" class="contact-link" target="_blank" rel="noopener">alice.attruvera.ai</a>
+          <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" class="contact-link" target="_blank" rel="noopener" data-i18n="cases.alice.privacy">ALICE privacy policy</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LICENSING -->
+<section id="licensing" aria-labelledby="licensing-heading">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="lic.label">Licensing</span>
+    <h2 class="section-title" id="licensing-heading" data-i18n="lic.heading">Open where it matters. Protected where it counts.</h2>
+    <p class="section-body" style="max-width:560px;margin-top:12px;" data-i18n="lic.intro">The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.</p>
+  </div>
+
+  <div class="pricing-table">
+
+    <div class="price-card fade-up">
+      <div class="price-tier" data-i18n="lic.t1.tier">Open Source</div>
+      <div class="price-product" id="price-platform-name"></div>
+      <div class="price-tagline" data-i18n="lic.t1.tagline">Core knowledge representation platform — free for any use.</div>
+      <div class="price-amount">
+        <span class="price-free">Free</span>
+      </div>
+      <div class="price-features">
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f1">Rhizomatic knowledge architecture</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f2">Multi-agent delivery backbone</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f3">Community support</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t1.f4">Open source license</span></div>
+      </div>
+    </div>
+
+    <div class="price-card fade-up">
+      <div class="price-tier" data-i18n="lic.t2.tier">Licensed Add-on</div>
+      <div class="price-product">Hudo + Max</div>
+      <div class="price-tagline" data-i18n="lic.t2.tagline">Attribution and multi-agent harmonization. Per seat, per year.</div>
+      <div class="price-amount">
+        <span class="price-num">$25K</span>
+        <span class="price-period">/ seat / year</span>
+      </div>
+      <div class="price-features">
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f1">Hudo attribution engine (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f2">Max multi-agent harmonization (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f3">Integration with open-source core</span></div>
+        <div class="pricef"><div class="pricef-check">✓</div><span data-i18n="lic.t2.f4">Enterprise support SLA</span></div>
+      </div>
+    </div>
+
+    <div class="price-card featured-price fade-up">
+      <div class="price-tier" data-i18n="lic.t3.tier">Full Stack</div>
+      <div class="price-product" data-i18n="lic.t3.product">Complete Platform</div>
+      <div class="price-tagline" data-i18n="lic.t3.tagline">The full Attruvera trust infrastructure — all four layers.</div>
+      <div class="price-amount">
+        <span class="price-num">$25K</span>
+        <span class="price-period">/ seat / year</span>
+      </div>
+      <div class="price-features">
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span id="price-full-platform"></span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f2">Hudo attribution (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f3">Max harmonization (patent pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f4">TVA cryptographic audit (PCT pending)</span></div>
+        <div class="pricef"><div class="pricef-check" style="color:var(--moss)">✓</div><span data-i18n="lic.t3.f5">Priority support + onboarding</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="about-inner" style="grid-template-columns: 1fr; max-width: 880px;">
+    <div>
+      <span class="section-label" data-i18n="about.label">About Attruvera</span>
+      <h2 class="section-title" id="about-heading" data-i18n="about.heading">Built on mathematics. Grounded in accountability.</h2>
+      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.legal">© 2026 · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.</p>
+      <p class="section-body" style="margin-bottom:20px;" data-i18n="about.p1">Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, emerging from the university's research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization.</p>
+      <p class="section-body" data-i18n="about.p2">The company's foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI's failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+    <h2 class="section-title" id="contact-heading" data-i18n="contact.heading">Three conversations we want to have.</h2>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-card fade-up">
+      <div class="contact-card-label" data-i18n="contact.c1.label">For Investors</div>
+      <h4 data-i18n="contact.c1.h4">Seed Round</h4>
+      <p data-i18n="contact.c1.p">We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.</p>
+    </div>
+    <div class="contact-card fade-up">
+      <div class="contact-card-label" data-i18n="contact.c2.label">For Partners</div>
+      <h4 data-i18n="contact.c2.h4">Strategic Partnerships</h4>
+      <p data-i18n="contact.c2.p">We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.</p>
+    </div>
+    <div class="contact-card fade-up">
+      <div class="contact-card-label" data-i18n="contact.c3.label">For Licensees</div>
+      <h4 data-i18n="contact.c3.h4">Technology Licensing</h4>
+      <p data-i18n="contact.c3.p">Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-left">
+    © 2026 Attruvera Technologies, Inc. · <a href="https://maps.app.goo.gl/PFBMAoq3i4zrv9NFA" style="color: #CCCCCC;" target="_blank" rel="noopener">3463 Magic Dr, Suite T-19, San Antonio, TX 78229</a>
+  </div>
+  <div class="footer-right">
+    <a href="#products" data-i18n="nav.products">Products</a>
+    <a href="#licensing" data-i18n="nav.licensing">Licensing</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="https://alice.attruvera.ai/nuntius/ALICE_ABOUT" target="_blank" rel="noopener">ALICE</a>
+    <a href="https://alice.attruvera.ai/nuntius/SYS_PRIVACY" target="_blank" rel="noopener" data-i18n="footer.alicePrivacy">ALICE Privacy</a>
+    <a href="mailto:contact@attruvera.com" class="contact-link">contact@attruvera.com</a>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a href="#hero" class="back-top" id="back-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</a>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── Apply CONFIG ──
+  const pn = CONFIG.DELIVERY_PLATFORM_NAME;
+  document.getElementById('hero-tagline').textContent =
+    CONFIG.TAGLINE + ' ' + pn + ', Hudo, and Max make it possible. TVA makes it provable.';
+  document.getElementById('prod-platform-name').textContent = pn;
+  document.getElementById('prod-platform-h3').textContent = pn;
+  document.getElementById('price-platform-name').textContent = pn + ' (open core)';
+  document.getElementById('price-full-platform').textContent = pn + ' open core';
+
+  // ── Nav scroll effect ──
+  var nav = document.getElementById('main-nav');
+  var backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+      backTop.classList.add('visible');
+    } else {
+      nav.classList.remove('scrolled');
+      backTop.classList.remove('visible');
+    }
+  });
+
+  // ── Intersection observer for fade-up ──
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  // ── TVA hash animation ──
+  var hashes = ['a3f9c2', 'b7e1d4', 'c2a8f0', 'd6b3e9', 'e1f4a7', 'f0c5b2'];
+  var hi = 0;
+  setInterval(function() {
+    hi = (hi + 1) % hashes.length;
+    ['hash1','hash2','hash3'].forEach(function(id, i) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = hashes[(hi + i) % hashes.length] + '...';
+    });
+  }, 2800);
+
+  // ══════════════════════════════════════════════
+  // ACCESSIBILITY DROPDOWN
+  // ══════════════════════════════════════════════
+
+  var a11y = JSON.parse(localStorage.getItem('a11y') || '{}');
+  var trigger = document.getElementById('a11y-trigger');
+  var dropdown = document.getElementById('a11y-dropdown');
+
+  // Toggle dropdown
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var open = dropdown.classList.toggle('open');
+    trigger.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', function() {
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.focus();
+    }
+  });
+  dropdown.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  // ── Burger menu ──
+  var burger = document.getElementById('nav-burger');
+  var mobilePanel = document.getElementById('nav-mobile-panel');
+  var mainNav = document.getElementById('main-nav');
+
+  burger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var open = mobilePanel.classList.toggle('open');
+    mainNav.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    // Close a11y dropdown if open
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Close mobile menu on link click or outside click
+  mobilePanel.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobilePanel.classList.remove('open');
+      mainNav.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function() {
+    mobilePanel.classList.remove('open');
+    mainNav.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+  mobilePanel.addEventListener('click', function(e) { e.stopPropagation(); });
+  mainNav.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  function applyA11y() {
+    // ── High contrast ──
+    document.body.classList.toggle('high-contrast', !!a11y.contrast);
+    var btnC = document.getElementById('btn-contrast');
+    btnC.classList.toggle('active', !!a11y.contrast);
+    btnC.setAttribute('aria-checked', String(!!a11y.contrast));
+
+    // ── Reduce motion ──
+    var btnM = document.getElementById('btn-motion');
+    btnM.classList.toggle('active', !!a11y.motion);
+    btnM.setAttribute('aria-checked', String(!!a11y.motion));
+    var ms = document.getElementById('motion-style');
+    if (a11y.motion) {
+      if (!ms) { ms = document.createElement('style'); ms.id = 'motion-style'; document.head.appendChild(ms); }
+      ms.textContent = '*, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; } .fade-up{opacity:1!important;transform:none!important;} html{scroll-behavior:auto!important;}';
+    } else { if (ms) ms.remove(); }
+
+    // ── Color blindness ──
+    document.body.classList.remove('cb-deuteranopia', 'cb-tritanopia', 'cb-mono');
+    var cbMode = a11y.colorBlind || 'none';
+    if (cbMode === 'deuteranopia') document.body.classList.add('cb-deuteranopia');
+    if (cbMode === 'tritanopia')   document.body.classList.add('cb-tritanopia');
+    if (cbMode === 'mono')         document.body.classList.add('cb-mono');
+    ['btn-cb-none','btn-cb-deut','btn-cb-trit','btn-cb-mono'].forEach(function(id, i) {
+      var modes = ['none','deuteranopia','tritanopia','mono'];
+      var btn = document.getElementById(id);
+      if (btn) {
+        var active = cbMode === modes[i];
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-checked', String(active));
+      }
+    });
+  }
+
+  applyA11y();
+
+  document.getElementById('btn-contrast').addEventListener('click', function() {
+    a11y.contrast = !a11y.contrast;
+    localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
+  });
+  document.getElementById('btn-motion').addEventListener('click', function() {
+    a11y.motion = !a11y.motion;
+    localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
+  });
+  // Color blindness radio buttons
+  [['btn-cb-none','none'],['btn-cb-deut','deuteranopia'],['btn-cb-trit','tritanopia'],['btn-cb-mono','mono']].forEach(function(pair) {
+    var btn = document.getElementById(pair[0]);
+    if (btn) btn.addEventListener('click', function() {
+      a11y.colorBlind = pair[1];
+      localStorage.setItem('a11y', JSON.stringify(a11y)); applyA11y();
+    });
+  });
+  document.getElementById('btn-reset').addEventListener('click', function() {
+    a11y = {};
+    localStorage.removeItem('a11y');
+    applyA11y();
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // ══════════════════════════════════════════════
+  // INTERNATIONALISATION (EN / ES)
+  // ══════════════════════════════════════════════
+
+  var TRANSLATIONS = {
+    en: {
+      skip: 'Skip to main content',
+      'nav.products': 'Products',
+      'nav.vision': 'Vision',
+      'nav.cases': 'Case Studies',
+      'nav.licensing': 'Licensing',
+      'nav.about': 'About',
+      'nav.contact': 'Contact',
+      'hero.eyebrow': 'Trust Infrastructure for AI',
+      'hero.h1pre': 'The',
+      'hero.h1em': 'verification layer',
+      'hero.h1rest': 'every AI transaction deserves.',
+      'hero.tagline': CONFIG.TAGLINE + ' ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo, and Max make it possible. TVA makes it provable.',
+      'hero.btn1': 'Explore the stack',
+      'hero.btn2': 'Talk to us',
+      'hero.card.label': 'The Attruvera Thesis',
+      'hero.card.h3': 'Provable AI, at scale.',
+      'hero.card.p': 'Provenance, attribution, accountability, and audit.',
+      'hero.stat1': 'Healthcare spend optimized',
+      'hero.stat2': 'International patent filing in progress',
+      'hero.stat3': 'Core patent-pending<br>technologies',
+      'hero.stat4': 'Research spinout<br>San Antonio, TX',
+      'prob.num1': '01 — THE PROBLEM',
+      'prob.num2': '02 — THE PROBLEM',
+      'prob.num3': '03 — THE PROBLEM',
+      'prob.h1': 'No verification standard',
+      'prob.h2': 'Attribution is invisible',
+      'prob.h3': 'Learning without memory',
+      'prob.p1': 'LLM outputs are consumed daily in high-stakes contexts — medicine, law, government — with no standardized mechanism to prove what was asked, what was answered, or whether it was validated.',
+      'prob.p2': 'When multi-agent AI systems produce a result, no layer currently tracks which agent contributed what. Responsibility is diffuse. Liability is undefined. Regulators have no handle on the process.',
+      'prob.p3': 'AI systems optimize for individual sessions. Knowledge built through interaction is lost. Organizations re-teach systems constantly — without infrastructure for cumulative, attributed learning.',
+      'prod.label': 'The Technology Stack',
+      'prod.heading': 'Four layers.<br><em>One integrated platform.</em>',
+      'prod.intro': 'Attruvera is not a single tool — it is a vertically integrated trust infrastructure. Each layer is independently valuable; together they form the only complete solution for accountable AI deployment.',
+      'prod.alice.sub': 'KNOWLEDGE PLATFORM',
+      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is a web-based knowledge platform that hosts structured bodies of work as graphs of linked units and attaches configurable AI agents to each unit. The foundation of the stack — free and open in its core form. Vela and the education configuration are the same software with different content profiles.',
+      'prod.alice.f1': 'Rhizomatic, non-hierarchical knowledge representation',
+      'prod.alice.f2': 'Adaptive delivery: content surfaces at the moment of need',
+      'prod.alice.f3': 'Multi-agent orchestration backbone',
+      'prod.alice.f4': 'Open core; licensed extensions for attribution and harmonization',
+      'prod.alice.live': 'In production: ALICE at UTSA',
+      'prod.max.sub': 'MULTI-AGENT HARMONIZATION',
+      'prod.max.p': 'When multiple AI agents collaborate on a task, Max coordinates their outputs — resolving conflicts, enforcing consistency, and producing a single harmonized result with a traceable decision record. No more contradiction between agents; no more opaque consensus.',
+      'prod.max.f1': 'Cross-agent output harmonization and conflict resolution',
+      'prod.max.f2': 'Configurable adjudication logic with audit trail',
+      'prod.max.f3': 'Scales from two-agent tasks to enterprise orchestration',
+      'prod.max.f4': 'Patent-pending multi-agent coordination protocol',
+      'prod.hudo.sub': 'WHO DOES — ATTRIBUTION LAYER',
+      'prod.hudo.p': 'Hudo answers the question every regulated industry must be able to answer: who — or what — produced this output, and on what basis? A patent-pending attribution engine that binds AI outputs to their contributing agents, sources, and reasoning chains.',
+      'prod.hudo.f1': 'Granular attribution: output ↔ agent ↔ source ↔ reasoning',
+      'prod.hudo.f2': 'Defensible documentation for compliance and litigation',
+      'prod.hudo.f3': 'Designed for healthcare, government, and financial services',
+      'prod.hudo.f4': 'Patent-pending attribution protocol',
+      'prod.vela.badge': 'ON THE ALICE PLATFORM',
+      'prod.vela.sub': 'INVENTION DISCLOSURE & PORTFOLIO MANAGEMENT',
+      'prod.vela.p': 'Vela is an invention-disclosure and portfolio-management service for technology-transfer offices, delivered as software as a service. Inventors submit disclosures through a guided form; the office reviews, tracks and manages the resulting portfolio. Vela is a configuration of the ALICE platform — the same software with a different content profile.',
+      'prod.vela.f1': 'Guided disclosure intake for inventors',
+      'prod.vela.f2': 'Review, tracking and portfolio management for the office',
+      'prod.vela.f3': 'One tenant per institution: its own database, storage and signing keys',
+      'prod.vela.f4': 'A configuration of the ALICE platform: same software, different content profile',
+      'prod.vela.live': 'In production: vela.attruvera.ai',
+      'prod.tva.sub': 'TRUSTED VERIFICATION AUTHORITY',
+      'prod.tva.p': 'The cryptographic foundation of the entire stack. TVA creates an immutable, tamper-evident audit record of every AI interaction — what was asked, what was produced, what was verified — using a patent-pending hash-chain architecture. Think of it as the clearing and settlement layer for LLM transactions.',
+      'prod.tva.f1': 'Cryptographic hash-chain over every AI interaction',
+      'prod.tva.f2': 'Tamper-evident audit trail: HIPAA, FERPA, FedRAMP ready',
+      'prod.tva.f3': 'Proves what happened without exposing sensitive content',
+      'prod.tva.f4': 'Enables AI liability insurance underwriting',
+      'prod.tva.f5': 'PCT international patent filing in progress',
+      'vision.label': 'The Market Position',
+      'vision.heading': 'The clearing standard for AI.',
+      'vision.p1': 'Visa did not replace banks or payment networks. It became the trusted clearing layer between them — the standard that made transactions verifiable, accountable, and insurable at global scale.',
+      'vision.p2': 'Attruvera occupies the same position in the AI economy. We do not replace your LLM, your agents, or your applications. We become the layer that makes every interaction provable — and therefore deployable in regulated, high-stakes environments where trust is non-negotiable.',
+      'vision.center.label': 'The Clearing Layer',
+      'vision.center.h4': 'Attruvera Trust Infrastructure',
+      'vision.center.p': 'Every AI transaction, verified.',
+      'vision.n1.title': 'Healthcare',
+      'vision.n1.sub': 'HIPAA · clinical AI · audit',
+      'vision.n2.title': 'Government',
+      'vision.n2.sub': 'FedRAMP · procurement · accountability',
+      'vision.n3.title': 'Finance',
+      'vision.n3.sub': 'Compliance · liability · underwriting',
+      'vision.n4.title': 'Education',
+      'vision.n4.sub': 'FERPA · academic integrity · attribution',
+      'cases.label': 'Proven at Scale',
+      'cases.heading': 'Not a prototype. A track record.',
+      'cases.apd.tag': 'GOVERNMENT · HEALTHCARE ALLOCATION',
+      'cases.apd.h3': 'U.S. State Health Agency',
+      'cases.apd.unit': 'annual spend optimized',
+      'cases.apd.p': 'Attruvera technology was deployed through ISF, Inc. to analyze and optimize resource allocation for a U.S. state health agency — one of the largest algorithmic budget allocation exercises in state government. The system produced auditable, defensible recommendations at a scale no manual process could achieve.',
+      'cases.alice.tag': 'EDUCATION · INSTALLED PRODUCT',
+      'cases.alice.h3': 'ALICE at UTSA',
+      'cases.alice.val': 'Live',
+      'cases.alice.unit': 'in UTSA courses',
+      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) is the Attruvera knowledge platform. In its education configuration, instructors author courses as linked lessons with learning objectives and rubrics, students submit work and converse with a course-scoped tutor, and instructors review AI-assisted feedback before release. Attruvera Technologies develops and operates ALICE; The University of Texas at San Antonio uses it in courses offered under university research pilots.',
+      'cases.alice.privacy': 'ALICE privacy policy',
+      'lic.label': 'Licensing',
+      'lic.heading': 'Open where it matters. Protected where it counts.',
+      'lic.intro': 'The core knowledge representation layer is open source — we believe the infrastructure of knowledge should be accessible. The attribution, harmonization, and verification layers that make AI trustworthy in regulated environments are licensed.',
+      'lic.t1.tier': 'Open Source',
+      'lic.t1.tagline': 'Core knowledge representation platform — free for any use.',
+      'lic.t1.f1': 'Rhizomatic knowledge architecture',
+      'lic.t1.f2': 'Multi-agent delivery backbone',
+      'lic.t1.f3': 'Community support',
+      'lic.t1.f4': 'Open source license',
+      'lic.t1.cta': 'Access repository',
+      'lic.t2.tier': 'Licensed Add-on',
+      'lic.t2.tagline': 'Attribution and multi-agent harmonization. Per seat, per year.',
+      'lic.t2.f1': 'Hudo attribution engine (patent pending)',
+      'lic.t2.f2': 'Max multi-agent harmonization (patent pending)',
+      'lic.t2.f3': 'Integration with open-source core',
+      'lic.t2.f4': 'Enterprise support SLA',
+      'lic.t2.cta': 'Inquire about licensing',
+      'lic.t3.tier': 'Full Stack',
+      'lic.t3.product': 'Complete Platform',
+      'lic.t3.tagline': 'The full Attruvera trust infrastructure — all four layers.',
+      'lic.t3.f2': 'Hudo attribution (patent pending)',
+      'lic.t3.f3': 'Max harmonization (patent pending)',
+      'lic.t3.f4': 'TVA cryptographic audit (PCT pending)',
+      'lic.t3.f5': 'Priority support + onboarding',
+      'lic.t3.cta': 'Start the conversation',
+      'about.label': 'About Attruvera',
+      'about.heading': 'Built on mathematics. Grounded in accountability.',
+      'about.legal': '© 2026 · Attruvera Technologies, Inc. is a Delaware C-Corp · All rights reserved.',
+      'about.p1': 'Attruvera Technologies is a deep-tech company incorporated in Delaware and headquartered in San Antonio, Texas. It is a research spinout of The University of Texas at San Antonio, emerging from the university\'s research enterprise in computational mathematics and AI governance. UTSA holds equity in the company under a conflict-of-interest management plan — a structure that reflects institutional confidence and ensures rigorous oversight of commercialization.',
+      'about.p2': 'The company\'s foundational insight is mathematical: zero-error AI is provably impossible, which means the right question for any deployment is not "is this AI reliable?" but "is this AI\'s failure mode acceptable and visible?" Attruvera builds the infrastructure that makes failure modes visible — and therefore manageable.',
+      'contact.label': 'Get in Touch',
+      'contact.heading': 'Three conversations we want to have.',
+      'contact.c1.label': 'For Investors',
+      'contact.c1.h4': 'Seed Round',
+      'contact.c1.p': 'We are building the trust infrastructure layer for the AI economy. If you are investing in the governance, compliance, or accountability stack for enterprise AI, we should talk.',
+      'contact.c2.label': 'For Partners',
+      'contact.c2.h4': 'Strategic Partnerships',
+      'contact.c2.p': 'We work with system integrators, government contractors, and enterprise software vendors who need a credible, auditable AI accountability layer for their clients and deployments.',
+      'contact.c3.label': 'For Licensees',
+      'contact.c3.h4': 'Technology Licensing',
+      'contact.c3.p': 'Whether you need Hudo, Max, TVA, or the full stack, our licensing team can scope a deployment that fits your regulatory environment, risk profile, and budget.',
+      'footer.alicePrivacy': 'ALICE Privacy',
+    },
+    es: {
+      skip: 'Saltar al contenido principal',
+      'nav.products': 'Productos',
+      'nav.vision': 'Visión',
+      'nav.cases': 'Casos de Uso',
+      'nav.licensing': 'Licencias',
+      'nav.about': 'Nosotros',
+      'nav.contact': 'Contacto',
+      'hero.eyebrow': 'Infraestructura de Confianza para IA',
+      'hero.h1pre': 'La',
+      'hero.h1em': 'capa de verificación',
+      'hero.h1rest': 'que toda transacción de IA merece.',
+      'hero.tagline': 'Atribución · Confianza · Veracidad. IA con los humanos primero. ' + CONFIG.DELIVERY_PLATFORM_NAME + ', Hudo y Max lo hacen posible. TVA lo hace demostrable.',
+      'hero.btn1': 'Explorar la plataforma',
+      'hero.btn2': 'Contáctenos',
+      'hero.card.label': 'La Tesis de Attruvera',
+      'hero.card.h3': 'IA demostrable, a escala.',
+      'hero.card.p': 'Procedencia, atribución, responsabilidad y auditoría.',
+      'hero.stat1': 'Gasto de salud pública optimizado',
+      'hero.stat2': 'Solicitud internacional de patente en curso',
+      'hero.stat3': 'Tecnologías con<br>patente pendiente',
+      'hero.stat4': 'Empresa derivada de UTSA<br>San Antonio, TX',
+      'prob.num1': '01 — EL PROBLEMA',
+      'prob.num2': '02 — EL PROBLEMA',
+      'prob.num3': '03 — EL PROBLEMA',
+      'prob.h1': 'Sin estándar de verificación',
+      'prob.h2': 'La atribución es invisible',
+      'prob.h3': 'Aprendizaje sin memoria',
+      'prob.p1': 'Las salidas de los LLM se consumen diariamente en contextos de alto riesgo — medicina, derecho, gobierno — sin ningún mecanismo estandarizado para demostrar qué se preguntó, qué se respondió, o si fue validado.',
+      'prob.p2': 'Cuando los sistemas multiagente de IA producen un resultado, ninguna capa rastrea qué agente contribuyó con qué. La responsabilidad es difusa. La responsabilidad legal está indefinida. Los reguladores no tienen control del proceso.',
+      'prob.p3': 'Los sistemas de IA optimizan para sesiones individuales. El conocimiento construido mediante la interacción se pierde. Las organizaciones re-entrenan los sistemas constantemente — sin infraestructura para un aprendizaje acumulativo y atribuido.',
+      'prod.label': 'La Plataforma Tecnológica',
+      'prod.heading': 'Cuatro capas.<br><em>Una plataforma integrada.</em>',
+      'prod.intro': 'Attruvera no es una herramienta única — es una infraestructura de confianza verticalmente integrada. Cada capa tiene valor independiente; juntas forman la única solución completa para el despliegue responsable de IA.',
+      'prod.alice.sub': 'PLATAFORMA DE CONOCIMIENTO',
+      'prod.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es una plataforma de conocimiento basada en web que aloja cuerpos estructurados de trabajo como grafos de unidades enlazadas y asocia agentes de IA configurables a cada unidad. La base de toda la plataforma: libre y abierta en su núcleo. Vela y la configuración educativa son el mismo software con distintos perfiles de contenido.',
+      'prod.alice.f1': 'Representación del conocimiento rizomática y no jerárquica',
+      'prod.alice.f2': 'Entrega adaptativa: el contenido aparece cuando se necesita',
+      'prod.alice.f3': 'Columna vertebral de orquestación multiagente',
+      'prod.alice.f4': 'Núcleo abierto; extensiones licenciadas para atribución y armonización',
+      'prod.alice.live': 'En producción: ALICE en UTSA',
+      'prod.max.sub': 'ARMONIZACIÓN MULTIAGENTE',
+      'prod.max.p': 'Cuando múltiples agentes de IA colaboran en una tarea, Max coordina sus resultados — resolviendo conflictos, aplicando consistencia y produciendo un único resultado armonizado con un registro de decisiones rastreable. Sin más contradicciones entre agentes; sin más consenso opaco.',
+      'prod.max.f1': 'Armonización de salidas entre agentes y resolución de conflictos',
+      'prod.max.f2': 'Lógica de adjudicación configurable con pista de auditoría',
+      'prod.max.f3': 'Escala desde tareas de dos agentes hasta orquestación empresarial',
+      'prod.max.f4': 'Protocolo de coordinación multiagente con patente pendiente',
+      'prod.hudo.sub': 'QUIÉN LO HACE — CAPA DE ATRIBUCIÓN',
+      'prod.hudo.p': 'Hudo responde la pregunta que toda industria regulada debe poder contestar: ¿quién — o qué — produjo este resultado, y con qué base? Un motor de atribución con patente pendiente que vincula las salidas de IA con sus agentes contribuyentes, fuentes y cadenas de razonamiento.',
+      'prod.hudo.f1': 'Atribución granular: salida ↔ agente ↔ fuente ↔ razonamiento',
+      'prod.hudo.f2': 'Documentación defendible para cumplimiento normativo y litigios',
+      'prod.hudo.f3': 'Diseñado para salud, gobierno y servicios financieros',
+      'prod.hudo.f4': 'Protocolo de atribución con patente pendiente',
+      'prod.vela.badge': 'SOBRE LA PLATAFORMA ALICE',
+      'prod.vela.sub': 'DIVULGACIÓN DE INVENCIONES Y GESTIÓN DE CARTERA',
+      'prod.vela.p': 'Vela es un servicio de divulgación de invenciones y gestión de cartera para oficinas de transferencia de tecnología, ofrecido como software como servicio. Los inventores presentan sus divulgaciones mediante un formulario guiado; la oficina las revisa, les da seguimiento y gestiona la cartera resultante. Vela es una configuración de la plataforma ALICE: el mismo software con un perfil de contenido distinto.',
+      'prod.vela.f1': 'Recepción guiada de divulgaciones para inventores',
+      'prod.vela.f2': 'Revisión, seguimiento y gestión de cartera para la oficina',
+      'prod.vela.f3': 'Un inquilino por institución: base de datos, almacenamiento y claves de firma propias',
+      'prod.vela.f4': 'Una configuración de la plataforma ALICE: el mismo software, distinto perfil de contenido',
+      'prod.vela.live': 'En producción: vela.attruvera.ai',
+      'prod.tva.sub': 'AUTORIDAD DE VERIFICACIÓN CONFIABLE',
+      'prod.tva.p': 'La base criptográfica de toda la plataforma. TVA crea un registro de auditoría inmutable y resistente a manipulaciones de cada interacción de IA — qué se preguntó, qué se produjo, qué se verificó — usando una arquitectura de cadena de hash con patente pendiente. Piense en ella como la capa de compensación y liquidación de las transacciones con LLM.',
+      'prod.tva.f1': 'Cadena de hash criptográfica sobre cada interacción de IA',
+      'prod.tva.f2': 'Pista de auditoría resistente a manipulaciones: preparada para HIPAA, FERPA y FedRAMP',
+      'prod.tva.f3': 'Demuestra lo ocurrido sin exponer contenido sensible',
+      'prod.tva.f4': 'Permite la suscripción de seguros de responsabilidad para IA',
+      'prod.tva.f5': 'Solicitud internacional de patente PCT en curso',
+      'vision.label': 'Posicionamiento en el Mercado',
+      'vision.heading': 'El estándar de compensación para la IA.',
+      'vision.p1': 'Visa no reemplazó a los bancos ni a las redes de pago. Se convirtió en la capa de compensación confiable entre ellos — el estándar que hizo las transacciones verificables, responsables y asegurables a escala global.',
+      'vision.p2': 'Attruvera ocupa la misma posición en la economía de la IA. No reemplazamos su LLM, sus agentes ni sus aplicaciones. Nos convertimos en la capa que hace cada interacción demostrable — y por tanto desplegable en entornos regulados y de alto riesgo donde la confianza no es negociable.',
+      'vision.center.label': 'La Capa de Compensación',
+      'vision.center.h4': 'Infraestructura de Confianza Attruvera',
+      'vision.center.p': 'Cada transacción de IA, verificada.',
+      'vision.n1.title': 'Salud',
+      'vision.n1.sub': 'HIPAA · IA clínica · auditoría',
+      'vision.n2.title': 'Gobierno',
+      'vision.n2.sub': 'FedRAMP · contratación · responsabilidad',
+      'vision.n3.title': 'Finanzas',
+      'vision.n3.sub': 'Cumplimiento · responsabilidad · suscripción',
+      'vision.n4.title': 'Educación',
+      'vision.n4.sub': 'FERPA · integridad académica · atribución',
+      'cases.label': 'Probado a Escala',
+      'cases.heading': 'No es un prototipo. Es un historial.',
+      'cases.apd.tag': 'GOBIERNO · ASIGNACIÓN DE RECURSOS EN SALUD',
+      'cases.apd.h3': 'Agencia Estatal de Salud de EE. UU.',
+      'cases.apd.unit': 'gasto anual optimizado',
+      'cases.apd.p': 'La tecnología de Attruvera fue desplegada a través de ISF, Inc. para analizar y optimizar la asignación de recursos para una agencia estatal de salud de EE. UU. — uno de los ejercicios de asignación presupuestaria algorítmica más grandes del gobierno estatal. El sistema produjo recomendaciones auditables y defendibles a una escala que ningún proceso manual podría lograr.',
+      'cases.alice.tag': 'EDUCACIÓN · PRODUCTO INSTALADO',
+      'cases.alice.h3': 'ALICE en UTSA',
+      'cases.alice.val': 'Activo',
+      'cases.alice.unit': 'en cursos de UTSA',
+      'cases.alice.p': 'ALICE (Adaptive Learning Intelligence via Cognitive Engines) es la plataforma de conocimiento de Attruvera. En su configuración educativa, los instructores crean cursos como lecciones enlazadas con objetivos de aprendizaje y rúbricas, los estudiantes entregan trabajos y conversan con un tutor acotado al curso, y los instructores revisan la retroalimentación asistida por IA antes de publicarla. Attruvera Technologies desarrolla y opera ALICE; la Universidad de Texas en San Antonio la utiliza en cursos ofrecidos dentro de programas piloto de investigación.',
+      'cases.alice.privacy': 'Política de privacidad de ALICE',
+      'lic.label': 'Licencias',
+      'lic.heading': 'Abierto donde importa. Protegido donde cuenta.',
+      'lic.intro': 'La capa central de representación del conocimiento es de código abierto — creemos que la infraestructura del conocimiento debe ser accesible. Las capas de atribución, armonización y verificación que hacen que la IA sea confiable en entornos regulados están licenciadas.',
+      'lic.t1.tier': 'Código Abierto',
+      'lic.t1.tagline': 'Plataforma central de representación del conocimiento — gratuita para cualquier uso.',
+      'lic.t1.f1': 'Arquitectura de conocimiento rizomática',
+      'lic.t1.f2': 'Columna vertebral de entrega multiagente',
+      'lic.t1.f3': 'Soporte comunitario',
+      'lic.t1.f4': 'Licencia de código abierto',
+      'lic.t1.cta': 'Acceder al repositorio',
+      'lic.t2.tier': 'Complemento Licenciado',
+      'lic.t2.tagline': 'Atribución y armonización multiagente. Por asiento, por año.',
+      'lic.t2.f1': 'Motor de atribución Hudo (patente pendiente)',
+      'lic.t2.f2': 'Armonización multiagente Max (patente pendiente)',
+      'lic.t2.f3': 'Integración con el núcleo de código abierto',
+      'lic.t2.f4': 'SLA de soporte empresarial',
+      'lic.t2.cta': 'Consultar sobre licencias',
+      'lic.t3.tier': 'Plataforma Completa',
+      'lic.t3.product': 'Plataforma Completa',
+      'lic.t3.tagline': 'La infraestructura de confianza completa de Attruvera — las cuatro capas.',
+      'lic.t3.f2': 'Atribución Hudo (patente pendiente)',
+      'lic.t3.f3': 'Armonización Max (patente pendiente)',
+      'lic.t3.f4': 'Auditoría criptográfica TVA (PCT pendiente)',
+      'lic.t3.f5': 'Soporte prioritario + incorporación',
+      'lic.t3.cta': 'Iniciar la conversación',
+      'about.label': 'Sobre Attruvera',
+      'about.heading': 'Construido sobre matemáticas. Fundamentado en responsabilidad.',
+      'about.legal': '© 2026 · Attruvera Technologies, Inc. es una C-Corp de Delaware · Todos los derechos reservados.',
+      'about.p1': 'Attruvera Technologies es una empresa de tecnología avanzada constituida en Delaware y con sede en San Antonio, Texas. Es una empresa derivada de la Universidad de Texas en San Antonio, surgida de su investigación en matemáticas computacionales y gobernanza de IA. UTSA posee participación en la empresa bajo un plan de gestión de conflictos de interés — una estructura que refleja la confianza institucional y garantiza una supervisión rigurosa de la comercialización.',
+      'about.p2': 'La perspectiva fundamental de la empresa es matemática: el error cero en la IA es demostrablemente imposible, lo que significa que la pregunta correcta para cualquier despliegue no es "¿es confiable esta IA?" sino "¿es el modo de fallo de esta IA aceptable y visible?" Attruvera construye la infraestructura que hace visibles los modos de fallo — y por tanto manejables.',
+      'contact.label': 'Contáctenos',
+      'contact.heading': 'Tres conversaciones que queremos tener.',
+      'contact.c1.label': 'Para Inversores',
+      'contact.c1.h4': 'Ronda Semilla',
+      'contact.c1.p': 'Estamos construyendo la capa de infraestructura de confianza para la economía de la IA. Si está invirtiendo en la pila de gobernanza, cumplimiento o responsabilidad para la IA empresarial, deberíamos hablar.',
+      'contact.c2.label': 'Para Socios',
+      'contact.c2.h4': 'Alianzas Estratégicas',
+      'contact.c2.p': 'Trabajamos con integradores de sistemas, contratistas gubernamentales y proveedores de software empresarial que necesitan una capa de responsabilidad de IA creíble y auditable para sus clientes y despliegues.',
+      'contact.c3.label': 'Para Licenciatarios',
+      'contact.c3.h4': 'Licencias Tecnológicas',
+      'contact.c3.p': 'Ya sea que necesite Hudo, Max, TVA o la plataforma completa, nuestro equipo de licencias puede definir un despliegue que se adapte a su entorno regulatorio, perfil de riesgo y presupuesto.',
+      'footer.alicePrivacy': 'Privacidad de ALICE',
+    }
+  };
+
+  var currentLang = localStorage.getItem('lang') || 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    var t = TRANSLATIONS[lang];
+    document.documentElement.lang = lang;
+
+    // Update lang button label
+    document.getElementById('lang-label').textContent = lang === 'en' ? 'ES' : 'EN';
+    document.getElementById('lang-btn').setAttribute('aria-label',
+      lang === 'en' ? 'Switch to Spanish' : 'Switch to English');
+
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+
+    // Update hero tagline (set by CONFIG JS)
+    var tl = document.getElementById('hero-tagline');
+    if (tl) tl.textContent = t['hero.tagline'] || '';
+
+    // Update page title
+    document.title = lang === 'es'
+      ? 'Attruvera Technologies — Atribución · Confianza · Veracidad'
+      : 'Attruvera Technologies — Attribution · Trust · Veracity';
+  }
+
+  // Apply on load
+  applyLang(currentLang);
+
+  // Lang button toggle
+  document.getElementById('lang-btn').addEventListener('click', function(e) {
+    e.stopPropagation();
+    applyLang(currentLang === 'en' ? 'es' : 'en');
+  });
+
+});
+</script>
+</body>
+</html>
